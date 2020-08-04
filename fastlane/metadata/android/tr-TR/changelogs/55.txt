@@ -1,0 +1,2 @@
+- Manşetler sayfası eklendi.
+- Arama ile ilgili problem giderildi.

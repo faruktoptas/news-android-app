@@ -1,0 +1,36 @@
+[
+  {
+    "i": 1204,
+    "n": "Welt.de",
+    "l": "https://www.welt.de/feeds/section/finanzen.rss?format=xml"
+  },
+  {
+    "i": 1201,
+    "n": "T-Online",
+    "l": "http://feeds.t-online.de/rss/wirtschaft"
+  },
+  {
+    "i": 1205,
+    "n": "RP-Online",
+    "l": "http://www.rp-online.de/wirtschaft/feed.rss"
+  },
+  {
+    "i": 1202,
+    "n": "Zeit.de",
+    "l": "http://newsfeed.zeit.de/wirtschaft/index"
+  },
+  {
+    "i": 1203,
+    "n": "Faz.net",
+    "l": "http://www.faz.net/rss/aktuell/wirtschaft/"
+  },
+  {
+    "i": 1206,
+    "n": "News.de",
+    "l": "http://www.news.de/rss/364371168/wirtschaft/"
+  }
+
+
+
+
+]

@@ -1,0 +1,70 @@
+[
+  {
+    "id": 0,
+    "title": "Latest News"
+  },
+  {
+    "id": 1,
+    "title": "Gündem"
+  },
+  {
+    "id": 2,
+    "title": "Sport"
+  },
+  {
+    "id": 3,
+    "title": "Magazin"
+  },
+  {
+    "id": 4,
+    "title": "Ekonomi"
+  },
+  {
+    "id": 5,
+    "title": "Siyaset"
+  },
+  {
+    "id": 6,
+    "title": "Life"
+  },
+  {
+    "id": 7,
+    "title": "Dünya"
+  },
+  {
+    "id": 8,
+    "title": "Yazarlar"
+  },
+  {
+    "id": 9,
+    "title": "Finans"
+  },
+  {
+    "id": 10,
+    "title": "Kadın"
+  },
+  {
+    "id": 11,
+    "title": "Eğitim"
+  },
+  {
+    "id": 12,
+    "title": "Kitap"
+  },
+  {
+    "id": 13,
+    "title": "Teknoloji"
+  },
+  {
+    "id": 14,
+    "title": "Otomobil"
+  },
+  {
+    "id": 15,
+    "title": "Müzik"
+  },
+  {
+    "id": 16,
+    "title": "Sinema"
+  }
+]

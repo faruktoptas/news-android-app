@@ -1,0 +1,153 @@
+/*
+ *  Copyright (c) 2020. Faruk Toptaş
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ */
+
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.26.1'
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'io.fabric'
+apply plugin: 'kotlin-kapt'
+apply from: '../dependencies.gradle'
+apply from: '../sign.gradle'
+
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+
+android {
+    compileSdkVersion 28
+
+    packagingOptions {
+        exclude 'META-INF/app_debug.kotlin_module'
+    }
+
+    defaultConfig {
+        applicationId "com.moblino.countrynews"
+        minSdkVersion 14
+        targetSdkVersion 28
+        multiDexEnabled true
+        versionCode versions.code
+        versionName versions.name
+        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+    }
+
+    signingConfigs {
+        release {
+            keyAlias keystore.alias
+            keyPassword keystore.sp
+            storeFile file('../upload.jks')
+            storePassword keystore.sp
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    lintOptions {
+        disable 'MissingTranslation'
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation "com.android.support:appcompat-v7:$versions.supportLib"
+    implementation "com.android.support:support-v4:$versions.supportLib"
+    implementation "com.android.support:design:$versions.supportLib"
+    implementation "com.android.support:recyclerview-v7:$versions.supportLib"
+    implementation "com.android.support:cardview-v7:$versions.supportLib"
+    implementation "com.android.support:customtabs:$versions.supportLib"
+    implementation "com.android.support:preference-v7:$versions.supportLib"
+
+    implementation "com.google.android.gms:play-services-analytics:$versions.play"
+    implementation "com.google.firebase:firebase-core:$versions.play"
+    implementation "com.google.firebase:firebase-config:16.4.0"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.6"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.6'
+
+    implementation "android.arch.lifecycle:livedata:$versions.arch"
+    implementation "android.arch.lifecycle:runtime:$versions.arch"
+    implementation "android.arch.lifecycle:extensions:$versions.arch"
+    kapt "android.arch.lifecycle:compiler:$versions.arch"
+
+    implementation 'org.koin:koin-android:1.0.2'
+    implementation 'org.koin:koin-android-viewmodel:1.0.2'
+
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation('com.squareup.picasso:picasso:2.71828') {
+        exclude group: 'com.android.support'
+    }
+
+    implementation 'com.j256.ormlite:ormlite-core:4.48'
+    implementation 'com.j256.ormlite:ormlite-android:4.48'
+
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+
+    implementation 'com.github.chrisbanes:PhotoView:1.3.1'
+    implementation 'com.github.faruktoptas:FancyShowCaseView:1.1.5'
+    implementation('com.crashlytics.sdk.android:crashlytics:2.5.5@aar') {
+        transitive = true
+    }
+    implementation('com.mikepenz:aboutlibraries:5.7.3@aar') {
+        transitive = true
+    }
+
+    testImplementation 'junit:junit:4.12'
+    testImplementation "android.arch.core:core-testing:$versions.arch"
+    testImplementation 'org.mockito:mockito-core:2.23.0'
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0"
+
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude group: 'com.android.support', module: 'design'
+        exclude group: 'com.android.support', module: 'recyclerview-v7'
+    }
+}
+
+tasks.withType(Test) {
+    testLogging {
+        events "started", "passed", "skipped", "failed"
+    }
+}
+
+apply plugin: 'com.google.gms.google-services'

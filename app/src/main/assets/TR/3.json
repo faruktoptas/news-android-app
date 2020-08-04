@@ -1,0 +1,27 @@
+[
+  {
+    "i": 1804,
+    "n": "Sabah",
+    "l": "https://www.sabah.com.tr/rss/gundem.xml"
+  },
+  {
+    "i": 1802,
+    "n": "Hürriyet",
+    "l": "http://www.hurriyet.com.tr/rss/gundem"
+  },
+  {
+    "i": 1803,
+    "n": "Ensonhaber",
+    "l": "http://www.ensonhaber.com/rss/gundem.xml"
+  },
+  {
+    "i": 1806,
+    "n": "Habertürk",
+    "l": "https://www.haberturk.com/rss/kategori/gundem.xml"
+  },
+  {
+    "i": 1808,
+    "n": "Ahaber",
+    "l": "https://www.ahaber.com.tr/rss/gundem.xml"
+  }
+]

@@ -1,0 +1,28 @@
+[
+
+  {
+    "i": 2702,
+    "n": "Volkskrant.nl",
+    "l": "https://www.volkskrant.nl/binnenland/rss.xml"
+  },
+  {
+    "i": 2703,
+    "n": "Parool.nl",
+    "l": "https://www.parool.nl/binnenland/rss.xml"
+  },
+  {
+    "i": 2704,
+    "n": "Dg.nl",
+    "l": "https://www.gelderlander.nl/binnenland/rss.xml"
+  },
+  {
+    "i": 2705,
+    "n": "Rd.nl",
+    "l": "https://www.rd.nl/binnenland-7.4508?ot=rd.rss.ot"
+  },
+  {
+    "i": 2706,
+    "n": "Telegraaf.nl",
+    "l": "https://www.telegraaf.nl/rss/binnenland.xml"
+  }
+]

@@ -1,0 +1,14 @@
+⭐ <b> Schneller und einfacher Zugriff auf die beliebtesten Nachrichten </ b>
+Mit der News-App können Sie schnell und einfach auf die beliebtesten Nachrichtenquellen zugreifen.
+
+⭐ <b> Nachrichtenkategorien </ b>
+{{categories}} Kategorien sind hier verfügbar.
+
+Schneller und einfacher Nachrichtenleser für die beliebtesten Nachrichten und Zeitungen Ihres Landes. Bleiben Sie mit Ihren Ländernachrichten auf dem Laufenden und vergleichen Sie sie mit verschiedenen Quellen.
+
+{{sources}}
+
+<b> ⭐Kontaktieren Sie mit uns: </ b>
+Sie können uns über moblinoapps@gmail.com kontaktieren.
+
+Dies ist eine RSS-Reader-App. Inhalte werden nicht von uns erstellt. Alle Inhalte werden von Nachrichtenseiten erstellt.

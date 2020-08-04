@@ -1,0 +1,32 @@
+[
+  {
+    "i": 1603,
+    "n": "Lenta",
+    "l": "https://lenta.ru/rss"
+  },
+  {
+    "i": 1605,
+    "n": "Gismeteo",
+    "l": "https://www.gismeteo.ru/news/rss/"
+  },
+  {
+    "i": 1606,
+    "n": "Rt",
+    "l": "https://www.rt.com/rss/news/"
+  },
+  {
+    "i": 1607,
+    "n": "Lifenews",
+    "l": "https://life.ru/xml/feed.xml"
+  },
+  {
+    "i": 1601,
+    "n": "Rbc",
+    "l": "http://static.feed.rbc.ru/rbc/internal/rss.rbc.ru/rbc.ru/news.rss"
+  },
+  {
+    "i": 1602,
+    "n": "Rambler",
+    "l": "https://news.rambler.ru/rss/moscow_city/"
+  }
+]

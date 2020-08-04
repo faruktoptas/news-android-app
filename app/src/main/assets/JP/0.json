@@ -1,0 +1,27 @@
+[
+  {
+    "i": 1403,
+    "n": "Asahi",
+    "l": "http://rss.asahi.com/rss/asahi/newsheadlines.rdf"
+  },
+  {
+    "i": 1405,
+    "n": "Wsj Japan",
+    "l": "http://realtime.wsj.com/japan/feed/?mod=WSJJP_Blog"
+  },
+  {
+    "i": 1409,
+    "n": "Japantimes",
+    "l": "http://www.japantimes.co.jp/feed/topstories"
+  },
+  {
+    "i": 1411,
+    "n": "Nikkan",
+    "l": "http://www.nikkan.co.jp/rss/nksrdf.rdf"
+  },
+  {
+    "i": 1412,
+    "n": "At-s",
+    "l": "http://www.at-s.com/rss/shizushin.xml"
+  }
+]

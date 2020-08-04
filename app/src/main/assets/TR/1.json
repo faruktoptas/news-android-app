@@ -1,0 +1,84 @@
+[
+  {
+    "i": 1807,
+    "n": "Hürriyet",
+    "l": "http://www.hurriyet.com.tr/rss/spor"
+  },
+  {
+    "i": 1812,
+    "n": "Sabah",
+    "l": "https://www.sabah.com.tr/rss/spor.xml"
+  },
+  {
+    "i": 1830,
+    "n": "Beinsports.com",
+    "l": "http://tr.beinsports.com/rss/ana-sayfa"
+  },
+  {
+    "i": 1820,
+    "n": "Fotomaç",
+    "l": "https://www.fotomac.com.tr/rss/futbol.xml"
+  },
+  {
+    "i": 1805,
+    "n": "Gsgazete",
+    "l": "http://www.gsgazete.com/rss"
+  },
+
+  {
+    "i": 1828,
+    "n": "Fanatik",
+    "l": "https://news.google.com/rss/search?q=fanatik.com.tr&um=1&ie=UTF-8&hl=tr&gl=TR&ceid=TR:tr"
+  },
+
+  {
+    "i": 1809,
+    "n": "Ensonhaber",
+    "l": "http://www.ensonhaber.com/rss/spor.xml"
+  },
+  {
+    "i": 1810,
+    "n": "Mynet",
+    "l": "http://spor.mynet.com/rss"
+  },
+  {
+    "i": 1811,
+    "n": "Habertürk",
+    "l": "https://www.haberturk.com/rss/spor.xml"
+  },
+  {
+    "i": 1815,
+    "n": "Cumhuriyet",
+    "l": "http://www.cumhuriyet.com.tr/rss/9.xml"
+  },
+  {
+    "i": 1817,
+    "n": "Cnntürk",
+    "l": "https://www.cnnturk.com/feed/rss/spor/news"
+  },
+  {
+    "i": 1819,
+    "n": "Stargazete",
+    "l": "http://www.stargazete.com/rss/spor.xml"
+  },
+  {
+    "i": 1821,
+    "n": "Goal.com",
+    "l": "http://www.goal.com/tr/feeds/news?fmt=rss&ICID=HP"
+  },
+  {
+    "i": 1825,
+    "n": "Tribündergi",
+    "l": "http://www.tribundergi.com/sitemap.xml"
+  },
+  {
+    "i": 1818,
+    "n": "Ahaber",
+    "l": "https://www.ahaber.com.tr/rss/spor.xml"
+  },
+  {
+    "i": 1827,
+    "n": "F5Haber",
+    "l": "http://www.f5haber.com/rss/spor_haber.xml"
+  }
+]

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~  Copyright (c) 2020. Faruk Toptaş
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   you may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="app_name">Nieuws</string>
+    <string name="network_error">Netwerkfout!</string>
+    <string name="error_json_parse">Er is een fout opgetreden! Probeer het opnieuw.</string>
+    <string name="error_json_webview_url">Pagina wordt geladen fout! Probeer het opnieuw.</string>
+    <string name="text_empty_list">RSS-feed kan niet worden gelezen.</string>
+    <string name="title_edit_list">Sort Feed List</string>
+    <string name="title_save_list">Save</string>
+    <string name="title_share">Delen</string>
+    <string name="title_share_app">Deel deze app</string>
+    <string name="title_settings">instellingen</string>
+    <string name="title_about">Over</string>
+    <string name="date_days_ago">%d dagen geleden</string>
+    <string name="date_hours_ago">%d uur geleden</string>
+    <string name="date_mins_ago">%d minuten geleden</string>
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Dichtbij</string>
+    <string name="reading_mode">Google\nWeb Light</string>
+    <string name="title_retry">opnieuw proberen</string>
+    <string name="title_search">Zoeken</string>
+    <string name="title_load_images">Afbeeldingen laden</string>
+    <string name="title_gwl_mode">Inschakelen Google Web Light</string>
+    <string name="title_pref_country">Land</string>
+    <string name="text_gwl">Het inschakelen van Google Web Light maakt de pagina te laden sneller en kusten minder gegevens.</string>
+    <string name="search_hint">Zoeken</string>
+    <string name="title_bug_report">Geef feedback</string>
+    <string name="no_email_app">Er is geen e-app geïnstalleerd op uw telefoon!</string>
+    <string name="title_licenses">Open Source Licenties</string>
+    <string name="text_ok">OK</string>
+    <string name="error_choose_one">Selecteer ten minste één punt!</string>
+    <string name="title_whatsnew">Wat is nieuw in deze versie</string>
+    <string name="text_whats_new">- Bugfixes</string>
+    <string name="no_fav">U heeft geen bewaarde nieuws :(</string>
+    <string name="title_email">E-mail</string>
+    <string name="title_favourites">Opgenomen nieuws</string>
+    <string name="title_request_feed_name">Krant of nieuwssite naam</string>
+    <string name="title_send">sturen</string>
+    <string name="text_request_feed_success">Hartelijk dank voor uw feedback.</string>
+    <string name="title_message">Jouw bericht</string>
+    <string name="title_request_feed">Feed Request</string>
+    <string name="card_question_no">Nee</string>
+    <string name="card_question_yes">Ja</string>
+    <string name="card_question_rate_me">Wilt u deze app kunnen waarderen?</string>
+    <string name="card_question_user_requested_rss">Is er een nieuws-feed u wilt worden toegevoegd?</string>
+    <string name="card_question_sort_feeds">Wilt u nieuws feeds sorteren?</string>
+    <string name="error_valid_feedback">Schrijf minstens 3 karakters.</string>
+    <string name="card_question_new_version">Er is een nieuwere versie op Google Play Store. Wilt u updaten?</string>
+    <string name="info_empty_search">Geen resultaten gevonden.</string>
+    <string name="err_search_not_valid">Dit voer is uitgeschakeld.</string>
+    <string name="title_rate">Rente op Google Play</string>
+    <string name="show_detail_first">Show Samenvatting First</string>
+    <string name="show_detail_first_summary">Indien ingeschakeld, toont een korte beschrijving van de RSS-item niet vol bron.</string>
+    <string name="title_list_type">Lijsttype</string>
+    <string name="text_guide_news_detail">Veeg naar rechts / links om de vorige / volgende nieuws zien.</string>
+    <string name="text_fav_added">Nieuws opgenomen.</string>
+    <string name="text_fav_removed">Nieuws verwijderd.</string>
+    <string name="title_go_to_source">Ga naar Bron</string>
+    <string name="text_swipe_1">Veeg naar rechts / links om te navigeren tussen nieuws.</string>
+    <string name="text_choose_country">Selecteer een land om nieuws te lezen.</string>
+    <string name="title_saved_list">Lijst</string>
+    <string name="text_show_case_item_type">Door hier te tikken, kunt u het typen van de lijst wijzigen.</string>
+    <string name="error_invalid_email">Vul een geldig e-mail.</string>
+    <string name="text_show_case_photo_detail">Klik op de foto voor volledige schermweergave.</string>
+    <string name="night_mode">Nachtmodus</string>
+    <string name="font_size">Inhoud Lettergrootte</string>
+    <string name="card_question_dark_mode">Wil je de donkere modus proberen?</string>
+</resources>

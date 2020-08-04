@@ -1,0 +1,43 @@
+[
+  {
+    "i": 1205,
+    "n": "Welt.de",
+    "l": "https://www.welt.de/feeds/section/sport.rss?format=xml"
+  },
+  {
+    "i": 1201,
+    "n": "T-Online",
+    "l": "http://feeds.t-online.de/rss/fussball"
+  },
+  {
+    "i": 1202,
+    "n": "Zeit.de",
+    "l": "http://newsfeed.zeit.de/sport/index"
+  },
+  {
+    "i": 1206,
+    "n": "RP-Online",
+    "l": "http://www.rp-online.de/sport/feed.rss"
+  },
+  {
+    "i": 1207,
+    "n": "DiePresse.com",
+    "l": "http://diepresse.com/rss/Sport"
+  },
+  {
+    "i": 1208,
+    "n": "News.de",
+    "l": "http://www.news.de/rss/364371176/sport/"
+  },
+  {
+    "i": 1203,
+    "n": "Faz.net",
+    "l": "http://www.faz.net/rss/aktuell/sport/fussball/"
+  },
+  {
+    "i": 1204,
+    "n": "Kicker.de",
+    "l": "http://rss.kicker.de/news/aktuell",
+    "e": "ISO-8859-1"
+  }
+]

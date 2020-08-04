@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  Copyright (c) 2020. Faruk Toptaş
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   you may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <color name="cn_light_gray">#888888</color>
+    <color name="cn_lighter_gray">#cccccc</color>
+    <color name="cn_darker_gray">#222222</color>
+    <color name="cn_black">#222222</color>
+    <color name="cn_white">#ffffff</color>
+    <color name="cn_switch_disabled">#e58785</color>
+
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#cccccc</color>
+    <color name="accent_translucent">#bbbbbb</color>
+
+    <color name="bg_item_dragging_active_state">#e58785</color>
+
+    <color name="transparent_black">#cc000000</color>
+
+    <color name="colorAccent">#cd312c</color>
+    <!--Day Night Colors -->
+    <color name="mainTextColor">#333333</color>
+    <color name="secondaryTextColor">#666666</color>
+    <color name="mainContrast">#fff</color>
+    <color name="mainBackground">#eee</color>
+    <color name="colorHighlight">#444444</color>
+
+    <color name="card_bg">#fff</color>
+    <color name="card_title_text_color">#000000</color>
+    <color name="card_date_text_color">#999</color>
+    <color name="card_detail_date">#cccccc</color>
+    <color name="card_detail_secondary">#333333</color>
+    <color name="card_button">#cd312c</color>
+    <!-- -->
+
+</resources>

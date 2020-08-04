@@ -1,0 +1,32 @@
+[
+  {
+    "i": 1203,
+    "n": "Welt.de",
+    "l": "https://www.welt.de/feeds/section/politik.rss?format=xml"
+  },
+  {
+    "i": 1201,
+    "n": "Zeit.de",
+    "l": "http://newsfeed.zeit.de/politik/index"
+  },
+  {
+    "i": 1205,
+    "n": "DiePresse.com",
+    "l": "http://diepresse.com/rss/Politik"
+  },
+  {
+    "i": 1204,
+    "n": "RP-Online",
+    "l": "http://www.rp-online.de/politik/feed.rss"
+  },
+  {
+    "i": 1202,
+    "n": "Faz.net",
+    "l": "http://www.faz.net/rss/aktuell/politik/"
+  },
+  {
+    "i": 1206,
+    "n": "News.de",
+    "l": "http://www.news.de/rss/364367598/politik/"
+  }
+]

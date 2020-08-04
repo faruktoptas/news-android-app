@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~  Copyright (c) 2020. Faruk Toptaş
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   you may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="app_name">Haberler</string>
+    <string name="network_error">Bağlantı Hatası!</string>
+    <string name="error_json_parse">Beklenmeyen bir hata oluştu! Lütfen tekrar deneyiniz.</string>
+    <string name="error_json_webview_url">Haber kaynağı yüklenemedi! Lütfen tekrar deneyiniz.</string>
+    <string name="text_empty_list">Bir bağlantı problemi yaşıyorsunuz veya bu haber bağlantısında bir sorun var.</string>
+    <string name="title_edit_list">Haber Kaynaklarını Sırala</string>
+    <string name="title_save_list">Kaydet</string>
+    <string name="title_share">Paylaş</string>
+    <string name="title_share_app">Uygulamayı Paylaş</string>
+    <string name="title_settings">Ayarlar</string>
+    <string name="title_about">Hakkında</string>
+    <string name="date_days_ago">%d gün</string>
+    <string name="date_hours_ago">%d saat</string>
+    <string name="date_mins_ago">%d dakika</string>
+    <string name="navigation_drawer_open">Aç</string>
+    <string name="navigation_drawer_close">Kapat</string>
+    <string name="reading_mode">Google\nWeb Light</string>
+    <string name="title_retry">Tekrar Dene</string>
+    <string name="title_search">Ara</string>
+    <string name="title_load_images">Resimleri Yükle</string>
+    <string name="title_gwl_mode">Google Web Light Kullan</string>
+    <string name="title_pref_country">Ülke</string>
+    <string name="text_gwl">Sayfayı Google Web Light kullanarak açar. Sayfanın daha hızlı yüklenmesini ve daha az veri harcamasını sağlar.</string>
+    <string name="search_hint">Ara</string>
+    <string name="title_bug_report">Görüş Bildir</string>
+    <string name="no_email_app">Cihazınızda yüklü bir eposta uygulaması bulunmamaktadır!</string>
+    <string name="title_licenses">Açık Kaynak Lisanslar</string>
+    <string name="text_ok">Tamam</string>
+    <string name="error_choose_one">En az 1 haber kaynağı seçmelisiniz!</string>
+    <string name="title_whatsnew">Bu sürümdeki yenilikler</string>
+    <string name="text_whats_new">- Manşetler sayfası eklendi.\n- Arama ile ilgili problem giderildi.</string>
+    <string name="no_fav">Henüz kaydettiğiniz bir haber yok :(</string>
+    <string name="title_email">Eposta</string>
+    <string name="title_favourites">Kaydedilen Haberler</string>
+    <string name="title_request_feed_name">Haber veya gazete adı</string>
+    <string name="title_send">Gönder</string>
+    <string name="text_request_feed_success">Bildiriminiz için teşekkür ederiz.</string>
+    <string name="title_message">Mesajınız</string>
+    <string name="title_request_feed">Yeni haber/gazete isteği</string>
+    <string name="card_question_no">Hayır</string>
+    <string name="card_question_yes">Evet</string>
+    <string name="card_question_rate_me">Görüş ve önerileriniz bizim için önemlidir. Bu uygulamaya puan vermek ister misiniz?</string>
+    <string name="card_question_user_requested_rss">Eklenmesini istediğiniz bir haber veya gazete sitesi var mı?</string>
+    <string name="card_question_sort_feeds">Haber kaynaklarının sırasını değiştirmek ister misiniz?</string>
+    <string name="card_question_dark_mode">Karanlık modu denemek ister misiniz?</string>
+    <string name="error_valid_feedback">Lütfen en az 3 karakter giriniz.</string>
+    <string name="card_question_new_version">Yeni bir sürüm mevcut. Güncellemek ister misiniz?</string>
+    <string name="info_empty_search">Sonuç bulunamadı.</string>
+    <string name="err_search_not_valid">Bu haber kaynağını seçmek için önce aktifleştirmeniz gerekmektedir.</string>
+    <string name="title_rate">Mağazada Puan Ver</string>
+    <string name="show_detail_first">Haber Özetini Göster</string>
+    <string name="show_detail_first_summary">Bu seçenek etkin olduğunda habere tıklandığında önce haberin kısa açıklaması görüntülenir. (Daha hızlı yüklenir ve daha az veri harcar)</string>
+    <string name="title_list_type">Listeleme Tipi</string>
+    <string name="text_guide_news_detail">Sağa sola kaydırarak haberler arasında gezinebilirsiniz.</string>
+    <string name="text_fav_added">Haber kaydedildi.</string>
+    <string name="text_fav_removed">Haber kayıtlı listesinden silindi.</string>
+    <string name="title_go_to_source">Sayfaya Git</string>
+    <string name="text_swipe_1">Sağa sola kaydırarak haberler arasında gezinebilirsiniz.</string>
+    <string name="text_choose_country">Lütfen haberlerini okuyacağınız ülkeyi seçiniz.</string>
+    <string name="title_saved_list">Liste</string>
+    <string name="text_show_case_item_type">Görünüm tipini değiştirerek tek veya iki sütün olarak listeleme yapabilirsiniz.</string>
+    <string name="error_invalid_email">Lütfen doğru bir eposta adresi giriniz.</string>
+    <string name="text_show_case_photo_detail">Fotoğrafa tıklayarak tam ekran görebilirsiniz.</string>
+    <string name="night_mode">Karanlık Modu</string>
+    <string name="font_size">İçerik Yazı Boyutu</string>
+    <string name="title_privacy">Gizlilik Politikası</string>
+</resources>

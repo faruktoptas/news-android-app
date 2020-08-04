@@ -1,0 +1,16 @@
+⭐⭐⭐⭐⭐ %100 yerli  olan uygulamamıza göstermiş olduğunuz ilgiden dolayı teşekkür ederiz.
+
+⭐<b>Farklı kaynaklara hızlı ve kolay erişim</b>
+Haberler uygulaması ile çok sayıda popüler haber kaynağını çok hızlı ve kolay bir şekilde okuyabilirsiniz.
+
+⭐<b>Zengin kategori</b>
+{{categories}} kategorilerinde haberleri okuyabilirsiniz.
+
+Güncel haberleri farklı kaynaklardan okuyarak karşılaştırma yapın.İsterseniz başka ülkelerin popüler haber sitelerini de takip edebilirsiniz.
+
+{{sources}}
+
+<b>⭐Bize Ulaşın:</b>
+Görüş ve önerilerinizi bizimle paylaşmak için moblinoapps@gmail.com adresine mail atabilirsiniz.
+
+Haberler uygulaması bir RSS okuyucudur. Bütün içerik haber siteleri tarafından oluşturulmaktadır.

@@ -1,0 +1,70 @@
+[
+  {
+    "id": 0,
+    "title": "Latest News"
+  },
+  {
+    "id": 1,
+    "title": "Sport"
+  },
+  {
+    "id": 2,
+    "title": "Magazine"
+  },
+  {
+    "id": 3,
+    "title": "Journal"
+  },
+  {
+    "id": 4,
+    "title": "Economy"
+  },
+  {
+    "id": 5,
+    "title": "Politics"
+  },
+  {
+    "id": 6,
+    "title": "Life"
+  },
+  {
+    "id": 7,
+    "title": "World"
+  },
+  {
+    "id": 8,
+    "title": "Columnist"
+  },
+  {
+    "id": 9,
+    "title": "Finance"
+  },
+  {
+    "id": 10,
+    "title": "Women"
+  },
+  {
+    "id": 11,
+    "title": "Education"
+  },
+  {
+    "id": 12,
+    "title": "Books"
+  },
+  {
+    "id": 13,
+    "title": "Tech"
+  },
+  {
+    "id": 14,
+    "title": "Cars"
+  },
+  {
+    "id": 15,
+    "title": "Music"
+  },
+  {
+    "id": 16,
+    "title": "Cinema"
+  }
+]

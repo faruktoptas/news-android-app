@@ -1,0 +1,27 @@
+[
+  {
+    "i": 1802,
+    "n": "Sabah",
+    "l": "https://www.sabah.com.tr/rss/saglik.xml"
+  },
+  {
+    "i": 1803,
+    "n": "Hürriyet",
+    "l": "http://www.hurriyet.com.tr/rss/saglik"
+  },
+  {
+    "i": 1805,
+    "n": "Habertürk",
+    "l": "https://www.haberturk.com/rss/kategori/saglik.xml"
+  },
+  {
+    "i": 1806,
+    "n": "Cnntürk",
+    "l": "https://www.cnnturk.com/feed/rss/saglik/news"
+  },
+  {
+    "i": 1808,
+    "n": "Ahaber",
+    "l": "https://www.ahaber.com.tr/rss/saglik.xml"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "i": 2101,
+    "n": "Goal.com",
+    "l": "http://www.goal.com/en/feeds/news?fmt=rss&ICID=HP"
+  },
+  {
+    "i": 2102,
+    "n": "Washingtonpost",
+    "l": "http://feeds.washingtonpost.com/rss/sports"
+  },
+  {
+    "i": 2103,
+    "n": "Nypost",
+    "l": "https://nypost.com/sports/feed/"
+  },
+  {
+    "i": 2104,
+    "n": "Foxsports",
+    "l": "https://api.foxsports.com/v1/rss?partnerKey=zBaFxRyGKCfxBagJG9b8pqLyndmvo7UU"
+  },
+  {
+    "i": 2105,
+    "n": "Huffingtonpost",
+    "l": "https://www.huffingtonpost.com/section/sports/feed"
+  },
+  {
+    "i": 2106,
+    "n": "Yardbarker",
+    "l": "http://www.yardbarker.com/rss/rumors"
+  },
+  {
+    "i": 2107,
+    "n": "Uefa.com",
+    "l": "http://www.uefa.com/rssfeed/news/rss.xml"
+  },
+  {
+    "i": 2108,
+    "n": "Npr",
+    "l": "https://www.npr.org/rss/rss.php?id=1001"
+  },
+  {
+    "i": 2110,
+    "n": "Ruters",
+    "l": "http://feeds.reuters.com/reuters/sportsNews?format=xml"
+  },
+  {
+    "i": 2111,
+    "n": "Deadspin",
+    "l": "http://deadspin.com/rss"
+  }
+]

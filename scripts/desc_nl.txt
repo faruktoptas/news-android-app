@@ -1,0 +1,14 @@
+⭐ <b> Snelle en gemakkelijke toegang tot het meest populaire nieuws </b>
+Met de Nieuws-app hebt u snel en gemakkelijk toegang tot de meest populaire nieuwsbronnen.
+
+⭐ <b> Nieuwscategorieën </b>
+{{categories}} categorieën zijn hier beschikbaar.
+
+Snelle en gemakkelijke nieuwslezer voor het populairste nieuws en kranten in uw land. Blijf op de hoogte van het nieuws over uw land en vergelijk ze met verschillende bronnen.
+
+{{sources}}
+
+<b> ⭐Neem contact met ons op: </b>
+U kunt contact met ons opnemen via moblinoapps@gmail.com.
+
+Dit is een RSS-lezer-app. Inhoud is niet door ons gemaakt. Alle inhoud is gemaakt door nieuwssites.

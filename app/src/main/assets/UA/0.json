@@ -1,0 +1,42 @@
+[
+  {
+    "i": 1901,
+    "n": "Korrespondent",
+    "l": "http://k.img.com.ua/rss/ru/all_news2.0.xml"
+  },
+  {
+    "i": 1902,
+    "n": "Liga.net",
+    "l": "http://news.liga.net/all/rss.xml"
+  },
+  {
+    "i": 1903,
+    "n": "Unian.net",
+    "l": "http://rss.unian.net/site/news_ukr.rss"
+  },
+  {
+    "i": 1904,
+    "n": "Gazeta",
+    "l": "https://gazeta.ua/rss"
+  },
+  {
+    "i": 1905,
+    "n": "24tv",
+    "l": "https://24tv.ua/rss/topNews.xml"
+  },
+  {
+    "i": 1906,
+    "n": "Newsru",
+    "l": "https://rss.newsru.com/com/www/news/top"
+  },
+  {
+    "i": 1907,
+    "n": "Ictv",
+    "l": "https://fakty.ictv.ua/ua/feed/"
+  },
+  {
+    "i": 1909,
+    "n": "Ipress",
+    "l": "http://ipress.ua/rss/export.rss"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "i": 2001,
+    "n": "The Guardian UK",
+    "l": "https://www.theguardian.com/uk/rss"
+  },
+  {
+    "i": 2002,
+    "n": "Telegraph",
+    "l": "http://www.telegraph.co.uk/rss"
+  },
+  {
+    "i": 2005,
+    "n": "Dailymail",
+    "l": "http://www.dailymail.co.uk/home/index.rss"
+  },
+  {
+    "i": 2007,
+    "n": "Press and Journal",
+    "l": "https://www.pressandjournal.co.uk/feed/"
+  },
+  {
+    "i": 2006,
+    "n": "Express",
+    "l": "http://feeds.feedburner.com/daily-express-uk-news?format=xml"
+  },
+  {
+    "i": 2008,
+    "n": "Daily Star",
+    "l": "http://feeds.feedburner.com/daily-star-latest-news?format=xml"
+  }
+]

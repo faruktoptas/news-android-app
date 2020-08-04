@@ -1,0 +1,63 @@
+[
+  {
+    "i": 2702,
+    "n": "Ad.nl",
+    "l": "https://www.ad.nl/home/rss.xml"
+  },
+  {
+    "i": 2705,
+    "n": "dutchcowboys.nl",
+    "l": "http://www.dutchcowboys.nl/feed/rss"
+  },
+  {
+    "i": 2708,
+    "n": "Volkskrant.nl",
+    "l": "https://www.volkskrant.nl/nieuws/rss.xml"
+  },
+  {
+    "i": 2709,
+    "n": "Parool.nl",
+    "l": "https://www.parool.nl/nieuws/rss.xml"
+  },
+  {
+    "i": 2711,
+    "n": "Dg.nl",
+    "l": "https://www.gelderlander.nl/home/rss.xml"
+  },
+  {
+    "i": 2701,
+    "n": "Dutchnews.nl",
+    "l": "http://www.dutchnews.nl/feed/?news"
+  },
+  {
+    "i": 2720,
+    "n": "rtlnieuws.nl",
+    "l": "http://www.rtlnieuws.nl/service/rss/nederland/index.xml"
+  },
+
+  {
+    "i": 2714,
+    "n": "Fd.nl",
+    "l": "https://fd.nl/?rss"
+  },
+  {
+    "i": 2715,
+    "n": "Rd.nl",
+    "l": "https://www.rd.nl/laatste-nieuws-7.4514?ot=rd.rss.ot"
+  },
+  {
+    "i": 2716,
+    "n": "Telegraaf.nl",
+    "l": "https://www.telegraaf.nl/rss/"
+  },
+  {
+    "i": 2718,
+    "n": "Bnr.nl",
+    "l": "https://www.bnr.nl/?rss"
+  },
+  {
+    "i": 2719,
+    "n": "Blikopnieuws.nl",
+    "l": "http://www.blikopnieuws.nl/feeds/all/rss.xml"
+  }
+]

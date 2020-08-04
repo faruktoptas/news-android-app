@@ -1,0 +1,173 @@
+[
+  {
+    "i": 1802,
+    "n": "Onedio",
+    "l": "https://onedio.com/support/rss.xml"
+  },
+  {
+    "i": 1839,
+    "n": "Sabah",
+    "l": "https://www.sabah.com.tr/rss/anasayfa.xml"
+  },
+  {
+    "i": 1803,
+    "n": "Hürriyet",
+    "l": "http://www.hurriyet.com.tr/rss/anasayfa"
+  },
+  {
+    "i": 1805,
+    "n": "Yenişafak",
+    "l": "https://www.yenisafak.com/rss"
+  },
+  {
+    "i": 1807,
+    "n": "Sözcü",
+    "l": "http://www.sozcu.com.tr/rss.xml"
+  },
+  {
+    "i": 1808,
+    "n": "Habertürk",
+    "l": "http://www.haberturk.com/rss/manset.xml"
+  },
+  {
+    "i": 1816,
+    "n": "Haber3",
+    "l": "https://www.haber3.com/rss/"
+  },
+  {
+    "i": 1863,
+    "n": "CNNTürk",
+    "l": "https://www.cnnturk.com/feed/rss/all/news"
+  },
+  {
+    "i": 1832,
+    "n": "AA",
+    "l": "https://www.aa.com.tr/tr/rss/default?cat=live"
+  },
+  {
+    "i": 1843,
+    "n": "Sol",
+    "l": "http://haber.sol.org.tr/rss/tumicerik"
+  },
+  {
+    "i": 1847,
+    "n": "Denizhaber",
+    "l": "https://www.denizhaber.com.tr/rss/"
+  },
+  {
+    "i": 1850,
+    "n": "Ogünhaber",
+    "l": "http://www.ogunhaber.com/rss"
+  },
+  {
+    "i": 1861,
+    "n": "Dünya.com",
+    "l": "https://www.dunya.com/rss?dunya"
+  },
+  {
+    "i": 1831,
+    "n": "Gazeteilksayfa",
+    "l": "http://www.gazeteilksayfa.com/rss/"
+  },
+  {
+    "i": 1835,
+    "n": "Timetürk",
+    "l": "https://www.timeturk.com/rss/"
+  },
+  {
+    "i": 1866,
+    "n": "Güneş",
+    "l": "http://www.gunes.com/XmlRss"
+  },
+  {
+    "i": 1828,
+    "n": "Objektifhaber",
+    "l": "http://www.objektifhaber.com/sondakika.rss"
+  },
+
+  {
+    "i": 1820,
+    "n": "Stargazete",
+    "l": "http://www.stargazete.com/rss/sondakika.xml"
+  },
+  {
+    "i": 1853,
+    "n": "BBC Türkçe",
+    "l": "http://feeds.bbci.co.uk/turkce/rss.xml"
+  },
+  {
+    "i": 1857,
+    "n": "Sputnik",
+    "l": "https://tr.sputniknews.com/export/rss2/archive/index.xml"
+  },
+  {
+    "i": 1804,
+    "n": "Ensonhaber",
+    "l": "http://www.ensonhaber.com/rss/ensonhaber.xml"
+  },
+  {
+    "i": 1851,
+    "n": "Haber7",
+    "l": "http://sondakika.haber7.com/sondakika.rss"
+  },
+  {
+    "i": 1852,
+    "n": "Haberler",
+    "l": "http://rss.haberler.com/rss.asp?kategori=sondakika"
+  },
+  {
+    "i": 1862,
+    "n": "Milli Gazete",
+    "l": "https://www.milligazete.com.tr/rss"
+  },
+  {
+    "i": 1813,
+    "n": "Cumhuriyet",
+    "l": "http://www.cumhuriyet.com.tr/rss/son_dakika.xml"
+  },
+  {
+    "i": 1806,
+    "n": "Mynet",
+    "l": "http://www.mynet.com/haber/rss/sondakika"
+  },
+  {
+    "i": 1865,
+    "n": "Memurlar.net",
+    "l": "https://news.google.com/rss/search?q=memurlar.net&um=1&ie=UTF-8&hl=tr&gl=TR&ceid=TR:tr"
+  },
+  {
+    "i": 1811,
+    "n": "İnternethaber",
+    "l": "http://www.internethaber.com/rss"
+  },
+  {
+    "i": 1845,
+    "n": "F5Haber",
+    "l": "http://www.f5haber.com/rss/gundem_haber.xml"
+  },
+  {
+    "i": 1818,
+    "n": "Ahaber",
+    "l": "https://www.ahaber.com.tr/rss/anasayfa.xml"
+  },
+  {
+    "i": 1825,
+    "n": "Trthaber",
+    "l": "https://www.trthaber.com/sondakika.rss"
+  },
+  {
+    "i": 1841,
+    "n": "Diken",
+    "l": "http://www.diken.com.tr/feed/"
+  },
+  {
+    "i": 1854,
+    "n": "DW Türkçe",
+    "l": "http://partner.dw.com/rdf/rss-tur-all"
+  },
+  {
+    "i": 1867,
+    "n": "Turkgun",
+    "l": "https://www.turkgun.com/export/rss"
+  }
+]

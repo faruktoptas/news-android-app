@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  Copyright (c) 2020. Faruk Toptaş
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   you may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="pref_show_detail_first"
+        android:summary="@string/show_detail_first_summary"
+        android:title="@string/show_detail_first" />
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="pref_readability"
+        android:summary="@string/text_gwl"
+        android:title="@string/title_gwl_mode" />
+
+    <ListPreference
+        android:defaultValue="1"
+        android:dialogTitle="@string/night_mode"
+        android:entries="@array/array_night_mode"
+        android:entryValues="@array/array_night_mode_values"
+        android:key="pref_night_mode"
+        android:summary="%s"
+        android:title="@string/night_mode" />
+
+    <ListPreference
+        android:defaultValue="1"
+        android:dialogTitle="@string/font_size"
+        android:entries="@array/font_size_list"
+        android:entryValues="@array/font_size_list_values"
+        android:key="pref_font_size"
+        android:summary="%s"
+        android:title="@string/font_size" />
+
+    <ListPreference
+        android:defaultValue="0"
+        android:dialogTitle="@string/title_load_images"
+        android:entries="@array/array_load_images"
+        android:entryValues="@array/array_load_images_values"
+        android:key="pref_load_images"
+        android:summary="%s"
+        android:title="@string/title_load_images" />
+    <ListPreference
+        android:defaultValue=""
+        android:dialogTitle="@string/title_pref_country"
+        android:entries="@array/array_country_keys"
+        android:entryValues="@array/array_country_values"
+        android:key="pref_country"
+        android:summary="%s"
+        android:title="@string/title_pref_country" />
+
+    <Preference
+        android:key="give_feedback"
+        android:title="@string/title_bug_report">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.moblino.countrynews.ui.activity.FeedbackActivity"
+            android:targetPackage="com.moblino.countrynews" />
+    </Preference>
+
+    <Preference
+        android:key="about"
+        android:title="@string/title_about">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.moblino.countrynews.features.about.AboutActivity"
+            android:targetPackage="com.moblino.countrynews" />
+    </Preference>
+
+    <Preference
+        android:key="privacy"
+        android:title="@string/title_privacy">
+
+    </Preference>
+
+    <Preference
+        android:key="licenses"
+        android:title="@string/title_licenses">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.moblino.countrynews.features.settings.LicensesActivity"
+            android:targetPackage="com.moblino.countrynews" />
+    </Preference>
+
+</PreferenceScreen>

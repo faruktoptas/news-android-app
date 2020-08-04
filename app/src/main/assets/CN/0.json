@@ -1,0 +1,38 @@
+[
+  {
+    "i": 1109,
+    "n": "FT Chinese",
+    "l": "http://www.ftchinese.com/rss/news"
+  },
+
+  {
+    "i": 1101,
+    "n": "Sohu",
+    "l": "http://rss.news.sohu.com/rss/focus.xml"
+  },
+  {
+    "i": 1102,
+    "n": "163.com",
+    "l": "http://news.163.com/special/00011K6L/rss_newstop.xml"
+  },
+  {
+    "i": 1103,
+    "n": "People.com.cn",
+    "l": "http://www.people.com.cn/rss/world.xml"
+  },
+  {
+    "i": 1104,
+    "n": "China Daily",
+    "l": "http://www.chinadaily.com.cn/rss/china_rss.xml"
+  },
+  {
+    "i": 1106,
+    "n": "Xinhuanet",
+    "l": "http://www.xinhuanet.com/local/news_province.xml"
+  },
+  {
+    "i": 1107,
+    "n": "Huanqiu",
+    "l": "http://rss.huanqiu.com/china/roll.xml"
+  }
+]

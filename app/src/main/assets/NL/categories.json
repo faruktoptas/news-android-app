@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "title": "Nieuws"
+  },
+  {
+    "id": 1,
+    "title": "Sport"
+  },
+  {
+    "id": 2,
+    "title": "Buitenland"
+  },
+  {
+    "id": 3,
+    "title": "Binnenland"
+  },
+  {
+    "id": 4,
+    "title": "Economie"
+  },
+  {
+    "id": 5,
+    "title": "Politiek"
+  }
+]

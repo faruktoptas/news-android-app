@@ -1,0 +1,22 @@
+[
+  {
+    "i": 1801,
+    "n": "Sabah",
+    "l": "https://www.sabah.com.tr/rss/dunya.xml"
+  },
+  {
+    "i": 1803,
+    "n": "Habertürk",
+    "l": "https://www.haberturk.com/rss/kategori/dunya.xml"
+  },
+  {
+    "i": 1804,
+    "n": "Cnntürk",
+    "l": "https://www.cnnturk.com/feed/rss/dunya/news"
+  },
+  {
+    "i": 1806,
+    "n": "Ahaber",
+    "l": "https://www.ahaber.com.tr/rss/dunya.xml"
+  }
+]

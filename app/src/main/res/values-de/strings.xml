@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~  Copyright (c) 2020. Faruk Toptaş
+  ~
+  ~   Licensed under the Apache License, Version 2.0 (the "License");
+  ~   you may not use this file except in compliance with the License.
+  ~   You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~   Unless required by applicable law or agreed to in writing, software
+  ~   distributed under the License is distributed on an "AS IS" BASIS,
+  ~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~   See the License for the specific language governing permissions and
+  ~   limitations under the License.
+  ~
+  -->
+
+<resources>
+    <string name="app_name">Nachrichten</string>
+    <string name="network_error">Netzwerkfehler!</string>
+    <string name="error_json_parse">Es ist ein Fehler aufgetreten! Bitte versuchen sie es erneut.</string>
+    <string name="error_json_webview_url">Fehler an Laden der Seite! Bitte versuchen sie es erneut.</string>
+    <string name="text_empty_list">RSS-Feed kann nicht gelesen werden.</string>
+    <string name="title_edit_list">Bearbeiten Feed-Liste</string>
+    <string name="title_save_list">Speichern</string>
+    <string name="title_share">Teilen</string>
+    <string name="title_share_app">Teile diese App</string>
+    <string name="title_settings">Einstellungen</string>
+    <string name="title_about">Über</string>
+    <string name="date_days_ago">Vor %d Tagen</string>
+    <string name="date_hours_ago">Vor %d Stunden</string>
+    <string name="date_mins_ago">Vor %d Minuten</string>
+    <string name="navigation_drawer_open">Öffnen</string>
+    <string name="navigation_drawer_close">Schließen</string>
+    <string name="reading_mode">Google\nWeb Light</string>
+    <string name="title_retry">wiederholen</string>
+    <string name="title_search">Suche</string>
+    <string name="title_load_images">Bilder laden</string>
+    <string name="title_gwl_mode">Google Web Light aktivieren</string>
+    <string name="title_pref_country">Land</string>
+    <string name="text_gwl">Durch die Aktivierung von Google Web Light wird die Seite schneller geladen und weniger Daten gespeichert.</string>
+    <string name="search_hint">Suche</string>
+    <string name="title_bug_report">Fehlerbericht</string>
+    <string name="no_email_app">Es gibt keine E-Mail-Anwendung auf dem Telefon installiert!</string>
+    <string name="title_licenses">Lizenzen</string>
+    <string name="text_ok">OK</string>
+    <string name="error_choose_one">Bitte wählen Sie mindestens einen Eintrag aus!</string>
+    <string name="title_whatsnew">Was neu in dieser Version ist</string>
+    <string name="text_whats_new">- Problem beheben</string>
+    <string name="no_fav">Du hast keine gespeicherten Nachrichten :(</string>
+    <string name="title_email">Email</string>
+    <string name="title_favourites">aufgenommene Nachrichten</string>
+    <string name="title_request_feed_name">Zeitung oder News-Site-Name</string>
+    <string name="title_send">Senden</string>
+    <string name="text_request_feed_success">Danke für Ihre Rückmeldung.</string>
+    <string name="title_message">Deine Nachricht</string>
+    <string name="title_request_feed">Feed-Anfrage</string>
+    <string name="card_question_no">Nein</string>
+    <string name="card_question_yes">Ja</string>
+    <string name="card_question_rate_me">Möchten Sie diese App bewerten?</string>
+    <string name="card_question_user_requested_rss">Gibt es irgendwelche News-Feeds, die du hinzugefügt werden möchtest?</string>
+    <string name="card_question_sort_feeds">Gibt es irgendwelche News-Feeds, die du hinzugefügt werden möchtest?</string>
+    <string name="error_valid_feedback">Bitte schreiben Sie mindestens 3 Zeichen.</string>
+    <string name="card_question_new_version">Es gibt eine neuere Version im Google Play Store. Möchten Sie aktualisieren?</string>
+    <string name="info_empty_search">Keine Ergebnisse gefunden.</string>
+    <string name="err_search_not_valid">Dieser Feed ist deaktiviert.</string>
+    <string name="title_rate">Bewerte auf Google Play</string>
+    <string name="show_detail_first">Zusammenfassung anzeigen Erste</string>
+    <string name="show_detail_first_summary">Wenn aktiviert, zeigt eine kurze Beschreibung des RSS-Artikels nicht volle Quelle.</string>
+    <string name="title_list_type">Liste Typ</string>
+    <string name="text_guide_news_detail">Wischen Sie nach rechts / links, um vorherige / nächste Nachrichten zu sehen.</string>
+    <string name="text_fav_added">Nachrichten aufgezeichnet</string>
+    <string name="text_fav_removed">Nachrichten gelöscht.</string>
+    <string name="title_go_to_source">Gehe zu Quelle</string>
+    <string name="text_swipe_1">Wischen Sie nach rechts / links, um zwischen den Nachrichten zu navigieren.</string>
+    <string name="text_choose_country">Bitte wählen Sie das Land, in dem Sie die Nachrichten lesen.</string>
+    <string name="title_saved_list">Liste</string>
+    <string name="text_show_case_item_type">Wenn Sie hier tippen, können Sie die Auflistungstypen umschalten.</string>
+    <string name="error_invalid_email">Bitte schreiben Sie eine gültige E-Mail.</string>
+    <string name="text_show_case_photo_detail">Klicken Sie auf das Foto für Vollbildansicht.</string>
+    <string name="night_mode">Nachtmodus</string>
+    <string name="font_size">Inhalt Schriftgröße</string>
+    <string name="card_question_dark_mode">Möchten Sie den dunklen Modus ausprobieren?</string>
+</resources>

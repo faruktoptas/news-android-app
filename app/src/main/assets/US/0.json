@@ -1,0 +1,87 @@
+[
+  {
+    "i": 2106,
+    "n": "Abcnews",
+    "l": "http://feeds.abcnews.com/abcnews/topstories"
+  },
+  {
+    "i": 2101,
+    "n": "CNN",
+    "l": "http://rss.cnn.com/rss/edition.rss"
+  },
+  {
+    "i": 2103,
+    "n": "NYTimes",
+    "l": "http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+  },
+  {
+    "i": 2116,
+    "n": "Npr.org",
+    "l": "https://www.npr.org/rss/rss.php?id=1001"
+  },
+  {
+    "i": 2107,
+    "n": "Nbcnews",
+    "l": "http://feeds.nbcnews.com/feeds/topstories"
+  },
+  {
+    "i": 2112,
+    "n": "Nypost",
+    "l": "https://nypost.com/news/feed/"
+  },
+  {
+    "i": 2117,
+    "n": "Latimes",
+    "l": "http://www.latimes.com/rss2.0.xml"
+  },
+  {
+    "i": 2108,
+    "n": "Nydailynews",
+    "l": "http://feeds.nydailynews.com/NydnRss?format=xml"
+  },
+  {
+    "i": 2118,
+    "n": "Livemint",
+    "l": "https://www.livemint.com/rss/news"
+  },
+  {
+    "i": 2119,
+    "n": "Msnbc",
+    "l": "http://www.msnbc.com/feeds/latest"
+  },
+  {
+    "i": 2120,
+    "n": "Voanews",
+    "l": "https://www.voanews.com/api/zq$omekvi_"
+  },
+  {
+    "i": 2121,
+    "n": "Breitbart",
+    "l": "http://feeds.feedburner.com/breitbart?format=xml"
+  },
+  {
+    "i": 2114,
+    "n": "Cbsnews",
+    "l": "http://www.cbsnews.com/latest/rss/main"
+  },
+  {
+    "i": 2104,
+    "n": "Foxnews",
+    "l": "http://feeds.foxnews.com/foxnews/latest?format=xml"
+  },
+  {
+    "i": 2105,
+    "n": "Usatoday",
+    "l": "http://rssfeeds.usatoday.com/usatoday-newstopstories&x=1"
+  },
+  {
+    "i": 2110,
+    "n": "CNBC",
+    "l": "http://www.cnbc.com/id/100003114/device/rss/rss.html"
+  },
+  {
+    "i": 2111,
+    "n": "Reuters",
+    "l": "http://feeds.reuters.com/Reuters/domesticNews?format=xml"
+  }
+]

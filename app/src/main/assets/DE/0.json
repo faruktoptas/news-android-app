@@ -1,0 +1,154 @@
+[
+  {
+    "i": 1205,
+    "n": "Die Welt",
+    "l": "https://www.welt.de/feeds/latest.rss"
+  },
+  {
+    "i": 1210,
+    "n": "Welt.de",
+    "l": "https://www.welt.de/feeds/topnews.rss?format=xml"
+  },
+  {
+    "i": 1223,
+    "n": "Express.de",
+    "l": "https://www.express.de/feed/index.rss"
+  },
+  {
+    "i": 1224,
+    "n": "Mopo.de",
+    "l": "https://www.mopo.de/feed/index.rss"
+  },
+  {
+    "i": 1226,
+    "n": "Ksta.de",
+    "l": "https://www.ksta.de/feed/index.rss"
+  },
+  {
+    "i": 1227,
+    "n": "Bz-berlin.de",
+    "l": "https://www.bz-berlin.de/feed"
+  },
+  {
+    "i": 1204,
+    "n": "Thelocal.de",
+    "l": "https://www.thelocal.de/feeds/rss.php"
+  },
+  {
+    "i": 1228,
+    "n": "Sueddeutsche.de",
+    "l": "https://rss.sueddeutsche.de/rss/Topthemen"
+  },
+  {
+    "i": 1211,
+    "n": "Stern",
+    "l": "https://www.stern.de/feed/standard/all/"
+  },
+  {
+    "i": 1212,
+    "n": "Handelsblatt",
+    "l": "http://www.handelsblatt.com/contentexport/feed/top-themen/"
+  },
+  {
+    "i": 1214,
+    "n": "RP-Online",
+    "l": "http://www.rp-online.de/feed.rss"
+  },
+  {
+    "i": 1216,
+    "n": "DiePresse.com",
+    "l": "http://diepresse.com/rss/home"
+  },
+  {
+    "i": 1202,
+    "n": "Bild",
+    "l": "http://www.bild.de/rssfeeds/vw-home/vw-home-16725562,sort=1,view=rss2.bild.xml"
+  },
+  {
+    "i": 1225,
+    "n": "Taz.de",
+    "l": "http://www.taz.de/rss.xml"
+  },
+  {
+    "i": 1201,
+    "n": "Spiegel Online",
+    "l": "http://www.spiegel.de/schlagzeilen/index.rss",
+    "e": "ISO-8859-1"
+  },
+  {
+    "i": 1203,
+    "n": "Online Focus",
+    "l": "https://rss.focus.de/"
+  },
+  {
+    "i": 1229,
+    "n": "Tz.de",
+    "l": "https://tz.de/rssfeed.rdf"
+  },
+  {
+    "i": 1230,
+    "n": "Merkur.de",
+    "l": "https://www.merkur.de/rssfeed.rdf"
+  },
+  {
+    "i": 1206,
+    "n": "Zeit.de",
+    "l": "http://newsfeed.zeit.de/index"
+  },
+  {
+    "i": 1215,
+    "n": "Der Tagesspiegel",
+    "l": "http://www.tagesspiegel.de/contentexport/feed/home"
+  },
+  {
+    "i": 1207,
+    "n": "Faz.net",
+    "l": "http://www.faz.net/rss/aktuell/"
+  },
+  {
+    "i": 1208,
+    "n": "Tagesschau",
+    "l": "http://www.tagesschau.de/xml/rss2"
+  },
+  {
+    "i": 1219,
+    "n": "Sueddeutsche Zeitung",
+    "l": "http://rss.sueddeutsche.de/rss/Topthemen"
+  },
+  {
+    "i": 1217,
+    "n": "Klamm.de",
+    "l": "http://img4.klamm.de/rss/news_recent.xml",
+    "e": "ISO-8859-1"
+  },
+  {
+    "i": 1218,
+    "n": "News.de",
+    "l": "http://www.news.de/rss/news/"
+  },
+  {
+    "i": 1231,
+    "n": "Zdf.de",
+    "l": "https://www.zdf.de/rss/zdf/nachrichten"
+  },
+  {
+    "i": 1232,
+    "n": "Presseportal.de",
+    "l": "https://www.presseportal.de/rss/presseportal.rss2"
+  },
+  {
+    "i": 1220,
+    "n": "Zeitung.de",
+    "l": "http://www.zeitung.de/feed/"
+  },
+  {
+    "i": 1221,
+    "n": "Jungefreiheit.de",
+    "l": "https://jungefreiheit.de/feed/"
+  },
+  {
+    "i": 1222,
+    "n": "Epochtimes.de",
+    "l": "https://www.epochtimes.de/?feed=rss"
+  }
+]

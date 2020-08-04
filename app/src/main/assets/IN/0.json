@@ -1,0 +1,38 @@
+[
+  {
+    "i": 1306,
+    "n": "Indian Express",
+    "l": "http://indianexpress.com/section/india/feed/"
+  },
+  {
+    "i": 1308,
+    "n": "Sify",
+    "l": "http://www.sify.com/rss2/news/article/category/national"
+  },
+  {
+    "i": 1311,
+    "n": "Asianage",
+    "l": "http://www.asianage.com/rss_feed/"
+  },
+  {
+    "i": 1301,
+    "n": "Times of India",
+    "l": "https://timesofindia.indiatimes.com/rssfeeds/1221656.cms"
+  },
+
+  {
+    "i": 1303,
+    "n": "NDTV",
+    "l": "http://feeds.feedburner.com/NDTV-LatestNews?format=xml"
+  },
+  {
+    "i": 1302,
+    "n": "The Hindu",
+    "l": "http://www.thehindu.com/?service=rss"
+  },
+  {
+    "i": 1315,
+    "n": "Google News",
+    "l": "https://news.google.co.in/news?pz=1&cf=all&ned=in&hl=en&output=rss"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "i": 2601,
+    "n": "la Repubblica",
+    "l": "http://www.repubblica.it/rss/homepage/rss2.0.xml"
+  },
+  {
+    "i": 2602,
+    "n": "LaGazetta",
+    "l": "http://www.gazzetta.it/rss/home.xml"
+  },
+  {
+    "i": 2604,
+    "n": "IlSole24Ore",
+    "l": "http://feeds.ilsole24ore.com/c/32276/f/438662/index.rss"
+  },
+  {
+    "i": 2607,
+    "n": "IlMessaggero.it",
+    "l": "http://www.ilmessaggero.it/rss/primopiano.xml",
+    "e": "ISO-8859-1"
+  },
+  {
+    "i": 2603,
+    "n": "IlFattoQuotidiano",
+    "l": "https://www.ilfattoquotidiano.it/feed/"
+  },
+  {
+    "i": 2605,
+    "n": "La Stampa",
+    "l": "http://www.lastampa.it/rss.xml"
+  }
+]

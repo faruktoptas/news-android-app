@@ -1,0 +1,40 @@
+[
+
+
+  {
+    "i": 1803,
+    "n": "Ensonhaber",
+    "l": "http://www.ensonhaber.com/rss/magazin.xml"
+  },
+  {
+    "i": 1804,
+    "n": "Mynet",
+    "l": "https://www.mynet.com/magazin/rss"
+  },
+  {
+    "i": 1805,
+    "n": "Habertürk",
+    "l": "https://www.haberturk.com/rss/magazin.xml"
+  },
+
+  {
+    "i": 1808,
+    "n": "Cnntürk",
+    "l": "https://www.cnnturk.com/feed/rss/news/magazin"
+  },
+  {
+    "i": 1809,
+    "n": "Stargazete",
+    "l": "http://www.stargazete.com/rss/magazin.xml"
+  },
+  {
+    "i": 1837,
+    "n": "Medyafaresi",
+    "l": "http://www.medyafaresi.com/rss"
+  },
+  {
+    "i": 1838,
+    "n": "Ahaber",
+    "l": "https://www.ahaber.com.tr/rss/magazin.xml"
+  }
+]

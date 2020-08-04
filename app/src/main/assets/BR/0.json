@@ -1,0 +1,29 @@
+[
+  {
+    "i": 1001,
+    "n": "Folha De S.Paulo",
+    "l": "http://feeds.folha.uol.com.br/emcimadahora/rss091.xml",
+    "e": "ISO-8859-1"
+  },
+  {
+    "i": 1002,
+    "n": "Diario do Nordeste",
+    "l": "http://diariodonordeste.verdesmares.com.br/feed/nacional-1.784442"
+  },
+  {
+    "i": 1004,
+    "n": "O Dia",
+    "l": "https://odia.ig.com.br/rss.xml"
+  },
+  {
+    "i": 1006,
+    "n": "Lancenet",
+    "l": "http://www.lancenet.com.br/rss/"
+  },
+  {
+    "i": 1007,
+    "n": "Correio Braziliense",
+    "l": "http://www.correiobraziliense.com.br/rss/noticia/brasil/rss.xml",
+    "e": "ISO-8859-1"
+  }
+]

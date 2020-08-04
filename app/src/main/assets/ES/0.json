@@ -1,0 +1,32 @@
+[
+  {
+    "i": 1701,
+    "n": "El Mundo",
+    "l": "http://estaticos.elmundo.es/elmundo/rss/espana.xml"
+  },
+  {
+    "i": 1702,
+    "n": "El Pais",
+    "l": "http://ep00.epimg.net/rss/elpais/portada.xml"
+  },
+  {
+    "i": 1703,
+    "n": "Abc",
+    "l": "http://www.abc.es/rss/feeds/abcPortada.xml"
+  },
+  {
+    "i": 1704,
+    "n": "Europapress",
+    "l": "http://www.europapress.es/rss/rss.aspx"
+  },
+  {
+    "i": 1705,
+    "n": "Vozpopuli",
+    "l": "https://www.vozpopuli.com/rss/"
+  },
+  {
+    "i": 1706,
+    "n": "El Economista",
+    "l": "http://www.eleconomista.es/rss/rss-flash-del-mercado.php"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "i": 2702,
+    "n": "Volkskrant.nl",
+    "l": "https://www.volkskrant.nl/sport/rss.xml"
+  },
+  {
+    "i": 2703,
+    "n": "Parool.nl",
+    "l": "https://www.parool.nl/sport/rss.xml"
+  },
+  {
+    "i": 2704,
+    "n": "Dg.nl",
+    "l": "https://www.gelderlander.nl/sport/rss.xml"
+  },
+  {
+    "i": 2705,
+    "n": "Telegraaf.nl",
+    "l": "https://www.telegraaf.nl/rss/telesport.xml"
+  },
+  {
+    "i": 2709,
+    "n": "Staantribune.nl",
+    "l": "https://staantribune.nl/feed/?post_type=news"
+  },
+  {
+    "i": 2707,
+    "n": "Onlinewedden.nl",
+    "l": "https://www.onlinewedden.com/feed/"
+  },
+  {
+    "i": 2708,
+    "n": "Blikopnieuws.nl",
+    "l": "http://www.blikopnieuws.nl/feeds/sport/rss.xml"
+  }
+]

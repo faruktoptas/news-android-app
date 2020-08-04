@@ -1,0 +1,82 @@
+[
+  {
+    "id": 0,
+    "title": "Son Dakika"
+  },
+  {
+    "id": 1,
+    "title": "Spor"
+  },
+  {
+    "id": 2,
+    "title": "Magazin"
+  },
+  {
+    "id": 3,
+    "title": "Gündem"
+  },
+  {
+    "id": 4,
+    "title": "Ekonomi"
+  },
+  {
+    "id": 5,
+    "title": "Yazarlar"
+  },
+  {
+    "id": 6,
+    "title": "Siyaset"
+  },
+  {
+    "id": 7,
+    "title": "Dünya"
+  },
+  {
+    "id": 8,
+    "title": "Yerel"
+  },
+  {
+    "id": 9,
+    "title": "Finans"
+  },
+  {
+    "id": 10,
+    "title": "Kadın"
+  },
+  {
+    "id": 11,
+    "title": "Eğitim"
+  },
+  {
+    "id": 12,
+    "title": "Kitap"
+  },
+  {
+    "id": 13,
+    "title": "Teknoloji"
+  },
+  {
+    "id": 14,
+    "title": "Otomobil"
+  },
+  {
+    "id": 15,
+    "title": "Müzik"
+  },
+  {
+    "id": 16,
+    "title": "Fotoğraf"
+  },
+  {
+    "id": 17,
+    "title": "Sağlık"
+  },
+  {
+    "id": 18,
+    "title": "Eğlence"
+  },
+  {
+    "id": 19,
+    "title": "Sanat"
+  }
+]

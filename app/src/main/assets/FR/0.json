@@ -1,0 +1,43 @@
+[
+  {
+    "i": 2403,
+    "n": "L'OBS",
+    "l": "http://tempsreel.nouvelobs.com/rss.xml"
+  },
+  {
+    "i": 2404,
+    "n": "20minutes",
+    "l": "https://www.20minutes.fr/feeds/rss-une.xml"
+  },
+  {
+    "i": 2405,
+    "n": "L'EXPRESS",
+    "l": "https://www.lexpress.fr/rss/alaune.xml",
+    "e": "ISO-8859-1"
+  },
+  {
+    "i": 2407,
+    "n": "LCI",
+    "l": "https://www.lci.fr/feeds/rss-une.xml"
+  },
+  {
+    "i": 2408,
+    "n": "LADEPECHE",
+    "l": "https://www.ladepeche.fr/rss.xml"
+  },
+  {
+    "i": 2402,
+    "n": "Le Figaro",
+    "l": "http://www.lefigaro.fr/rss/figaro_flash-actu.xml"
+  },
+  {
+    "i": 2410,
+    "n": "Mediapart",
+    "l": "https://www.mediapart.fr/articles/feed"
+  },
+  {
+    "i": 2411,
+    "n": "Midi Libre",
+    "l": "http://www.midilibre.fr/rss.xml"
+  }
+]

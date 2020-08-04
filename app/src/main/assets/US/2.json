@@ -1,0 +1,22 @@
+[
+  {
+    "i": 2101,
+    "n": "Abcnews",
+    "l": "http://feeds.abcnews.com/abcnews/entertainmentheadlines"
+  },
+  {
+    "i": 2102,
+    "n": "Nypost",
+    "l": "https://nypost.com/entertainment/feed/"
+  },
+  {
+    "i": 2103,
+    "n": "Washingtonpost",
+    "l": "http://feeds.washingtonpost.com/rss/entertainment"
+  },
+  {
+    "i": 2104,
+    "n": "Reuters",
+    "l": "http://feeds.reuters.com/reuters/entertainment?format=xml"
+  }
+]

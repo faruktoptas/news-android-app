@@ -1,0 +1,77 @@
+[
+  {
+    "i": 2101,
+    "n": "Mashable",
+    "l": "http://feeds.mashable.com/Mashable"
+  },
+  {
+    "i": 2102,
+    "n": "Engadget",
+    "l": "https://www.engadget.com/rss.xml"
+  },
+  {
+    "i": 2103,
+    "n": "Wired",
+    "l": "https://www.wired.com/feed/"
+  },
+  {
+    "i": 2104,
+    "n": "Thenextweb",
+    "l": "http://feeds2.feedburner.com/thenextweb"
+  },
+  {
+    "i": 2105,
+    "n": "Readwrite",
+    "l": "http://readwrite.com/feed/"
+  },
+  {
+    "i": 2106,
+    "n": "Nypost",
+    "l": "https://nypost.com/tech/feed/"
+  },
+  {
+    "i": 2107,
+    "n": "Abcnews",
+    "l": "http://feeds.abcnews.com/abcnews/technologyheadlines"
+  },
+  {
+    "i": 2109,
+    "n": "Techcrunch",
+    "l": "http://feeds.feedburner.com/TechCrunch/"
+  },
+  {
+    "i": 2110,
+    "n": "Cnbc",
+    "l": "http://www.cnbc.com/id/19854910/device/rss/rss.html"
+  },
+  {
+    "i": 2111,
+    "n": "Reuters",
+    "l": "http://feeds.reuters.com/reuters/technologyNews?format=xml"
+  },
+  {
+    "i": 2112,
+    "n": "Arstechnica",
+    "l": "http://feeds.arstechnica.com/arstechnica/index?format=xml"
+  },
+  {
+    "i": 2113,
+    "n": "Venturebeat",
+    "l": "http://feeds.feedburner.com/venturebeat/SZYF?format=xml"
+  },
+  {
+    "i": 2114,
+    "n": "Lifehacker",
+    "l": "http://lifehacker.com/rss"
+  },
+  {
+    "i": 2115,
+    "n": "Gizmodo",
+    "l": "http://gizmodo.com/rss"
+  },
+  {
+    "i": 2116,
+    "n": "Techviral",
+    "l": "http://feeds.feedburner.com/thetechviral"
+  }
+]
