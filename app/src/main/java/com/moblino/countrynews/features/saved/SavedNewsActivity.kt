@@ -33,11 +33,11 @@ import com.moblino.countrynews.ext.toWrapperList
 import com.moblino.countrynews.features.main.NewsListAdapter
 import com.moblino.countrynews.features.main.OnNewsItemClickListener
 import com.moblino.countrynews.features.settings.SettingsActivity
-import com.moblino.countrynews.models.RssItem
+import com.moblino.countrynews.model.RssItem
 import com.moblino.countrynews.ext.show
-import com.moblino.countrynews.utils.Constants
-import com.moblino.countrynews.utils.PreferenceWrapper
-import com.moblino.countrynews.utils.UIUtils
+import com.moblino.countrynews.util.Constants
+import com.moblino.countrynews.util.PreferenceWrapper
+import com.moblino.countrynews.util.UIUtils
 import kotlinx.android.synthetic.main.activity_saved.recyclerView
 import kotlinx.android.synthetic.main.activity_saved.rl_no_items
 import org.koin.android.ext.android.inject

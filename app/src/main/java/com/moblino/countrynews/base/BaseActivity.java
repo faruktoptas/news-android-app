@@ -25,7 +25,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.moblino.countrynews.R;
-import com.moblino.countrynews.utils.PreferenceWrapper;
+import com.moblino.countrynews.util.PreferenceWrapper;
 
 /**
  * Created by faruktoptas on 09/01/16.

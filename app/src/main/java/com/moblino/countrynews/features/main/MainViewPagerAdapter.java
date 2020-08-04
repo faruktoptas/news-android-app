@@ -27,6 +27,9 @@ import java.util.List;
 /**
  * Created by faruktoptas on 29/10/15.
  */
+
+// TODO: 4.08.2020 use ViewPager2
+
 public class MainViewPagerAdapter extends FragmentStatePagerAdapter {
     private final List<Fragment> mFragmentList = new ArrayList<>();
     private final List<String> mFragmentTitleList = new ArrayList<>();
@@ -64,5 +67,6 @@ public class MainViewPagerAdapter extends FragmentStatePagerAdapter {
         for (int i = 0; i < cnt ; i++){
             mFragmentTitleList.remove(0);
         }
+        notifyDataSetChanged();
     }
 }

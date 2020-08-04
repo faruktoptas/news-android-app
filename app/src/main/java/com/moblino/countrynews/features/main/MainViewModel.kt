@@ -24,11 +24,11 @@ import com.moblino.countrynews.data.AppCache
 import com.moblino.countrynews.data.LoggerRepository
 import com.moblino.countrynews.data.PrefRepository
 import com.moblino.countrynews.ext.postTrue
-import com.moblino.countrynews.models.Category
-import com.moblino.countrynews.models.FeedItem
-import com.moblino.countrynews.utils.Constants
-import com.moblino.countrynews.utils.MOUtils
-import com.moblino.countrynews.utils.UpdateChecker
+import com.moblino.countrynews.model.Category
+import com.moblino.countrynews.model.FeedItem
+import com.moblino.countrynews.util.Constants
+import com.moblino.countrynews.util.ListUtil
+import com.moblino.countrynews.util.UpdateChecker
 import java.util.ArrayList
 import java.util.Locale
 
@@ -63,7 +63,7 @@ class MainViewModel(private val repo: MainRepository,
         val categories = repo.categoriesByCountry(selectedCountry)
 
         // A workaround not to use lambda. Because code coverage fails if kotlin sort used
-        val files = MOUtils.sortList(repo.getCountryFiles(selectedCountry).toList()).map { it as String }
+        val files = ListUtil.sortList(repo.getCountryFiles(selectedCountry).toList()).map { it as String }
 
         appCache.allFeeds.clear()
         activeCategories.clear()

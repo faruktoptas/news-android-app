@@ -23,7 +23,7 @@ import android.os.Bundle
 import com.moblino.countrynews.R
 import com.moblino.countrynews.base.BaseActivity
 import com.moblino.countrynews.ext.loadUrlWithResult
-import com.moblino.countrynews.utils.Utils
+import com.moblino.countrynews.util.DateUtil
 import kotlinx.android.synthetic.main.activity_photo.*
 import uk.co.senab.photoview.PhotoViewAttacher
 
@@ -39,7 +39,7 @@ class PhotoActivity : BaseActivity() {
         setContentView(R.layout.activity_photo)
         val imageUrl = intent.getStringExtra(EXTRA_IMAGE)
 
-        if (Utils.isLoadImagesEnabled(this) && imageUrl != null) {
+        if (DateUtil.isLoadImagesEnabled(this) && imageUrl != null) {
             imageView.loadUrlWithResult(imageUrl) { success ->
                 if (!success && !isFinishing) {
                     finish()

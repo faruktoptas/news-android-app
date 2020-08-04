@@ -24,7 +24,6 @@ import com.moblino.countrynews.R
 import com.moblino.countrynews.base.BaseActivity
 import com.moblino.countrynews.ext.getAppVersion
 import com.moblino.countrynews.features.settings.HealthCheckActivity
-import com.moblino.countrynews.utils.MOUtils
 import kotlinx.android.synthetic.main.activity_about.activity_about_textversion
 import kotlinx.android.synthetic.main.activity_about.ivLogo
 

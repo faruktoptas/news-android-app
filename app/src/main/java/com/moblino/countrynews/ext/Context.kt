@@ -21,11 +21,12 @@ import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.content.res.Configuration
+import android.content.res.Resources
 import android.net.Uri
 import com.moblino.countrynews.R
-import com.moblino.countrynews.utils.MOUtils
-import com.moblino.countrynews.utils.PreferenceWrapper
-import com.moblino.countrynews.utils.Utils
+import com.moblino.countrynews.util.DeviceInfo
+import com.moblino.countrynews.util.PreferenceWrapper
 
 fun Context.getAppVersion(): String? {
     return try {
@@ -57,8 +58,8 @@ fun Context.goToPlayStore() {
 fun Context.openEmailIntent() {
     try {
         val content = """
-            ${MOUtils.getDeviceManufacturer()}
-            ${MOUtils.getDeviceModel()} - ${MOUtils.getOSVersion()}
+            ${DeviceInfo.getDeviceManufacturer()}
+            ${DeviceInfo.getDeviceModel()} - ${DeviceInfo.getOSVersion()}
             GWL: ${if (PreferenceWrapper.getInstance().readGWLMode()) "1" else "0"}
             OG: ${if (PreferenceWrapper.getInstance().readShowDetailFirst()) "1" else "0"}"""
         val emailIntent = Intent(Intent.ACTION_SENDTO, Uri.fromParts(
@@ -69,4 +70,18 @@ fun Context.openEmailIntent() {
     } catch (e: ActivityNotFoundException) {
         goToPlayStore()
     }
+}
+
+fun Context.isNightMode(): Boolean {
+    val currentNightMode = (resources.configuration.uiMode
+            and Configuration.UI_MODE_NIGHT_MASK)
+    when (currentNightMode) {
+        Configuration.UI_MODE_NIGHT_NO ->                 // Night mode is not active, we're in day time
+            return false
+        Configuration.UI_MODE_NIGHT_YES ->                 // Night mode is active, we're at night!
+            return true
+        Configuration.UI_MODE_NIGHT_UNDEFINED ->                 // We don't know what mode we're in, assume notnight
+            return false
+    }
+    return false
 }

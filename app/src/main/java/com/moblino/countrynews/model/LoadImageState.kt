@@ -14,25 +14,25 @@
  *   limitations under the License.
  *
  */
+package com.moblino.countrynews.model
 
-package com.moblino.countrynews.utils
+/**
+ * Created by faruktoptas on 12/12/15.
+ */
+enum class LoadImageState {
+    ALWAYS, WIFI, NEVER;
 
-import android.content.Context
-import com.moblino.countrynews.ext.getAppVersion
+    companion object {
 
-class UpdateChecker(context: Context) {
-
-    private val currentAppVersion = context.getAppVersion()
-
-    fun isUpdated(oldAppVersion: String?, writeNewVersion: () -> Unit): Boolean {
-        if (oldAppVersion != null) {
-            if (oldAppVersion != currentAppVersion) {
-                writeNewVersion()
-                return true
+        @JvmStatic
+        fun fromString(s: String): LoadImageState {
+            return when (s) {
+                "0" -> ALWAYS
+                "1" -> WIFI
+                "2" -> NEVER
+                else -> WIFI
             }
-        } else {
-            writeNewVersion()
         }
-        return false
     }
+
 }

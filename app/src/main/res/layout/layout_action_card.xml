@@ -24,7 +24,7 @@
 
         <variable
             name="cardItem"
-            type="com.moblino.countrynews.models.RssItemWrapper" />
+            type="com.moblino.countrynews.model.RssItemWrapper" />
 
     </data>
 

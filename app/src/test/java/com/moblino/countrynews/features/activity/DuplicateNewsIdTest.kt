@@ -18,8 +18,8 @@
 package com.moblino.countrynews.features.activity
 
 import com.google.gson.Gson
-import com.moblino.countrynews.models.FeedItem
-import com.moblino.countrynews.utils.Constants
+import com.moblino.countrynews.model.FeedItem
+import com.moblino.countrynews.util.Constants
 import org.junit.Test
 import java.io.File
 import java.lang.AssertionError

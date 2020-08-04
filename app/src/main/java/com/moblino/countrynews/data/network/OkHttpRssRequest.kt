@@ -18,10 +18,10 @@
 package com.moblino.countrynews.data.network
 
 import android.os.AsyncTask
-import com.moblino.countrynews.models.RssItem
+import com.moblino.countrynews.model.RssItem
 import com.moblino.countrynews.data.XMLParser
-import com.moblino.countrynews.utils.Utils
-import com.moblino.countrynews.utils.Utils.readInputStream
+import com.moblino.countrynews.util.DateUtil
+import com.moblino.countrynews.util.DateUtil.readInputStream
 import okhttp3.Request
 import org.xml.sax.InputSource
 import java.io.StringReader
@@ -82,7 +82,7 @@ class OkHttpRssRequest(private val listener: RssResponseListener) :
     override fun onPostExecute(result: ArrayList<RssItem>) {
         super.onPostExecute(result)
         result.sortByDescending{ item ->
-            Utils.fixDate(item.pubDate)
+            DateUtil.fixDate(item.pubDate)
         }
         listener.onResponse(result, status, url)
     }

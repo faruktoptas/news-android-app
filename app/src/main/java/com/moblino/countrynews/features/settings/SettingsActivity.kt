@@ -34,9 +34,8 @@ import com.moblino.countrynews.R
 import com.moblino.countrynews.base.BaseActivity
 import com.moblino.countrynews.data.firebase.FirebaseManager
 import com.moblino.countrynews.ext.openEmailIntent
-import com.moblino.countrynews.utils.CNUtils
-import com.moblino.countrynews.utils.Constants
-import com.moblino.countrynews.utils.PreferenceWrapper
+import com.moblino.countrynews.util.Constants
+import com.moblino.countrynews.util.PreferenceWrapper
 import kotlinx.android.synthetic.main.layout_app_bar.*
 
 class SettingsActivity : BaseActivity() {
@@ -115,7 +114,6 @@ class SettingsActivity : BaseActivity() {
 
         private val prefChangeListener = Preference.OnPreferenceChangeListener { preference, o ->
             val key = o as String
-            CNUtils.logi(key)
             when (preference.key) {
                 PREF_KEY_LOAD_IMAGES -> updateSummary(key, preference, R.array.array_load_images, R.array.array_load_images_values)
                 PREF_KEY_COUNTRY -> updateSummary(key, preference, R.array.array_country_keys, R.array.array_country_values)

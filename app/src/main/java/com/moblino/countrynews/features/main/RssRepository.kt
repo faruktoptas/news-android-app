@@ -18,10 +18,10 @@
 package com.moblino.countrynews.features.main
 
 import com.moblino.countrynews.data.XMLParser
-import com.moblino.countrynews.models.RssItem
-import com.moblino.countrynews.models.RssRequest
-import com.moblino.countrynews.models.RssResponse
-import com.moblino.countrynews.utils.Utils
+import com.moblino.countrynews.model.RssItem
+import com.moblino.countrynews.model.RssRequest
+import com.moblino.countrynews.model.RssResponse
+import com.moblino.countrynews.util.DateUtil
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
@@ -59,7 +59,7 @@ class RssRepositoryImpl(private val okHttpClient: OkHttpClient) : RssRepository 
 
                     response.body()!!.apply {
                         val inputStream = byteStream()
-                        val responseString = Utils.readInputStream(inputStream, encoding)
+                        val responseString = DateUtil.readInputStream(inputStream, encoding)
                                 .replace("\"x", "\" x")
                                 .replace("<title></title>", "") // for hurriyet.com.tr
 
@@ -83,7 +83,7 @@ class RssRepositoryImpl(private val okHttpClient: OkHttpClient) : RssRepository 
             }
 
             list.sortByDescending { item ->
-                Utils.fixDate(item.pubDate)
+                DateUtil.fixDate(item.pubDate)
             }
             RssResponse(list, System.currentTimeMillis())
         }

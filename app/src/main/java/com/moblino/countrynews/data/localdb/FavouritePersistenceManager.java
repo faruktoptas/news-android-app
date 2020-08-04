@@ -19,7 +19,7 @@ package com.moblino.countrynews.data.localdb;
 
 import android.content.Context;
 
-import com.moblino.countrynews.models.RssItem;
+import com.moblino.countrynews.model.RssItem;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

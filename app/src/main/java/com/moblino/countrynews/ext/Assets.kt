@@ -15,20 +15,8 @@
  *
  */
 
-package com.moblino.countrynews.models
+package com.moblino.countrynews.ext
 
-import com.google.gson.annotations.SerializedName
-import java.io.Serializable
+import android.content.res.AssetManager
 
-/**
- * Created by faruktoptas on 30/10/15.
- */
-data class Category(
-
-        @SerializedName("id")
-        val id: Int,
-
-        @SerializedName("title")
-        val title: String
-
-) : Serializable
+fun AssetManager.readFile(file: String) = open(file).readBytes()

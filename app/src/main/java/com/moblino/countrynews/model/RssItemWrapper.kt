@@ -15,11 +15,8 @@
  *
  */
 
-package com.moblino.countrynews.features
+package com.moblino.countrynews.model
 
-import com.moblino.countrynews.model.RssItem
-
-object Mock {
-
-    val RSS_ITEM = RssItem("title", "http://", "", "", 0, "feedTitle", "desc")
-}
+data class RssItemWrapper(val rssItem: RssItem? = null,
+                          val card: CardQuestion? = null,
+                          val parsedDate: String? = null)

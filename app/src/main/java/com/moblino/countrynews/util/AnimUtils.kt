@@ -15,7 +15,7 @@
  *
  */
 
-package com.moblino.countrynews.utils
+package com.moblino.countrynews.util
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
@@ -39,7 +39,4 @@ object AnimUtils {
         }, 1000)
     }
 
-    fun circularEnter() {
-        // TODO:
-    }
 }

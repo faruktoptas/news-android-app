@@ -15,9 +15,20 @@
  *
  */
 
-package com.moblino.countrynews.models
+package com.moblino.countrynews.model
 
-data class RssResponse(
-        val items: List<RssItem>,
-        val timeStamp: Long
-)
+import com.google.gson.annotations.SerializedName
+import java.io.Serializable
+
+/**
+ * Created by faruktoptas on 30/10/15.
+ */
+data class Category(
+
+        @SerializedName("id")
+        val id: Int,
+
+        @SerializedName("title")
+        val title: String
+
+) : Serializable

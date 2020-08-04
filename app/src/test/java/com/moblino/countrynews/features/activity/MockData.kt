@@ -17,10 +17,10 @@
 
 package com.moblino.countrynews.features.activity
 
-import com.moblino.countrynews.models.CardQuestion
-import com.moblino.countrynews.models.Category
-import com.moblino.countrynews.models.FeedItem
-import com.moblino.countrynews.models.RssItem
+import com.moblino.countrynews.model.CardQuestion
+import com.moblino.countrynews.model.Category
+import com.moblino.countrynews.model.FeedItem
+import com.moblino.countrynews.model.RssItem
 
 object MockData {
     val RSS_ITEMS_SINGLE = listOf(RssItem("title", "link", "image", "date", 0, "feedTitle", "desc"))

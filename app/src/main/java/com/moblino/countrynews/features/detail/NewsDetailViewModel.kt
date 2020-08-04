@@ -22,8 +22,9 @@ import com.moblino.countrynews.base.BaseViewModel
 import com.moblino.countrynews.data.SingleLiveEvent
 import com.moblino.countrynews.data.ConfigRepository
 import com.moblino.countrynews.ext.postTrue
-import com.moblino.countrynews.models.RssItem
-import com.moblino.countrynews.utils.Utils
+import com.moblino.countrynews.model.RssItem
+import com.moblino.countrynews.util.DateUtil
+import com.moblino.countrynews.util.HtmlUtil
 
 class NewsDetailViewModel(private val configRepo: ConfigRepository) : BaseViewModel() {
 
@@ -44,7 +45,7 @@ class NewsDetailViewModel(private val configRepo: ConfigRepository) : BaseViewMo
 
             val date = configRepo.convertDate(it.pubDate)
             timeLive.postValue(date)
-            detailLive.postValue(Utils.parseHtml(it.description))
+            detailLive.postValue(HtmlUtil.parseHtml(it.description))
         }
     }
 

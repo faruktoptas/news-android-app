@@ -26,10 +26,9 @@ import com.moblino.countrynews.data.firebase.FirebaseManager;
 import com.moblino.countrynews.data.firebase.RemoteConfigWrapper;
 import com.moblino.countrynews.ext.ContextKt;
 import com.moblino.countrynews.features.editlist.EditFeedsActivity;
-import com.moblino.countrynews.models.CardQuestion;
-import com.moblino.countrynews.utils.Constants;
-import com.moblino.countrynews.utils.PreferenceWrapper;
-import com.moblino.countrynews.utils.Utils;
+import com.moblino.countrynews.model.CardQuestion;
+import com.moblino.countrynews.util.Constants;
+import com.moblino.countrynews.util.PreferenceWrapper;
 
 /**
  * Created by faruktoptas on 30/07/16.

@@ -26,13 +26,15 @@ import com.moblino.countrynews.BR
 import com.moblino.countrynews.NewsApplication
 import com.moblino.countrynews.R
 import com.moblino.countrynews.base.BaseBindingListAdapter
+import com.moblino.countrynews.data.AppCache
 import com.moblino.countrynews.databinding.ItemRecyclerBinding
 import com.moblino.countrynews.databinding.ItemRecyclerStaggeredBinding
 import com.moblino.countrynews.databinding.LayoutActionCardBinding
+import com.moblino.countrynews.ext.isNightMode
 import com.moblino.countrynews.ext.isTrue
-import com.moblino.countrynews.models.RssItemWrapper
-import com.moblino.countrynews.utils.PreferenceWrapper
-import com.moblino.countrynews.utils.Utils
+import com.moblino.countrynews.model.RssItemWrapper
+import com.moblino.countrynews.util.PreferenceWrapper
+import com.moblino.countrynews.util.DateUtil
 
 class NewsListAdapter(
         private val context: Context,
@@ -41,7 +43,7 @@ class NewsListAdapter(
     var onItemClickListener: OnNewsItemClickListener? = null
     var cardRowActionListener: CardRowActionListener? = null
     private val fontHelper = NewsApplication.instance.fontSizeHelper
-    private val isNightMode = Utils.isNightMode(context.resources)
+    private val isNightMode = context.isNightMode()
 
     override fun layoutResource() = R.layout.item_recycler_staggered
 
@@ -114,11 +116,11 @@ class NewsListAdapter(
     }
 
     private fun bindNormal(binding: ItemRecyclerBinding, wrapper: RssItemWrapper, position: Int) {
-        val showThumb = Utils.isLoadImagesEnabled(context)
+        val showThumb = DateUtil.isLoadImagesEnabled(context)
         val isStaggered = false
         binding.rlFav.setOnClickListener { view -> onItemClickListener?.onFavouriteClicked(view, wrapper.rssItem, position, (isStaggered || !showThumb) && !isNightMode) }
 
-        if (Utils.isFavourited(wrapper.rssItem?.link) > -1) {
+        if (AppCache.isFavorite(wrapper.rssItem?.link!!) > -1) {
             binding.ivFav.setImageResource(if ((isStaggered || !showThumb) && !isNightMode) R.drawable.ic_favorite_black_24dp else R.drawable.ic_favorite_white_24dp)
             binding.ivFav.tag = true
         } else {

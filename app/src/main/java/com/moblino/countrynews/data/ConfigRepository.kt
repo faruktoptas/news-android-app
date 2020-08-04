@@ -18,7 +18,7 @@
 package com.moblino.countrynews.data
 
 import android.content.Context
-import com.moblino.countrynews.utils.Utils
+import com.moblino.countrynews.util.DateUtil
 
 interface ConfigRepository {
 
@@ -30,9 +30,9 @@ interface ConfigRepository {
 
 class ConfigRepositoryImpl(private val context: Context) : ConfigRepository {
 
-    override fun shouldLoadImages() = Utils.isLoadImagesEnabled(context)
+    override fun shouldLoadImages() = DateUtil.isLoadImagesEnabled(context)
 
     override fun convertDate(date: String?): String? {
-        return Utils.convertDate(context, date) // TODO: check languages
+        return DateUtil.convertDate(context, date) // TODO: check languages
     }
 }

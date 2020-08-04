@@ -23,8 +23,8 @@ import com.moblino.countrynews.data.AppCache
 import com.moblino.countrynews.data.firebase.FirebaseManager
 import com.moblino.countrynews.data.localdb.FavouritePersistenceManager
 import com.moblino.countrynews.di.appModule
-import com.moblino.countrynews.utils.FontSizeHelper
-import com.moblino.countrynews.utils.PreferenceWrapper
+import com.moblino.countrynews.util.FontSizeHelper
+import com.moblino.countrynews.util.PreferenceWrapper
 import com.squareup.picasso.OkHttp3Downloader
 import com.squareup.picasso.Picasso
 import okhttp3.OkHttpClient

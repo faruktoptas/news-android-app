@@ -15,7 +15,7 @@
  *
  */
 
-package com.moblino.countrynews.utils;
+package com.moblino.countrynews.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -42,7 +42,6 @@ public class PreferenceWrapper {
     private static final String KEY_STAGGERED_LAYOUT = "pref_staggered_layout";
     private static final String KEY_SHOW_DETAIL_FIRST = "pref_show_detail_first";
     private static final String KEY_REMOTE_EXCLUDED = "pref_remote_excluded";
-    private static final String KEY_AD_STATE = "pref_ad_state";
     private static final String KEY_LAST_AD_SHOWN_DATE = "LAST_AD_SHOWN_DATE";
     private static final String KEY_NEWS_DETAIL_SHOWCASE = "NEWS_DETAIL_SHOWCASE";
     private static final String KEY_HEADING = "HEADING";
@@ -191,23 +190,6 @@ public class PreferenceWrapper {
         return mSharedPreferences.getString(KEY_REMOTE_EXCLUDED, "");
     }
 
-    public void writeAdState(String state) {
-        SharedPreferences.Editor editor = mSharedPreferences.edit();
-        try {
-            editor.putInt(KEY_AD_STATE, Integer.valueOf(state));
-        } catch (NumberFormatException e) {
-            CNUtils.logi("Ad state not integer");
-        }
-        editor.apply();
-    }
-
-    public int readAdState() {
-        return mSharedPreferences.getInt(KEY_AD_STATE, 0);
-    }
-
-    public String readLastAdShownDate() {
-        return mSharedPreferences.getString(KEY_LAST_AD_SHOWN_DATE, "");
-    }
 
     public boolean readDetailShowcase() {
         return mSharedPreferences.getBoolean(KEY_NEWS_DETAIL_SHOWCASE, false);

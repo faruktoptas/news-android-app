@@ -17,6 +17,8 @@
 
 package com.moblino.countrynews.di
 
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.moblino.countrynews.BuildConfig
 import com.moblino.countrynews.NewsApplication
 import com.moblino.countrynews.data.*
@@ -31,8 +33,8 @@ import com.moblino.countrynews.features.saved.SavedNewsRepositoryImpl
 import com.moblino.countrynews.features.saved.SavedNewsViewModel
 import com.moblino.countrynews.features.search.SearchViewModel
 import com.moblino.countrynews.features.webview.WebViewViewModel
-import com.moblino.countrynews.utils.PreferenceWrapper
-import com.moblino.countrynews.utils.UpdateChecker
+import com.moblino.countrynews.util.PreferenceWrapper
+import com.moblino.countrynews.util.UpdateChecker
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -47,6 +49,7 @@ val appModule = module {
     single { AppCache() }
     single { PreferenceWrapper.getInstance() }
 
+    single<Gson> { GsonBuilder().create() }
     single<OkHttpClient> {
         val builder = OkHttpClient.Builder()
         if (BuildConfig.DEBUG) {
@@ -61,7 +64,7 @@ val appModule = module {
     single<LoggerRepository> { LoggerRepositoryImpl() }
     single<PrefRepository> { PrefRepositoryImpl() }
     single<SavedNewsRepository> { SavedNewsRepositoryImpl(get(), get<NewsApplication>().favouritePersistenceManager) }
-    single<MainRepository> { MainRepositoryImpl(androidContext().assets) }
+    single<MainRepository> { MainRepositoryImpl(androidContext().assets, get()) }
     single<ConfigRepository> { ConfigRepositoryImpl(androidContext()) }
     single<RssRepository> { RssRepositoryImpl(get()) }
 

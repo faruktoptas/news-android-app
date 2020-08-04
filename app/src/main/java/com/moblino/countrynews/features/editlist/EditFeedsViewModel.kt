@@ -27,7 +27,7 @@ import com.moblino.countrynews.data.firebase.FirebaseManager
 import com.moblino.countrynews.ext.moveItems
 import com.moblino.countrynews.data.AppCache
 import com.moblino.countrynews.ext.isTrue
-import com.moblino.countrynews.models.FeedItem
+import com.moblino.countrynews.model.FeedItem
 import com.moblino.countrynews.ext.unite
 
 class EditFeedsViewModel(private val pref: PrefRepository,

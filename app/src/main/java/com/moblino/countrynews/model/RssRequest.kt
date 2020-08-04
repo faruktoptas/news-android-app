@@ -15,25 +15,6 @@
  *
  */
 
-package com.moblino.countrynews.utils
+package com.moblino.countrynews.model
 
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
-
-/**
- * Created by faruktoptas on 30/10/15.
- */
-class JSONUtil private constructor() {
-
-    private val gson: Gson = GsonBuilder().create()
-
-    fun <T> parseJson(jsonString: String?, clazz: Class<T>?): T {
-        return gson.fromJson(jsonString, clazz)
-    }
-
-    companion object {
-        @JvmStatic
-        val instance = JSONUtil()
-    }
-
-}
+data class RssRequest(val url: String, val encoding: String?)

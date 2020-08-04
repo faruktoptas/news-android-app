@@ -21,7 +21,7 @@ import com.moblino.countrynews.BR
 import com.moblino.countrynews.R
 import com.moblino.countrynews.base.BaseBindingListAdapter
 import com.moblino.countrynews.databinding.RowSearchBinding
-import com.moblino.countrynews.models.FeedItem
+import com.moblino.countrynews.model.FeedItem
 
 class SearchAdapter : BaseBindingListAdapter<FeedItem, RowSearchBinding>() {
 

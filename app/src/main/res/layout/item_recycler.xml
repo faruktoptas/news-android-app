@@ -24,7 +24,7 @@
 
         <variable
             name="rssItem"
-            type="com.moblino.countrynews.models.RssItemWrapper" />
+            type="com.moblino.countrynews.model.RssItemWrapper" />
     </data>
 
     <androidx.cardview.widget.CardView

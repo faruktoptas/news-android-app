@@ -24,13 +24,11 @@ import android.widget.TextView;
 
 import com.moblino.countrynews.R;
 import com.moblino.countrynews.base.BaseActivity;
-import com.moblino.countrynews.models.FeedItem;
-import com.moblino.countrynews.models.RssItem;
+import com.moblino.countrynews.model.FeedItem;
+import com.moblino.countrynews.model.RssItem;
 import com.moblino.countrynews.data.network.OkHttpRssRequest;
 import com.moblino.countrynews.data.network.ResponseStatus;
 import com.moblino.countrynews.data.network.RssResponseListener;
-import com.moblino.countrynews.utils.JSONUtil;
-import com.moblino.countrynews.utils.MOUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -106,19 +104,19 @@ public class HealthCheckActivity extends BaseActivity implements RssResponseList
 
     private void addCountry(String country) throws IOException {
         String[] items = getAssets().list(country);
-        int countryItemCount = 0;
+        /*int countryItemCount = 0;
         for (String item : items) {
             String jsonFile = item.substring(0, item.length() - 5);
             if (jsonFile.length() < 3) {
                 String feedListJson = MOUtils.readFromAssets(getAssets(), country + "/" + item);
-                final FeedItem[] feedItems = JSONUtil.getInstance().parseJson(feedListJson, FeedItem[].class);
+                final FeedItem[] feedItems = new Gson().fromJson(feedListJson, FeedItem[].class);
                 for (FeedItem feedItem : feedItems) {
                     mFullList.add(feedItem);
                     countryItemCount++;
                 }
             }
         }
-        mCountryList = mCountryList + country + " " + countryItemCount + "\n";
+        mCountryList = mCountryList + country + " " + countryItemCount + "\n";*/
         mTextViewCountryList.setText(mCountryList);
     }
 

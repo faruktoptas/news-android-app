@@ -32,11 +32,11 @@ import com.moblino.countrynews.data.firebase.FirebaseManager
 import com.moblino.countrynews.features.detail.DetailActivity
 import com.moblino.countrynews.features.settings.SettingsActivity
 import com.moblino.countrynews.features.webview.WebViewActivity
-import com.moblino.countrynews.models.CardQuestion
-import com.moblino.countrynews.models.RssItem
-import com.moblino.countrynews.utils.Constants
-import com.moblino.countrynews.utils.PreferenceWrapper
-import com.moblino.countrynews.utils.ShareReceiver
+import com.moblino.countrynews.model.CardQuestion
+import com.moblino.countrynews.model.RssItem
+import com.moblino.countrynews.util.Constants
+import com.moblino.countrynews.util.PreferenceWrapper
+import com.moblino.countrynews.util.ShareReceiver
 
 
 class ChromeTabObservable(private val activity: Activity) : LifecycleObserver, ServiceConnectionCallback {

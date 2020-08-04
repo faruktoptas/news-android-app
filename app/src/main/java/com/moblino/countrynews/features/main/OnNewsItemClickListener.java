@@ -19,7 +19,7 @@ package com.moblino.countrynews.features.main;
 
 import android.view.View;
 
-import com.moblino.countrynews.models.RssItem;
+import com.moblino.countrynews.model.RssItem;
 
 public interface OnNewsItemClickListener {
     void onItemSelected(RssItem DummyModel, int position);

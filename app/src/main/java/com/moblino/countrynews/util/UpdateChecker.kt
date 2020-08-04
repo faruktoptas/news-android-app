@@ -15,13 +15,24 @@
  *
  */
 
-package com.moblino.countrynews.models;
+package com.moblino.countrynews.util
 
-/**
- * Created by faruktoptas on 12/12/15.
- */
-public enum LoadImageState{
-    ALWAYS,
-    WIFI,
-    NEVER
+import android.content.Context
+import com.moblino.countrynews.ext.getAppVersion
+
+class UpdateChecker(context: Context) {
+
+    private val currentAppVersion = context.getAppVersion()
+
+    fun isUpdated(oldAppVersion: String?, writeNewVersion: () -> Unit): Boolean {
+        if (oldAppVersion != null) {
+            if (oldAppVersion != currentAppVersion) {
+                writeNewVersion()
+                return true
+            }
+        } else {
+            writeNewVersion()
+        }
+        return false
+    }
 }

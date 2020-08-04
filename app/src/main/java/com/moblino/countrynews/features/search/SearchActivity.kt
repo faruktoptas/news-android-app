@@ -36,10 +36,9 @@ import android.widget.Toast
 import com.moblino.countrynews.R
 import com.moblino.countrynews.base.BaseMvvmActivity
 import com.moblino.countrynews.ext.observeNotNull
-import com.moblino.countrynews.models.FeedItem
-import com.moblino.countrynews.utils.CNUtils
-import com.moblino.countrynews.utils.Constants
-import com.moblino.countrynews.utils.PreferenceWrapper
+import com.moblino.countrynews.model.FeedItem
+import com.moblino.countrynews.util.Constants
+import com.moblino.countrynews.util.PreferenceWrapper
 import kotlinx.android.synthetic.main.activity_search.lvSearch
 import kotlinx.android.synthetic.main.activity_search.rlContainer
 import kotlinx.android.synthetic.main.activity_search.searchView
@@ -106,6 +105,7 @@ class SearchActivity : BaseMvvmActivity() {
         }
     }
 
+    // TODO: move to viewModel
     private fun finishMe(feedItem: FeedItem?) {
         if (feedItem != null) {
             val checkString = PreferenceWrapper.getInstance().readCheckString(feedItem.categoryId)
@@ -120,7 +120,8 @@ class SearchActivity : BaseMvvmActivity() {
                 }
             }
 
-            if (excluded.isNotEmpty() && CNUtils.arrayContains(excluded, "" + feedItem.feedId!!)) {
+
+            if (excluded.any { it == "${feedItem.feedId}" }) {
                 Toast.makeText(this@SearchActivity, R.string.err_search_not_valid, Toast.LENGTH_SHORT).show()
             } else {
                 val data = Intent()
@@ -139,8 +140,8 @@ class SearchActivity : BaseMvvmActivity() {
     }
 
     override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
         handleIntent(intent)
-
     }
 
     private fun handleIntent(intent: Intent) {

@@ -26,11 +26,11 @@ import com.moblino.countrynews.base.BaseMvvmActivity
 import com.moblino.countrynews.features.main.chrome.ChromeTabObservable
 import com.moblino.countrynews.ext.observeNotNull
 import com.moblino.countrynews.ext.observeTrue
-import com.moblino.countrynews.models.CardQuestion
-import com.moblino.countrynews.models.RssItem
+import com.moblino.countrynews.model.CardQuestion
+import com.moblino.countrynews.model.RssItem
 import com.moblino.countrynews.ext.show
-import com.moblino.countrynews.utils.AnimUtils
-import com.moblino.countrynews.utils.Constants
+import com.moblino.countrynews.util.AnimUtils
+import com.moblino.countrynews.util.Constants
 import kotlinx.android.synthetic.main.activity_news_detail.rlBlackOverlay
 import kotlinx.android.synthetic.main.layout_bottom_sheet.detailViewPager
 import me.toptas.fancyshowcase.FancyShowCaseView

@@ -17,7 +17,7 @@
 
 package com.moblino.countrynews.data.network;
 
-import com.moblino.countrynews.models.RssItem;
+import com.moblino.countrynews.model.RssItem;
 
 import java.util.ArrayList;
 

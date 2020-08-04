@@ -15,7 +15,7 @@
  *
  */
 
-package com.moblino.countrynews.utils
+package com.moblino.countrynews.util
 
 import android.util.TypedValue
 import android.widget.TextView

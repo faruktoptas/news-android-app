@@ -23,7 +23,7 @@
 
         <variable
             name="searchItem"
-            type="com.moblino.countrynews.models.FeedItem" />
+            type="com.moblino.countrynews.model.FeedItem" />
 
     </data>
 

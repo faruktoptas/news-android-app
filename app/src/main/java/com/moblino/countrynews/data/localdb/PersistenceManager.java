@@ -24,7 +24,7 @@ import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
 import com.j256.ormlite.table.TableUtils;
-import com.moblino.countrynews.models.RssItem;
+import com.moblino.countrynews.model.RssItem;
 
 import java.sql.SQLException;
 import java.util.List;

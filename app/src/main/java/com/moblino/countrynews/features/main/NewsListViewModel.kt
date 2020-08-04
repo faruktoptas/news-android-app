@@ -26,9 +26,9 @@ import com.moblino.countrynews.ext.isTrue
 import com.moblino.countrynews.ext.postFalse
 import com.moblino.countrynews.ext.postTrue
 import com.moblino.countrynews.features.saved.SavedNewsRepository
-import com.moblino.countrynews.models.FeedItem
-import com.moblino.countrynews.models.RssItem
-import com.moblino.countrynews.models.RssRequest
+import com.moblino.countrynews.model.FeedItem
+import com.moblino.countrynews.model.RssItem
+import com.moblino.countrynews.model.RssRequest
 import kotlinx.coroutines.launch
 
 

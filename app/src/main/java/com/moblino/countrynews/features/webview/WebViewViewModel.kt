@@ -17,14 +17,13 @@
 
 package com.moblino.countrynews.features.webview
 
-import androidx.lifecycle.MutableLiveData
 import com.moblino.countrynews.R
 import com.moblino.countrynews.base.BaseViewModel
 import com.moblino.countrynews.data.ConfigRepository
 import com.moblino.countrynews.data.PrefRepository
 import com.moblino.countrynews.data.SingleLiveEvent
 import com.moblino.countrynews.ext.postTrue
-import com.moblino.countrynews.utils.Constants
+import com.moblino.countrynews.util.Constants
 
 class WebViewViewModel(private val configRepo: ConfigRepository, pref: PrefRepository) : BaseViewModel() {
 

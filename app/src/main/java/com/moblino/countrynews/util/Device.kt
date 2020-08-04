@@ -15,21 +15,20 @@
  *
  */
 
-package com.moblino.countrynews.utils
+package com.moblino.countrynews.util
 
-import android.content.BroadcastReceiver
-import android.content.Context
-import android.content.Intent
-import com.moblino.countrynews.ext.shareText
+import android.os.Build
 
-/**
- * Created by faruktoptas on 11/06/16.
- */
-class ShareReceiver : BroadcastReceiver() {
-    override fun onReceive(context: Context, intent: Intent) {
-        val url = intent.dataString
-        if (url != null) {
-            context.shareText(url)
-        }
+object DeviceInfo {
+    fun getDeviceManufacturer(): String? {
+        return Build.MANUFACTURER
+    }
+
+    fun getDeviceModel(): String? {
+        return Build.MODEL
+    }
+
+    fun getOSVersion(): String? {
+        return Build.VERSION.RELEASE
     }
 }

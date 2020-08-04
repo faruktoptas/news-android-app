@@ -34,12 +34,12 @@ import com.moblino.countrynews.data.localdb.FavouritePersistenceManager
 import com.moblino.countrynews.ext.asVisibility
 import com.moblino.countrynews.ext.observeNotNull
 import com.moblino.countrynews.ext.toWrapperList
-import com.moblino.countrynews.models.CardQuestion
-import com.moblino.countrynews.models.FeedItem
-import com.moblino.countrynews.models.RssItem
-import com.moblino.countrynews.models.RssItemWrapper
+import com.moblino.countrynews.model.CardQuestion
+import com.moblino.countrynews.model.FeedItem
+import com.moblino.countrynews.model.RssItem
+import com.moblino.countrynews.model.RssItemWrapper
 import com.moblino.countrynews.ext.show
-import com.moblino.countrynews.utils.*
+import com.moblino.countrynews.util.*
 import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.layout_empty_state.*
 import org.koin.android.ext.android.inject

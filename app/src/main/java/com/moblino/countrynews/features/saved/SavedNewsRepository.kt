@@ -19,8 +19,8 @@ package com.moblino.countrynews.features.saved
 
 import com.moblino.countrynews.data.localdb.FavouritePersistenceManager
 import com.moblino.countrynews.data.AppCache
-import com.moblino.countrynews.models.RssItem
-import com.moblino.countrynews.utils.Utils
+import com.moblino.countrynews.model.RssItem
+import com.moblino.countrynews.util.DateUtil
 
 interface SavedNewsRepository {
 
@@ -41,7 +41,7 @@ class SavedNewsRepositoryImpl(private val appCache: AppCache,
     }
 
     override fun removeFromMemory(link: String): Int {
-        val pos = Utils.isFavourited(link)
+        val pos = AppCache.isFavorite(link)
         if (pos > -1) {
             appCache.favoriteList.removeAt(pos)
         }

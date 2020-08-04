@@ -28,7 +28,7 @@ import android.widget.CompoundButton
 import com.moblino.countrynews.R
 import com.moblino.countrynews.base.BaseMvvmActivity
 import com.moblino.countrynews.ext.*
-import com.moblino.countrynews.utils.PreferenceWrapper
+import com.moblino.countrynews.util.PreferenceWrapper
 import kotlinx.android.synthetic.main.activity_webview.*
 import org.koin.android.viewmodel.ext.android.viewModel
 

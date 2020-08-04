@@ -17,8 +17,11 @@
 
 package com.moblino.countrynews.data;
 
-import com.moblino.countrynews.models.RssItem;
-import com.moblino.countrynews.utils.Utils;
+import android.text.Html;
+
+import com.moblino.countrynews.model.RssItem;
+import com.moblino.countrynews.util.DateUtil;
+import com.moblino.countrynews.util.HtmlUtil;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -92,11 +95,11 @@ public class XMLParser extends DefaultHandler {
                 rssItem = new RssItem();
                 rssItem.setTitle(tempTitle.trim());
                 rssItem.setLink(tempLink);
-                rssItem.setImage(Utils.optimizeImage(tempImage, tempLink));
+                rssItem.setImage(HtmlUtil.optimizeImage(tempImage, tempLink));
                 rssItem.setPubDate(tempPubdate);
-                rssItem.setDescription((Utils.fixDescription(tempDescription)));
-                if (tempImage == null && tempDescription != null && Utils.getImageSourceFromDescription(tempDescription) != null) {
-                    rssItem.setImage(Utils.optimizeImage(Utils.getImageSourceFromDescription(tempDescription), tempLink));
+                rssItem.setDescription((HtmlUtil.fixDescription(tempDescription)));
+                if (tempImage == null && tempDescription != null && HtmlUtil.getImageSourceFromDescription(tempDescription) != null) {
+                    rssItem.setImage(HtmlUtil.optimizeImage(HtmlUtil.getImageSourceFromDescription(tempDescription), tempLink));
                 }
                 items.add(rssItem);
                 tempLink = "";

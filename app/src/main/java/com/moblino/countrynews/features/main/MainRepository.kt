@@ -18,12 +18,12 @@
 package com.moblino.countrynews.features.main
 
 import android.content.res.AssetManager
+import com.google.gson.Gson
 import com.moblino.countrynews.NewsApplication
-import com.moblino.countrynews.models.Category
-import com.moblino.countrynews.models.FeedItem
-import com.moblino.countrynews.utils.Constants
-import com.moblino.countrynews.utils.JSONUtil
-import com.moblino.countrynews.utils.MOUtils
+import com.moblino.countrynews.ext.readFile
+import com.moblino.countrynews.model.Category
+import com.moblino.countrynews.model.FeedItem
+import com.moblino.countrynews.util.Constants
 
 interface MainRepository {
 
@@ -39,7 +39,7 @@ interface MainRepository {
 
 }
 
-class MainRepositoryImpl(private val assets: AssetManager) : MainRepository {
+class MainRepositoryImpl(private val assets: AssetManager, private val gson: Gson) : MainRepository {
 
 
     override fun countryList(): List<String> = assets.list("")!!.toList()
@@ -47,19 +47,19 @@ class MainRepositoryImpl(private val assets: AssetManager) : MainRepository {
     override fun categoriesByCountry(country: String): List<Category> {
 
         val json = readAssets("$country/${Constants.CATEGORY_FILE}")
-        return JSONUtil.instance.parseJson(json, Array<Category>::class.java).toList()
+        return gson.fromJson(json, Array<Category>::class.java).toList()
     }
 
     override fun getCountryFiles(country: String): Array<String> = assets.list(country)!!
 
     override fun feedsByCategory(country: String, categoryId: Int): List<FeedItem> {
         val feedListJson = readAssets("$country/$categoryId.json")
-        return JSONUtil.instance.parseJson(feedListJson, Array<FeedItem>::class.java).toList()
+        return gson.fromJson(feedListJson, Array<FeedItem>::class.java).toList()
     }
 
     override fun setCurrentCategory(categoryId: Int) {
         NewsApplication.instance.currentCategoryId = categoryId
     }
 
-    private fun readAssets(file: String) = MOUtils.readFromAssets(assets, file)
+    private fun readAssets(file: String) = assets.readFile(file).toString(Charsets.UTF_8)
 }

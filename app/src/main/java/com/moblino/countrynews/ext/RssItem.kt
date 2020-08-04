@@ -18,11 +18,11 @@
 package com.moblino.countrynews.ext
 
 import android.content.Context
-import com.moblino.countrynews.models.RssItem
-import com.moblino.countrynews.models.RssItemWrapper
-import com.moblino.countrynews.utils.Utils
+import com.moblino.countrynews.model.RssItem
+import com.moblino.countrynews.model.RssItemWrapper
+import com.moblino.countrynews.util.DateUtil
 
 fun List<RssItem>.toWrapperList(context: Context) = map {
-    if (!Utils.isLoadImagesEnabled(context)) it.image = null
-    RssItemWrapper(it, null, Utils.convertDate(context, it.pubDate))
+    if (!DateUtil.isLoadImagesEnabled(context)) it.image = null
+    RssItemWrapper(it, null, DateUtil.convertDate(context, it.pubDate))
 }

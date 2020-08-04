@@ -36,7 +36,7 @@
         android:roundIcon="@mipmap/ic_launcher_circular"
         android:theme="@style/BaseTheme"
         android:usesCleartextTraffic="true">
-        <receiver android:name=".utils.ShareReceiver" />
+        <receiver android:name=".util.ShareReceiver" />
 
         <activity
             android:name=".features.about.AboutActivity"

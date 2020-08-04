@@ -21,7 +21,8 @@ import androidx.databinding.BindingAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.moblino.countrynews.R
-import com.moblino.countrynews.utils.Utils
+import com.moblino.countrynews.util.DateUtil
+import com.moblino.countrynews.util.HtmlUtil
 import com.squareup.picasso.Picasso
 
 @BindingAdapter("textOrHide")
@@ -39,7 +40,7 @@ fun loadImageOrHide(view: ImageView, url: String?) {
     if (url.isNullOrEmpty()) {
         view.hide()
     } else {
-        Picasso.get().load(Utils.fixImageUrl(url))
+        Picasso.get().load(HtmlUtil.fixImageUrl(url))
                 .fit()
                 .centerCrop()
                 .error(R.drawable.bg_empty_image)

@@ -47,20 +47,20 @@ import com.moblino.countrynews.features.saved.SavedNewsActivity
 import com.moblino.countrynews.features.search.SearchActivity
 import com.moblino.countrynews.features.settings.SettingsActivity
 import com.moblino.countrynews.features.webview.HeadingsActivity
-import com.moblino.countrynews.models.Category
-import com.moblino.countrynews.models.FeedItem
-import com.moblino.countrynews.models.RssItem
-import com.moblino.countrynews.utils.Constants
-import com.moblino.countrynews.utils.Constants.Companion.EXTRA_CURRENT_CATEGORY
-import com.moblino.countrynews.utils.Constants.Companion.EXTRA_SEARCH_ITEM
-import com.moblino.countrynews.utils.Constants.Companion.NAV_ITEM_EDIT
-import com.moblino.countrynews.utils.Constants.Companion.NAV_ITEM_FAVOURITES
-import com.moblino.countrynews.utils.Constants.Companion.NAV_ITEM_FIRST_PAGES
-import com.moblino.countrynews.utils.Constants.Companion.NAV_ITEM_RATE
-import com.moblino.countrynews.utils.Constants.Companion.NAV_ITEM_SETTINGS
-import com.moblino.countrynews.utils.Constants.Companion.NAV_ITEM_SHARE
-import com.moblino.countrynews.utils.NewsShortcuts
-import com.moblino.countrynews.utils.Utils
+import com.moblino.countrynews.model.Category
+import com.moblino.countrynews.model.FeedItem
+import com.moblino.countrynews.model.RssItem
+import com.moblino.countrynews.util.Constants
+import com.moblino.countrynews.util.Constants.Companion.EXTRA_CURRENT_CATEGORY
+import com.moblino.countrynews.util.Constants.Companion.EXTRA_SEARCH_ITEM
+import com.moblino.countrynews.util.Constants.Companion.NAV_ITEM_EDIT
+import com.moblino.countrynews.util.Constants.Companion.NAV_ITEM_FAVOURITES
+import com.moblino.countrynews.util.Constants.Companion.NAV_ITEM_FIRST_PAGES
+import com.moblino.countrynews.util.Constants.Companion.NAV_ITEM_RATE
+import com.moblino.countrynews.util.Constants.Companion.NAV_ITEM_SETTINGS
+import com.moblino.countrynews.util.Constants.Companion.NAV_ITEM_SHARE
+import com.moblino.countrynews.util.NewsShortcuts
+import com.moblino.countrynews.util.UIUtils
 import kotlinx.android.synthetic.main.activity_main.*
 import me.toptas.fancyshowcase.FancyShowCaseView
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -128,11 +128,11 @@ class MainNewsActivity : BaseMvvmActivity(),
         menu.clear()
         if (getPreferenceWrapper().readCountry() == "TR" && !getPreferenceWrapper().readHeadingUrl().isNullOrEmpty()) {
             val itemHeading = menu.add(3, NAV_ITEM_FIRST_PAGES, 0, "Manşetler")
-            Utils.setNavMenuIcon(itemHeading, NAV_ITEM_FIRST_PAGES)
+            UIUtils.setNavMenuIcon(itemHeading, NAV_ITEM_FIRST_PAGES)
         }
         for (category in categories) {
             val menuItem = menu.add(0, category.id, 0, category.title)
-            Utils.setNavMenuIcon(menuItem, category.id)
+            UIUtils.setNavMenuIcon(menuItem, category.id)
             menuItem.isCheckable = true
             if (category.id == current) {
                 menuItem.isChecked = true
@@ -140,16 +140,16 @@ class MainNewsActivity : BaseMvvmActivity(),
         }
 
         val itemEdit = menu.add(1, NAV_ITEM_EDIT, 0, R.string.title_edit_list)
-        Utils.setNavMenuIcon(itemEdit, NAV_ITEM_EDIT)
+        UIUtils.setNavMenuIcon(itemEdit, NAV_ITEM_EDIT)
         val itemFavourites = menu.add(1, NAV_ITEM_FAVOURITES, 0, R.string.title_favourites)
-        Utils.setNavMenuIcon(itemFavourites, NAV_ITEM_FAVOURITES)
+        UIUtils.setNavMenuIcon(itemFavourites, NAV_ITEM_FAVOURITES)
 
         val itemSettings = menu.add(2, NAV_ITEM_SETTINGS, 0, R.string.title_settings)
-        Utils.setNavMenuIcon(itemSettings, NAV_ITEM_SETTINGS)
+        UIUtils.setNavMenuIcon(itemSettings, NAV_ITEM_SETTINGS)
         val itemAbout = menu.add(2, NAV_ITEM_RATE, 0, R.string.title_rate)
-        Utils.setNavMenuIcon(itemAbout, NAV_ITEM_RATE)
+        UIUtils.setNavMenuIcon(itemAbout, NAV_ITEM_RATE)
         val itemShare = menu.add(2, NAV_ITEM_SHARE, 0, R.string.title_share_app)
-        Utils.setNavMenuIcon(itemShare, NAV_ITEM_SHARE)
+        UIUtils.setNavMenuIcon(itemShare, NAV_ITEM_SHARE)
 
         NewsShortcuts.setShortcuts(this, categories)
     }

@@ -18,7 +18,6 @@
 package com.moblino.countrynews.data.firebase;
 
 import android.content.Context;
-import android.os.Build;
 import android.util.Log;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -26,9 +25,7 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.moblino.countrynews.BuildConfig;
 import com.moblino.countrynews.ext.ContextKt;
-import com.moblino.countrynews.utils.CNUtils;
-import com.moblino.countrynews.utils.MOUtils;
-import com.moblino.countrynews.utils.PreferenceWrapper;
+import com.moblino.countrynews.util.PreferenceWrapper;
 
 import java.util.HashMap;
 
@@ -72,8 +69,6 @@ public class RemoteConfigWrapper {
                         String adState = mFirebaseRemoteConfig.getString(VALUE_AD_STATE);
                         String headingUrl = mFirebaseRemoteConfig.getString(VALUE_HEADING_URL);
 
-                        CNUtils.logi("adstate: " + adState);
-                        PreferenceWrapper.getInstance().writeAdState(adState);
                         PreferenceWrapper.getInstance().writeRemoteExcludedNews(excludedNews);
                         if (latestVersion != null && latestVersion.length() > 0) {
                             PreferenceWrapper.getInstance().writeString(PreferenceWrapper.KEY_NEW_VERSION, latestVersion);

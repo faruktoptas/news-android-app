@@ -18,7 +18,7 @@
 package com.moblino.countrynews.features.detail
 
 import com.moblino.countrynews.data.AppCache
-import com.moblino.countrynews.models.RssItem
+import com.moblino.countrynews.model.RssItem
 
 interface DetailRepository {
 

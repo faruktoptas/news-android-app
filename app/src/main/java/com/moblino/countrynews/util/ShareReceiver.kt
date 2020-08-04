@@ -15,6 +15,21 @@
  *
  */
 
-package com.moblino.countrynews.models
+package com.moblino.countrynews.util
 
-data class RssRequest(val url: String, val encoding: String?)
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import com.moblino.countrynews.ext.shareText
+
+/**
+ * Created by faruktoptas on 11/06/16.
+ */
+class ShareReceiver : BroadcastReceiver() {
+    override fun onReceive(context: Context, intent: Intent) {
+        val url = intent.dataString
+        if (url != null) {
+            context.shareText(url)
+        }
+    }
+}

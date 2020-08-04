@@ -22,9 +22,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.moblino.countrynews.models.RssItem;
-import com.moblino.countrynews.models.CardQuestion;
-import com.moblino.countrynews.utils.PreferenceWrapper;
+import com.moblino.countrynews.model.RssItem;
+import com.moblino.countrynews.model.CardQuestion;
+import com.moblino.countrynews.util.PreferenceWrapper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +32,8 @@ import java.util.List;
 /**
  * Created by faruktoptas on 29/10/15.
  */
+// TODO: 4.08.2020 use ViewPager2
+
 public class NewsDetailViewPagerAdapter extends FragmentPagerAdapter {
     private final List<Fragment> mFragmentList = new ArrayList<>();
 
@@ -40,8 +42,7 @@ public class NewsDetailViewPagerAdapter extends FragmentPagerAdapter {
 
         int fragmentCount = list.size();
         int adPos = -1;
-        if (cardQuestion != null && cardQuestion.isAd() && cardQuestion.getPosition() > -1 &&
-                PreferenceWrapper.getInstance().readAdState() == 1) {
+        if (cardQuestion != null && cardQuestion.isAd() && cardQuestion.getPosition() > -1) {
             fragmentCount = fragmentCount + 1;
             adPos = cardQuestion.getPosition();
         }
