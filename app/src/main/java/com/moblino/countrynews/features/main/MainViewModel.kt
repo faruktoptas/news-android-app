@@ -186,10 +186,4 @@ class MainViewModel(private val repo: MainRepository,
         }
     }
 
-    fun logNewsClick(index: Int) {
-        if (index < appCache.currentFeedList.size) {
-            logger.sendScreen(appCache.currentFeedList[index].title)
-        }
-    }
-
 }

@@ -19,7 +19,6 @@ package com.moblino.countrynews
 
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.multidex.MultiDexApplication
-import com.crashlytics.android.Crashlytics
 import com.moblino.countrynews.data.AppCache
 import com.moblino.countrynews.data.firebase.FirebaseManager
 import com.moblino.countrynews.data.localdb.FavouritePersistenceManager
@@ -28,7 +27,6 @@ import com.moblino.countrynews.utils.FontSizeHelper
 import com.moblino.countrynews.utils.PreferenceWrapper
 import com.squareup.picasso.OkHttp3Downloader
 import com.squareup.picasso.Picasso
-import io.fabric.sdk.android.Fabric
 import okhttp3.OkHttpClient
 import org.koin.android.ext.android.inject
 import org.koin.android.ext.android.startKoin
@@ -46,9 +44,6 @@ class NewsApplication : MultiDexApplication() {
         super.onCreate()
         startKoin(this, listOf(appModule))
 
-        if (!BuildConfig.DEBUG) {
-            Fabric.with(this, Crashlytics())
-        }
         instance = this
         PreferenceWrapper.getInstance().init(applicationContext)
         FirebaseManager.getInstance().init(applicationContext)

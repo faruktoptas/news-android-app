@@ -29,7 +29,6 @@ import com.moblino.countrynews.features.saved.SavedNewsRepository
 import com.moblino.countrynews.models.FeedItem
 import com.moblino.countrynews.models.RssItem
 import com.moblino.countrynews.models.RssRequest
-import com.moblino.countrynews.utils.GAManager
 import kotlinx.coroutines.launch
 
 
@@ -66,7 +65,6 @@ class NewsListViewModel(private val cache: AppCache,
                 refresherIsRefreshing.postFalse()
                 showProgressLive.postFalse()
             }
-            loggerRepo.sendEvent(GAManager.ACTION_RSS_REQUEST)
         } else {
             val cached = cache.responseList[rssUrl]
             if (cached?.items?.isNotEmpty().isTrue()) {
@@ -98,8 +96,7 @@ class NewsListViewModel(private val cache: AppCache,
                     title,
                     rssItem.description))
 
-            loggerRepo.sendEvent(GAManager.ACTION_FAV)
-            loggerRepo.sendFireBaseEvent(FirebaseManager.EVENT_FAVOURITE)
+            loggerRepo.logEvent(FirebaseManager.EVENT_FAVOURITE)
             cb(true)
         }
     }

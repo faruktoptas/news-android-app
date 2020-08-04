@@ -24,7 +24,6 @@ import com.moblino.countrynews.data.firebase.FirebaseManager
 import com.moblino.countrynews.features.Mock
 import com.moblino.countrynews.features.saved.SavedNewsRepository
 import com.moblino.countrynews.models.RssItem
-import com.moblino.countrynews.utils.GAManager
 import com.nhaarman.mockitokotlin2.argumentCaptor
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
@@ -38,10 +37,11 @@ class NewsListViewModelTest {
     @get:Rule
     val rule = InstantTaskExecutorRule()
 
+    private val rssRepo: RssRepository = mock()
     private val repo: SavedNewsRepository = mock()
     private val logger: LoggerRepository = mock()
     private val cache = AppCache()
-    private val vm = NewsListViewModel(cache, repo, logger)
+    private val vm = NewsListViewModel(cache, rssRepo, repo, logger)
 
     @Before
     fun setup() {
@@ -59,7 +59,6 @@ class NewsListViewModelTest {
         val item = captor.firstValue
         assertEquals("title", item.title)
 
-        verify(logger).sendEvent(GAManager.ACTION_FAV)
-        verify(logger).sendFireBaseEvent(FirebaseManager.EVENT_FAVOURITE)
+        verify(logger).logEvent(FirebaseManager.EVENT_FAVOURITE)
     }
 }

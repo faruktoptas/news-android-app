@@ -59,7 +59,6 @@ import com.moblino.countrynews.utils.Constants.Companion.NAV_ITEM_FIRST_PAGES
 import com.moblino.countrynews.utils.Constants.Companion.NAV_ITEM_RATE
 import com.moblino.countrynews.utils.Constants.Companion.NAV_ITEM_SETTINGS
 import com.moblino.countrynews.utils.Constants.Companion.NAV_ITEM_SHARE
-import com.moblino.countrynews.utils.GAManager
 import com.moblino.countrynews.utils.NewsShortcuts
 import com.moblino.countrynews.utils.Utils
 import kotlinx.android.synthetic.main.activity_main.*
@@ -260,19 +259,17 @@ class MainNewsActivity : BaseMvvmActivity(),
                 sendIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.app_name) + " - " + Constants.PLAY_STORE_URL)
                 sendIntent.type = "text/plain"
                 startActivity(Intent.createChooser(sendIntent, getString(R.string.title_share_app)))
-                GAManager.sendEvent(GAManager.ACTION_APP_SHARE)
-                com.moblino.countrynews.data.firebase.FirebaseManager.getInstance().logShare()
+                FirebaseManager.getInstance().logShare()
             }
             NAV_ITEM_RATE -> {
                 goToPlayStore()
-                GAManager.sendEvent(GAManager.ACTION_APP_RATE)
-                com.moblino.countrynews.data.firebase.FirebaseManager.getInstance().logRate()
+                FirebaseManager.getInstance().logRate()
             }
             NAV_ITEM_FAVOURITES -> startActivityForResult(Intent(this,
                     SavedNewsActivity::class.java), Constants.REQ_CODE_LIST_CHANGED)
             else -> {
                 viewModel.changeCategory(id)
-                com.moblino.countrynews.data.firebase.FirebaseManager.getInstance().logCategoryChange(item.title.toString())
+                FirebaseManager.getInstance().logCategoryChange(item.title.toString())
             }
         }
 
@@ -321,12 +318,11 @@ class MainNewsActivity : BaseMvvmActivity(),
 
     //endregion
 
-    //region Other methods
+    //region Other
 
     override fun onNewsClicked(model: RssItem, rssUrl: String, position: Int) {
         val cardQuestion = (adapterViewPager.getItem(main_viewpager.currentItem) as MainActivityFragment).cardQuestion
         chromeObservable.openNewsDetail(model, rssUrl, position, cardQuestion)
-        viewModel.logNewsClick(main_viewpager.currentItem)
     }
 
     private fun setMenuItemIcon() {

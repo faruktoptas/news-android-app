@@ -83,12 +83,6 @@ class SavedNewsViewModelTest {
         assert(viewModel.notifyItemRemoved.observedValue() == 0)
         assert(viewModel.showSnackBar.observedValue() == true)
     }
-
-    @Test
-    fun testSavedNewsItemDetail() {
-        viewModel.goToItemDetail(MockData.RSS_ITEMS_SINGLE[0], 0)
-        verify(logRepo).sendScreen("feedTitle")
-    }
 }
 
 

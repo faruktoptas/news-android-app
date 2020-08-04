@@ -35,7 +35,7 @@ class DetailViewModel(private val repo: DetailRepository, logger: LoggerReposito
     val showFancy = MutableLiveData<Boolean>()
 
     init {
-        logger.sendFireBaseEvent(FirebaseManager.EVENT_NEWS_DETAIL)
+        logger.logEvent(FirebaseManager.EVENT_NEWS_DETAIL)
 
         if (!pref.readDetailShowCase()) {
             showFancy.postValue(true)

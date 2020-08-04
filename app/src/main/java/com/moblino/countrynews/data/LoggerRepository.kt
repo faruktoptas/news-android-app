@@ -18,28 +18,15 @@
 package com.moblino.countrynews.data
 
 import com.moblino.countrynews.data.firebase.FirebaseManager
-import com.moblino.countrynews.utils.GAManager
 
 interface LoggerRepository {
 
-    fun sendScreen(screenName: String)
-
-    fun sendEvent(eventName: String)
-
-    fun sendFireBaseEvent(event: String)
+    fun logEvent(event: String)
 }
 
 class LoggerRepositoryImpl : LoggerRepository {
 
-    override fun sendScreen(screenName: String) {
-        GAManager.sendScreen(screenName)
-    }
-
-    override fun sendEvent(eventName: String) {
-        GAManager.sendEvent(eventName)
-    }
-
-    override fun sendFireBaseEvent(event: String) {
+    override fun logEvent(event: String) {
         FirebaseManager.getInstance().logEvent(event)
     }
 }

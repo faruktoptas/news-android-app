@@ -53,7 +53,7 @@ class DetailViewModelTest {
     @Test
     fun testLogFireBase() {
         viewModel = DetailViewModel(detailRepo, logRepo, prefRepo)
-        verify(logRepo).sendFireBaseEvent(FirebaseManager.EVENT_NEWS_DETAIL)
+        verify(logRepo).logEvent(FirebaseManager.EVENT_NEWS_DETAIL)
     }
 
     @Test

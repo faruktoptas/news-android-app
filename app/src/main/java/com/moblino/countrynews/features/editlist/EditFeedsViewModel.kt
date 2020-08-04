@@ -29,7 +29,6 @@ import com.moblino.countrynews.data.AppCache
 import com.moblino.countrynews.ext.isTrue
 import com.moblino.countrynews.models.FeedItem
 import com.moblino.countrynews.ext.unite
-import com.moblino.countrynews.utils.GAManager
 
 class EditFeedsViewModel(private val pref: PrefRepository,
                          private val logger: LoggerRepository,
@@ -93,8 +92,7 @@ class EditFeedsViewModel(private val pref: PrefRepository,
 
     fun onItemMove(old: Int, new: Int) {
         feedList.moveItems(old, new)
-        logger.sendFireBaseEvent(FirebaseManager.EVENT_SORT)
-        logger.sendScreen(GAManager.ACTION_SORT)
+        logger.logEvent(FirebaseManager.EVENT_SORT)
     }
 
 }

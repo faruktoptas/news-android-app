@@ -56,12 +56,6 @@ class SavedNewsViewModel(private val repo: SavedNewsRepository,
         titleLive.postValue(title)
     }
 
-    fun goToItemDetail(model: RssItem, position: Int) {
-        if (model.feedTitle != null) {
-            loggerRepository.sendScreen(model.feedTitle)
-        }
-    }
-
 
     fun removeItem(item: RssItem) {
         repo.removeFromDb(item.link)

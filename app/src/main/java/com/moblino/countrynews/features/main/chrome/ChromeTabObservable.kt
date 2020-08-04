@@ -112,7 +112,7 @@ class ChromeTabObservable(private val activity: Activity) : LifecycleObserver, S
         if (customTabsServiceConnection == null) {
             customTabsServiceConnection = ServiceConnection(this)
         }
-        CustomTabsClient.bindCustomTabsService(activity, Constants.CUSTOM_TAB_PACKAGE_NAME, customTabsServiceConnection)
+        CustomTabsClient.bindCustomTabsService(activity, Constants.CUSTOM_TAB_PACKAGE_NAME, customTabsServiceConnection!!)
     }
 
     private fun unBindCustomTabService() {

@@ -99,7 +99,6 @@ class SavedNewsActivity : BaseMvvmActivity(), OnNewsItemClickListener {
 
     override fun onItemSelected(model: RssItem, position: Int) {
         chromeObservable.openNewsDetail(model, null, position, null)
-        viewModel.goToItemDetail(model, position)
     }
 
     override fun onFavouriteClicked(view: View, rssItem: RssItem, position: Int, isWhite: Boolean) {
