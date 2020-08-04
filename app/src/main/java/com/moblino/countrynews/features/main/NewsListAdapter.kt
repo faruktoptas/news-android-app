@@ -18,7 +18,7 @@
 package com.moblino.countrynews.features.main
 
 import android.content.Context
-import android.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -18,7 +18,7 @@
 package com.moblino.countrynews.features.editlist
 
 import android.annotation.SuppressLint
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.MotionEvent
 import android.widget.CheckBox
 import android.widget.ImageView

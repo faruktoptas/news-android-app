@@ -17,7 +17,7 @@
 
 package com.moblino.countrynews
 
-import android.support.v7.app.AppCompatDelegate
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.multidex.MultiDexApplication
 import com.crashlytics.android.Crashlytics
 import com.moblino.countrynews.data.AppCache

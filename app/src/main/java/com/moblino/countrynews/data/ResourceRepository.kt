@@ -18,7 +18,7 @@
 package com.moblino.countrynews.data
 
 import android.content.Context
-import android.support.annotation.StringRes
+import androidx.annotation.StringRes
 
 interface ResourceRepository {
     fun getString(@StringRes id: Int): String

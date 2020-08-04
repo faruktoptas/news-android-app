@@ -17,7 +17,7 @@
 
 package com.moblino.countrynews.base;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 /**
  * Created by faruktoptas on 11/10/16.

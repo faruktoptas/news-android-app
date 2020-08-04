@@ -17,11 +17,10 @@
 
 package com.moblino.countrynews.utils;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.Log;
 
 import com.moblino.countrynews.BuildConfig;
-import com.moblino.countrynews.models.Category;
 import com.moblino.countrynews.models.LoadImageState;
 
 /**

@@ -17,7 +17,7 @@
 
 package com.moblino.countrynews.features.main.chrome
 
-import android.support.customtabs.CustomTabsClient
+import androidx.browser.customtabs.CustomTabsClient
 
 interface ServiceConnectionCallback {
     /**

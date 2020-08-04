@@ -27,7 +27,7 @@
             type="com.moblino.countrynews.models.RssItemWrapper" />
     </data>
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/cardview"
         style="@style/SelectableBackground"
         android:layout_width="fill_parent"
@@ -115,5 +115,5 @@
 
         </RelativeLayout>
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 </layout>

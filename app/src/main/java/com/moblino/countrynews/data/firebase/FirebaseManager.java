@@ -19,7 +19,7 @@ package com.moblino.countrynews.data.firebase;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatDelegate;
+import androidx.appcompat.app.AppCompatDelegate;
 import android.util.Log;
 
 import com.google.firebase.analytics.FirebaseAnalytics;

@@ -17,7 +17,7 @@
 
 package com.moblino.countrynews.ext
 
-import android.arch.lifecycle.*
+import androidx.lifecycle.*
 import android.view.View
 
 fun LiveData<Boolean>.observeTrue(owner: LifecycleOwner, block: (Boolean) -> Unit) {

@@ -19,14 +19,14 @@ package com.moblino.countrynews.features.main.chrome
 
 import android.app.Activity
 import android.app.PendingIntent
-import android.arch.lifecycle.Lifecycle
-import android.arch.lifecycle.LifecycleObserver
-import android.arch.lifecycle.OnLifecycleEvent
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.OnLifecycleEvent
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.net.Uri
-import android.support.customtabs.*
-import android.support.v4.content.ContextCompat
+import androidx.browser.customtabs.*
+import androidx.core.content.ContextCompat
 import com.moblino.countrynews.R
 import com.moblino.countrynews.data.firebase.FirebaseManager
 import com.moblino.countrynews.features.detail.DetailActivity

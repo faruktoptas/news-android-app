@@ -19,7 +19,7 @@ package com.moblino.countrynews.features.detail
 
 import android.app.Activity
 import android.os.Bundle
-import android.support.design.widget.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import android.view.View
 import com.moblino.countrynews.R
 import com.moblino.countrynews.base.BaseMvvmActivity

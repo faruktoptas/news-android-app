@@ -17,7 +17,7 @@
 
 package com.moblino.countrynews.features.detail
 
-import android.arch.lifecycle.Observer
+import androidx.lifecycle.Observer
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater

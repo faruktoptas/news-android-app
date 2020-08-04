@@ -17,7 +17,7 @@
 
 package com.moblino.countrynews.features.main
 
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.MutableLiveData
 import com.moblino.countrynews.base.BaseViewModel
 import com.moblino.countrynews.data.SingleLiveEvent
 import com.moblino.countrynews.data.AppCache

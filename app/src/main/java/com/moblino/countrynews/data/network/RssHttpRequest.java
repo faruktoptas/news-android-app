@@ -18,7 +18,7 @@
 package com.moblino.countrynews.data.network;
 
 import android.os.AsyncTask;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
 
 import com.moblino.countrynews.models.RssItem;

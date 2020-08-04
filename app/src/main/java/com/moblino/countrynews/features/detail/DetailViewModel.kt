@@ -17,7 +17,7 @@
 
 package com.moblino.countrynews.features.detail
 
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.MutableLiveData
 import com.moblino.countrynews.base.BaseViewModel
 import com.moblino.countrynews.data.LoggerRepository
 import com.moblino.countrynews.data.PrefRepository
