@@ -46,13 +46,6 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         getDelegate().setLocalNightMode(PreferenceWrapper.getInstance().readNightMode());
         super.onCreate(savedInstanceState);
-        /*if (!(this instanceof WebviewActivity)) {
-            GAManager.sendScreen(getClass().getSimpleName());
-        }*/ // TODO: 13.07.2020
-    }
-
-    public PreferenceWrapper getPreferenceWrapper() {
-        return PreferenceWrapper.getInstance();
     }
 
     protected void setupToolbar() {

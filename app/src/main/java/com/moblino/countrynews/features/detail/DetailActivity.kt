@@ -116,6 +116,7 @@ class DetailActivity : BaseMvvmActivity(), NewsDetailFragment.OnNewsDetailListen
         FancyShowCaseView.Builder(this@DetailActivity)
                 .title(getString(R.string.text_swipe_1))
                 .showOnce(Constants.FANCY_DETAIL_SWIPE)
+                .closeOnTouch(false)
                 .delay(500)
                 .customView(R.layout.layout_detail_swipe_show_case, object : OnViewInflateListener {
                     override fun onViewInflated(view: View) {

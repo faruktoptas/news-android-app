@@ -106,6 +106,7 @@ class SavedNewsActivity : BaseMvvmActivity(), OnNewsItemClickListener {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == Constants.REQ_CODE_LIST_CHANGED) {
             if (resultCode == Activity.RESULT_OK) {
                 viewModel.refresh()

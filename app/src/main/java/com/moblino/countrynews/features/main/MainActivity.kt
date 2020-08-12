@@ -25,17 +25,16 @@ package com.moblino.countrynews.features.main
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.navigation.NavigationView
-import com.google.android.material.tabs.TabLayout
-import androidx.core.view.GravityCompat
-import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.appcompat.view.menu.ActionMenuItemView
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.view.menu.ActionMenuItemView
+import androidx.core.view.GravityCompat
+import com.google.android.material.navigation.NavigationView
+import com.google.android.material.tabs.TabLayout
 import com.moblino.countrynews.R
 import com.moblino.countrynews.base.BaseMvvmActivity
-import com.moblino.countrynews.features.main.chrome.ChromeTabObservable
 import com.moblino.countrynews.customviews.CardQuestionManager
 import com.moblino.countrynews.data.firebase.FirebaseManager
 import com.moblino.countrynews.data.firebase.RemoteConfigWrapper
@@ -43,6 +42,7 @@ import com.moblino.countrynews.ext.goToPlayStore
 import com.moblino.countrynews.ext.observeNotNull
 import com.moblino.countrynews.ext.observeTrue
 import com.moblino.countrynews.features.editlist.EditFeedsActivity
+import com.moblino.countrynews.features.main.chrome.ChromeTabObservable
 import com.moblino.countrynews.features.saved.SavedNewsActivity
 import com.moblino.countrynews.features.search.SearchActivity
 import com.moblino.countrynews.features.settings.SettingsActivity
@@ -65,16 +65,14 @@ import kotlinx.android.synthetic.main.activity_main.*
 import me.toptas.fancyshowcase.FancyShowCaseView
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class MainNewsActivity : BaseMvvmActivity(),
+class MainActivity : BaseMvvmActivity(),
         NavigationView.OnNavigationItemSelectedListener,
         MainActivityFragment.OnNewsClickListener {
-
 
     private val viewModel: MainViewModel by viewModel()
     private val chromeObservable = ChromeTabObservable(this)
 
-    private lateinit var adapterViewPager: MainViewPagerAdapter
-
+    private lateinit var adapterViewPager: MainViewPagerAdapterLegacy
     private var menuItemListType: MenuItem? = null
 
     override fun layoutRes() = R.layout.activity_main
@@ -90,7 +88,8 @@ class MainNewsActivity : BaseMvvmActivity(),
         toggle.syncState()
         nav_view.setNavigationItemSelectedListener(this)
         tablayout.tabMode = TabLayout.MODE_SCROLLABLE
-        adapterViewPager = MainViewPagerAdapter(supportFragmentManager)
+        adapterViewPager = MainViewPagerAdapterLegacy(supportFragmentManager)
+        main_viewpager.adapter = adapterViewPager
         setSupportActionBar(toolbar)
 
         val shortCutTab = intent.getIntExtra(EXTRA_CURRENT_CATEGORY, -1)
@@ -168,7 +167,6 @@ class MainNewsActivity : BaseMvvmActivity(),
         tablayout.setupWithViewPager(main_viewpager)
     }
 
-
     private fun resetViewPager() {
         adapterViewPager.clearFragments()
         try {
@@ -197,7 +195,7 @@ class MainNewsActivity : BaseMvvmActivity(),
         main_viewpager.post {
             if (!isFinishing) {
                 toolbar?.findViewById<View>(R.id.item_layout_type)?.let {
-                    FancyShowCaseView.Builder(this@MainNewsActivity)
+                    FancyShowCaseView.Builder(this@MainActivity)
                             .showOnce("item_layout_type")
                             .fitSystemWindows(true)
                             .enableAutoTextPosition()
@@ -233,18 +231,17 @@ class MainNewsActivity : BaseMvvmActivity(),
                 setMenuItemIcon()
                 viewModel.refresh(main_viewpager.currentItem)
 
-                com.moblino.countrynews.data.firebase.FirebaseManager.getInstance().setUserPropertyListingType(!getPreferenceWrapper().readStaggered())
+                FirebaseManager.getInstance().setUserPropertyListingType(!getPreferenceWrapper().readStaggered())
             }
         }
         return false
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        val id = item.itemId
-        when (id) {
+        when (val id = item.itemId) {
             NAV_ITEM_FIRST_PAGES -> {
                 startActivity(Intent(this, HeadingsActivity::class.java))
-                FirebaseManager.getInstance().logHeadlines();
+                FirebaseManager.getInstance().logHeadlines()
             }
             NAV_ITEM_EDIT -> {
                 val intent = Intent(this, EditFeedsActivity::class.java)
@@ -276,7 +273,6 @@ class MainNewsActivity : BaseMvvmActivity(),
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
-
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         when (requestCode) {
@@ -332,7 +328,6 @@ class MainNewsActivity : BaseMvvmActivity(),
             menuItemListType?.setIcon(R.drawable.ic_list_staggered)
         }
     }
-
 
     private fun showSearchActivity() {
         val searchView = toolbar.findViewById<ActionMenuItemView>(R.id.item_search)

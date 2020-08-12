@@ -30,11 +30,11 @@ import java.util.List;
 
 // TODO: 4.08.2020 use ViewPager2
 
-public class MainViewPagerAdapter extends FragmentStatePagerAdapter {
+public class MainViewPagerAdapterLegacy extends FragmentStatePagerAdapter {
     private final List<Fragment> mFragmentList = new ArrayList<>();
     private final List<String> mFragmentTitleList = new ArrayList<>();
 
-    public MainViewPagerAdapter(FragmentManager manager) {
+    public MainViewPagerAdapterLegacy(FragmentManager manager) {
         super(manager);
     }
 

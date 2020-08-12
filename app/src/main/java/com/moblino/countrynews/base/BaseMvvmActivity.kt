@@ -34,7 +34,7 @@ import com.moblino.countrynews.util.PreferenceWrapper
 abstract class BaseMvvmActivity : AppCompatActivity() {
 
     public override fun onCreate(savedInstanceState: Bundle?) {
-        delegate.setLocalNightMode(PreferenceWrapper.getInstance().readNightMode())
+        delegate.localNightMode = PreferenceWrapper.getInstance().readNightMode()
         super.onCreate(savedInstanceState)
         setContentView(layoutRes())
         initViews(savedInstanceState)
@@ -69,11 +69,7 @@ abstract class BaseMvvmActivity : AppCompatActivity() {
         actionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    protected fun setDisplayHomeAsEnabled() {
-        val actionBar = supportActionBar
-        actionBar?.setDisplayHomeAsUpEnabled(true)
-    }
-
+    // TODO: move to vm
     fun getPreferenceWrapper(): PreferenceWrapper {
         return PreferenceWrapper.getInstance()
     }

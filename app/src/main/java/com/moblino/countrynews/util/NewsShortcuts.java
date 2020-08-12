@@ -26,7 +26,7 @@ import android.os.Build;
 import androidx.annotation.DrawableRes;
 
 import com.moblino.countrynews.R;
-import com.moblino.countrynews.features.main.MainNewsActivity;
+import com.moblino.countrynews.features.main.MainActivity;
 import com.moblino.countrynews.model.Category;
 
 import java.util.ArrayList;
@@ -46,7 +46,7 @@ public class NewsShortcuts {
                 for (Category category : categoryList) {
                     if (counter < 4) {
                         counter++;
-                        Intent intent = new Intent(context, MainNewsActivity.class);
+                        Intent intent = new Intent(context, MainActivity.class);
                         intent.setAction(Intent.ACTION_VIEW);
                         intent.putExtra(Constants.EXTRA_CURRENT_CATEGORY, category.getId());
                         ShortcutInfo shortcutInfo = new ShortcutInfo.Builder(context, "id" + category.getId())

@@ -21,6 +21,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 
+import androidx.annotation.Nullable;
+
 import com.moblino.countrynews.R;
 import com.moblino.countrynews.data.firebase.FirebaseManager;
 import com.moblino.countrynews.data.firebase.RemoteConfigWrapper;
@@ -48,6 +50,7 @@ public class CardQuestionManager {
     private CardQuestionManager() {
     }
 
+    @Nullable
     public CardQuestion nextCard(Context context) {
         CardQuestion newVersion = createNewVersionCard(context);
         CardQuestion rateMe = createRateMeCard(context);
