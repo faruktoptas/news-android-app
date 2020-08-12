@@ -21,6 +21,7 @@ import android.app.Activity
 import android.os.Bundle
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import android.view.View
+import android.widget.ImageView
 import com.moblino.countrynews.R
 import com.moblino.countrynews.base.BaseMvvmActivity
 import com.moblino.countrynews.features.main.chrome.ChromeTabObservable
@@ -121,6 +122,9 @@ class DetailActivity : BaseMvvmActivity(), NewsDetailFragment.OnNewsDetailListen
                 .customView(R.layout.layout_detail_swipe_show_case, object : OnViewInflateListener {
                     override fun onViewInflated(view: View) {
                         AnimUtils.shake(view.findViewById(R.id.ivSwipe), isFinishing)
+                        view.findViewById<ImageView>(R.id.ivClose)?.setOnClickListener {
+                            FancyShowCaseView.hideCurrent(this@DetailActivity)
+                        }
                     }
                 })
                 .build()
