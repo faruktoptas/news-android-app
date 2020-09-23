@@ -15,12 +15,9 @@
  *
  */
 
-package com.moblino.countrynews.model
+package com.moblino.countynews.common.model
 
-import com.moblino.countynews.common.model.RssError
-import com.moblino.countynews.common.model.RssItem
-
-sealed class RssResponse {
-    data class Success(val items: List<RssItem>, val timeStamp: Long) : RssResponse()
-    data class Fail(val error: RssError) : RssResponse()
+sealed class RssError {
+    object Network : RssError()
+    object EmptyList : RssError()
 }

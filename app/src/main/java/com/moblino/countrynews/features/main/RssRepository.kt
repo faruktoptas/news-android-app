@@ -22,6 +22,7 @@ import com.moblino.countynews.common.model.RssItem
 import com.moblino.countrynews.model.RssRequest
 import com.moblino.countrynews.model.RssResponse
 import com.moblino.countynews.common.DateUtil
+import com.moblino.countynews.common.model.RssError
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
@@ -50,44 +51,38 @@ class RssRepositoryImpl(private val okHttpClient: OkHttpClient) : RssRepository 
 
             try {
                 val response = okHttpClient.newCall(request).execute()
-                if (response.isSuccessful && response?.body() != null) {
+                val body = response.body()
+                if (response.isSuccessful && body != null) {
+                    val parser = XMLParser()
+                    val factory = SAXParserFactory.newInstance()
+                    val saxParser = factory.newSAXParser()
+                    val reader = saxParser.xmlReader
+                    val inputStream = body.byteStream()
+                    val responseString = DateUtil.readInputStream(inputStream, encoding)
+                            .replace("\"x", "\" x")
+                            .replace("<title></title>", "") // for hurriyet.com.tr
 
-                    val myXMLHandler = XMLParser()
-                    val saxPF = SAXParserFactory.newInstance()
-                    val saxP = saxPF.newSAXParser()
-                    val xmlR = saxP.xmlReader
-
-                    response.body()!!.apply {
-                        val inputStream = byteStream()
-                        val responseString = DateUtil.readInputStream(inputStream, encoding)
-                                .replace("\"x", "\" x")
-                                .replace("<title></title>", "") // for hurriyet.com.tr
-
-                        xmlR.contentHandler = myXMLHandler
-                        val inputSource = InputSource(StringReader(responseString))
-                        inputSource.encoding = encoding
-                        xmlR.parse(inputSource)
-                        val items = myXMLHandler.items
-                        if (items?.isNotEmpty() == true) {
-                            list.addAll(items)
-                            // status = ResponseStatus.SUCCESS // TODO:
+                    reader.contentHandler = parser
+                    val inputSource = InputSource(StringReader(responseString))
+                    inputSource.encoding = encoding
+                    reader.parse(inputSource)
+                    val items = parser.items
+                    if (items?.isNotEmpty() == true) {
+                        list.addAll(items)
+                        list.sortByDescending { item ->
+                            DateUtil.fixDate(item.pubDate)
                         }
+                        RssResponse.Success(list, System.currentTimeMillis())
+                    } else {
+                        RssResponse.Fail(RssError.EmptyList)
                     }
-
                 } else {
-                    // status = ResponseStatus.NETWORK // TODO:
+                    RssResponse.Fail(RssError.Network)
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
-                // status = ResponseStatus.NETWORK // TODO:
+                RssResponse.Fail(RssError.Network)
             }
-
-            list.sortByDescending { item ->
-                DateUtil.fixDate(item.pubDate)
-            }
-            RssResponse(list, System.currentTimeMillis())
         }
     }
-
-
 }

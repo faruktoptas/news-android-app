@@ -29,6 +29,7 @@ import com.moblino.countrynews.features.saved.SavedNewsRepository
 import com.moblino.countrynews.model.FeedItem
 import com.moblino.countynews.common.model.RssItem
 import com.moblino.countrynews.model.RssRequest
+import com.moblino.countrynews.model.RssResponse
 import kotlinx.coroutines.launch
 
 
@@ -53,14 +54,17 @@ class NewsListViewModel(private val cache: AppCache,
         if (!hasCachedResponse || !readFromCache) {
             showEmptyLive.postValue(false)
             showProgressLive.postValue(showProgress)
-
             uiScope.launch {
-                val response = rssRepo.fetchRss(RssRequest(rssUrl, encoding))
-                val newsList = response.items
-                itemsLive.postValue(newsList)
-                cache.responseList[rssUrl] = response
-                if (newsList.isEmpty()) {
-                    showEmptyLive.postTrue()
+                when (val response = rssRepo.fetchRss(RssRequest(rssUrl, encoding))) {
+                    is RssResponse.Success -> {
+                        val newsList = response.items
+                        itemsLive.postValue(newsList)
+                        cache.responseList[rssUrl] = response
+                    }
+                    is RssResponse.Fail -> {
+                        // TODO: Different messages for different errors
+                        showEmptyLive.postTrue()
+                    }
                 }
                 refresherIsRefreshing.postFalse()
                 showProgressLive.postFalse()

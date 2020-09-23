@@ -90,19 +90,12 @@ class MainActivityFragment : Fragment(), OnNewsItemClickListener, OnRefreshListe
         setRecycleView()
         viewModel.fetchRss()
 
-        viewModel.itemsLive.observeNotNull(viewLifecycleOwner, { items ->
-            val arrayList = ArrayList<RssItemWrapper>()
-            arrayList.addAll(items.toWrapperList(requireContext()))
-            if (cardQuestion != null && arrayList.isNotEmpty()) arrayList.add(0, RssItemWrapper(card = cardQuestion))
-            rvAdapter.items = arrayList
-            updateList()
-        })
-
+        viewModel.itemsLive.observeNotNull(viewLifecycleOwner, ::updateList)
         viewModel.showProgressLive.asVisibility(viewLifecycleOwner, pbLoading)
         viewModel.showRefresherLive.asVisibility(viewLifecycleOwner, swRefresh)
         viewModel.showEmptyLive.asVisibility(viewLifecycleOwner, rl_empty_state)
-        viewModel.showEmptyLive.observeNotNull(viewLifecycleOwner, { swRefresh.show(!it) })
-        viewModel.refresherIsRefreshing.observeNotNull(viewLifecycleOwner, { swRefresh.isRefreshing = it })
+        viewModel.showEmptyLive.observeNotNull(viewLifecycleOwner) { swRefresh.show(!it) }
+        viewModel.refresherIsRefreshing.observeNotNull(viewLifecycleOwner) { swRefresh.isRefreshing = it }
     }
 
     private fun setRecycleView() {
@@ -140,15 +133,12 @@ class MainActivityFragment : Fragment(), OnNewsItemClickListener, OnRefreshListe
         rvRssItems.adapter = rvAdapter
     }
 
-    private fun updateList() {
+    private fun updateList(items: List<RssItem>) {
+        val arrayList = ArrayList<RssItemWrapper>()
+        arrayList.addAll(items.toWrapperList(requireContext()))
+        if (cardQuestion != null && arrayList.isNotEmpty()) arrayList.add(0, RssItemWrapper(card = cardQuestion))
+        rvAdapter.items = arrayList
         rvAdapter.notifyDataSetChanged()
-        /*if (itemList!!.size == 0) { // TODO: Move vm
-            rl_empty_state.show()
-            swRefresh.hide()
-        } else {
-            rl_empty_state.hide()
-            swRefresh.show()
-        }*/
     }
 
     override fun onItemSelected(model: RssItem, position: Int) {

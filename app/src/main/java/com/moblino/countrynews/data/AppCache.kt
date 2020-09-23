@@ -24,7 +24,7 @@ import com.moblino.countynews.common.model.RssItem
 
 data class AppCache(val allFeeds: ArrayList<FeedItem> = arrayListOf(),
                     val currentFeedList: ArrayList<FeedItem> = arrayListOf(),
-                    val responseList: HashMap<String, RssResponse> = hashMapOf(),
+                    val responseList: HashMap<String, RssResponse.Success> = hashMapOf(),
                     val favoriteList: ArrayList<RssItem> = arrayListOf()
 ) {
 
