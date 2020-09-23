@@ -15,39 +15,38 @@
  *
  */
 
-package com.moblino.countrynews.model;
+package com.moblino.countynews.common.model;
 
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
-import com.moblino.countrynews.data.localdb.PersistenceManager;
 
 import java.io.Serializable;
 
 @DatabaseTable(tableName = "Favourites")
-public class RssItem implements PersistenceManager.Modal, Serializable {
+public class RssItem implements Modal, Serializable {
 
-	@DatabaseField(generatedId = true)
-	private int id;
+    @DatabaseField(generatedId = true)
+    private int id;
 
-	@DatabaseField
-	private String title;
+    @DatabaseField
+    private String title;
 
-	@DatabaseField
-	private String link;
+    @DatabaseField
+    private String link;
 
-	@DatabaseField
-	private String image;
+    @DatabaseField
+    private String image;
 
-	@DatabaseField
-	private String pubDate;
+    @DatabaseField
+    private String pubDate;
 
-	@DatabaseField
-	private int feedId;
+    @DatabaseField
+    private int feedId;
 
     @DatabaseField
     private String feedTitle;
 
-	@DatabaseField
+    @DatabaseField
     private String description;
 
     public RssItem(String title, String link, String image, String pubDate, int feedId, String feedTitle, String description) {
@@ -58,56 +57,56 @@ public class RssItem implements PersistenceManager.Modal, Serializable {
         this.pubDate = pubDate;
         this.feedId = feedId;
         this.feedTitle = feedTitle;
-		this.description = description;
+        this.description = description;
     }
 
     public String getTitle() {
-		return title;
-	}
+        return title;
+    }
 
-	public void setTitle(String title) {
-		this.title = title.replace("&#39;","'").replace("&#039;","'");
-	}
+    public void setTitle(String title) {
+        this.title = title.replace("&#39;", "'").replace("&#039;", "'");
+    }
 
-	public String getLink() {
-		return link;
-	}
+    public String getLink() {
+        return link;
+    }
 
-	public void setLink(String link) {
-		this.link = link.trim();
-	}
+    public void setLink(String link) {
+        this.link = link.trim();
+    }
 
-	public String getImage() {
-		return image;
-	}
+    public String getImage() {
+        return image;
+    }
 
-	public void setImage(String image) {
-		this.image = image;
-	}
+    public void setImage(String image) {
+        this.image = image;
+    }
 
-	public String getPubDate() {
-		return pubDate;
-	}
+    public String getPubDate() {
+        return pubDate;
+    }
 
-	public void setPubDate(String pubDate) {
-		this.pubDate = pubDate;
-	}
+    public void setPubDate(String pubDate) {
+        this.pubDate = pubDate;
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public RssItem() {
-	}
+    public RssItem() {
+    }
 
-	@Override
-	public int getId() {
-		return id;
-	}
+    @Override
+    public int getId() {
+        return id;
+    }
 
     public String getFeedTitle() {
         return feedTitle;

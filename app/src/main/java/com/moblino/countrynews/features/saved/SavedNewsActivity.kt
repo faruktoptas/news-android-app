@@ -33,7 +33,7 @@ import com.moblino.countrynews.ext.toWrapperList
 import com.moblino.countrynews.features.main.NewsListAdapter
 import com.moblino.countrynews.features.main.OnNewsItemClickListener
 import com.moblino.countrynews.features.settings.SettingsActivity
-import com.moblino.countrynews.model.RssItem
+import com.moblino.countynews.common.model.RssItem
 import com.moblino.countrynews.ext.show
 import com.moblino.countrynews.util.Constants
 import com.moblino.countrynews.util.PreferenceWrapper

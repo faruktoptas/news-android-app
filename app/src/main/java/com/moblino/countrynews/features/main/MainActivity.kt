@@ -49,7 +49,7 @@ import com.moblino.countrynews.features.settings.SettingsActivity
 import com.moblino.countrynews.features.webview.HeadingsActivity
 import com.moblino.countrynews.model.Category
 import com.moblino.countrynews.model.FeedItem
-import com.moblino.countrynews.model.RssItem
+import com.moblino.countynews.common.model.RssItem
 import com.moblino.countrynews.util.Constants
 import com.moblino.countrynews.util.Constants.Companion.EXTRA_CURRENT_CATEGORY
 import com.moblino.countrynews.util.Constants.Companion.EXTRA_SEARCH_ITEM

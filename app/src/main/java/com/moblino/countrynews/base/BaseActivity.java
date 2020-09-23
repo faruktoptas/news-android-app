@@ -17,6 +17,7 @@
 
 package com.moblino.countrynews.base;
 
+import android.os.Build;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
@@ -44,7 +45,9 @@ public class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        getDelegate().setLocalNightMode(PreferenceWrapper.getInstance().readNightMode());
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            getDelegate().setLocalNightMode(PreferenceWrapper.getInstance().readNightMode());
+        }
         super.onCreate(savedInstanceState);
     }
 

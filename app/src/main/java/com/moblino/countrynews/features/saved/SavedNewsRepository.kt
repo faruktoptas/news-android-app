@@ -19,8 +19,7 @@ package com.moblino.countrynews.features.saved
 
 import com.moblino.countrynews.data.localdb.FavouritePersistenceManager
 import com.moblino.countrynews.data.AppCache
-import com.moblino.countrynews.model.RssItem
-import com.moblino.countrynews.util.DateUtil
+import com.moblino.countynews.common.model.RssItem
 
 interface SavedNewsRepository {
 

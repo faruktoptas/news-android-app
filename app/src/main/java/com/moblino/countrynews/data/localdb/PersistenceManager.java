@@ -24,12 +24,13 @@ import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
 import com.j256.ormlite.table.TableUtils;
-import com.moblino.countrynews.model.RssItem;
+import com.moblino.countynews.common.model.Modal;
+import com.moblino.countynews.common.model.RssItem;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public abstract class PersistenceManager<E extends PersistenceManager.Modal> {
+public abstract class PersistenceManager<E extends Modal> {
 
     Dao dao;
     private final DatabaseHelper mDatabaseHelper;
@@ -104,10 +105,6 @@ public abstract class PersistenceManager<E extends PersistenceManager.Modal> {
             e.printStackTrace();
             return false;
         }
-    }
-
-    public interface Modal {
-        int getId();
     }
 
 

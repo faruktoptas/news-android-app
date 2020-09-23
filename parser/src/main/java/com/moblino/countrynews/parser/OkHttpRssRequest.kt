@@ -15,13 +15,12 @@
  *
  */
 
-package com.moblino.countrynews.data.network
+package com.moblino.countrynews.parser
 
 import android.os.AsyncTask
-import com.moblino.countrynews.model.RssItem
-import com.moblino.countrynews.data.XMLParser
-import com.moblino.countrynews.util.DateUtil
-import com.moblino.countrynews.util.DateUtil.readInputStream
+
+import com.moblino.countynews.common.DateUtil
+import com.moblino.countynews.common.model.RssItem
 import okhttp3.Request
 import org.xml.sax.InputSource
 import java.io.StringReader
@@ -54,7 +53,7 @@ class OkHttpRssRequest(private val listener: RssResponseListener) :
 
                     response.body()?.apply {
                         val inputStream = byteStream()
-                        val responseString = readInputStream(inputStream, mEncoding)
+                        val responseString = DateUtil.readInputStream(inputStream, mEncoding)
                                 .replace("\"x","\" x")
                                 .replace("<title></title>","") // for hurriyet.com.tr
 

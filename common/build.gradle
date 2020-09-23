@@ -15,14 +15,22 @@
  *
  */
 
-package com.moblino.countrynews.data.network;
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply from: "../common-library.gradle"
 
-import com.moblino.countrynews.model.RssItem;
 
-import java.util.ArrayList;
 
-public interface RssResponseListener {
-	void onResponse(ArrayList<RssItem> newsList, ResponseStatus status, String feedUrl);
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.1'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+
+    implementation 'com.j256.ormlite:ormlite-core:4.48'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
 }
-
-

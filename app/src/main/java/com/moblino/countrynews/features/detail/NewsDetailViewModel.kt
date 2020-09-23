@@ -19,12 +19,11 @@ package com.moblino.countrynews.features.detail
 
 import androidx.lifecycle.MutableLiveData
 import com.moblino.countrynews.base.BaseViewModel
-import com.moblino.countrynews.data.SingleLiveEvent
 import com.moblino.countrynews.data.ConfigRepository
+import com.moblino.countrynews.data.SingleLiveEvent
 import com.moblino.countrynews.ext.postTrue
-import com.moblino.countrynews.model.RssItem
-import com.moblino.countrynews.util.DateUtil
-import com.moblino.countrynews.util.HtmlUtil
+import com.moblino.countrynews.parser.HtmlUtil
+import com.moblino.countynews.common.model.RssItem
 
 class NewsDetailViewModel(private val configRepo: ConfigRepository) : BaseViewModel() {
 

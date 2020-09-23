@@ -17,7 +17,7 @@
 
 package com.moblino.countrynews.features
 
-import com.moblino.countrynews.model.RssItem
+import com.moblino.countynews.common.model.RssItem
 
 object Mock {
 

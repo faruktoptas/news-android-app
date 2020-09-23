@@ -36,7 +36,7 @@ import com.moblino.countrynews.ext.observeNotNull
 import com.moblino.countrynews.ext.toWrapperList
 import com.moblino.countrynews.model.CardQuestion
 import com.moblino.countrynews.model.FeedItem
-import com.moblino.countrynews.model.RssItem
+import com.moblino.countynews.common.model.RssItem
 import com.moblino.countrynews.model.RssItemWrapper
 import com.moblino.countrynews.ext.show
 import com.moblino.countrynews.util.*

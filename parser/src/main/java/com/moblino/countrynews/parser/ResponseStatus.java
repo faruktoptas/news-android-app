@@ -15,7 +15,7 @@
  *
  */
 
-package com.moblino.countrynews.data.network;
+package com.moblino.countrynews.parser;
 
 public enum ResponseStatus{
 	SUCCESS,

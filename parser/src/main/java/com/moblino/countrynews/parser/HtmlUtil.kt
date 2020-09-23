@@ -15,7 +15,7 @@
  *
  */
 
-package com.moblino.countrynews.util
+package com.moblino.countrynews.parser
 
 import android.text.Html
 

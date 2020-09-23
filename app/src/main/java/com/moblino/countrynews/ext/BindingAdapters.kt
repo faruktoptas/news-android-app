@@ -21,8 +21,7 @@ import androidx.databinding.BindingAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.moblino.countrynews.R
-import com.moblino.countrynews.util.DateUtil
-import com.moblino.countrynews.util.HtmlUtil
+import com.moblino.countrynews.parser.HtmlUtil
 import com.squareup.picasso.Picasso
 
 @BindingAdapter("textOrHide")

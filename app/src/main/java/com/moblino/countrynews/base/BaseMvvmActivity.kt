@@ -17,6 +17,7 @@
 
 package com.moblino.countrynews.base
 
+import android.os.Build
 import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
@@ -34,11 +35,12 @@ import com.moblino.countrynews.util.PreferenceWrapper
 abstract class BaseMvvmActivity : AppCompatActivity() {
 
     public override fun onCreate(savedInstanceState: Bundle?) {
-        delegate.localNightMode = PreferenceWrapper.getInstance().readNightMode()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            delegate.localNightMode = PreferenceWrapper.getInstance().readNightMode()
+        }
         super.onCreate(savedInstanceState)
         setContentView(layoutRes())
         initViews(savedInstanceState)
-
     }
 
     /**

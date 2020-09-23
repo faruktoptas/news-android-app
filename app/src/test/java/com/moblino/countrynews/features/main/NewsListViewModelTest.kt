@@ -23,7 +23,7 @@ import com.moblino.countrynews.data.LoggerRepository
 import com.moblino.countrynews.data.firebase.FirebaseManager
 import com.moblino.countrynews.features.Mock
 import com.moblino.countrynews.features.saved.SavedNewsRepository
-import com.moblino.countrynews.model.RssItem
+import com.moblino.countynews.common.model.RssItem
 import com.nhaarman.mockitokotlin2.argumentCaptor
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify

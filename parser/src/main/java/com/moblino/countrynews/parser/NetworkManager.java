@@ -15,7 +15,7 @@
  *
  */
 
-package com.moblino.countrynews.data.network;
+package com.moblino.countrynews.parser;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;

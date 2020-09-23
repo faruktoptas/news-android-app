@@ -18,14 +18,9 @@
 package com.moblino.countrynews.util;
 
 import android.content.Context;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 
 import androidx.annotation.Nullable;
 
-import android.text.Html;
-
-import com.moblino.countrynews.NewsApplication;
 import com.moblino.countrynews.R;
 import com.moblino.countrynews.model.LoadImageState;
 
@@ -35,7 +30,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 

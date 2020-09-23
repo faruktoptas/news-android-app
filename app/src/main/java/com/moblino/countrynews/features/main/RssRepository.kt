@@ -17,11 +17,11 @@
 
 package com.moblino.countrynews.features.main
 
-import com.moblino.countrynews.data.XMLParser
-import com.moblino.countrynews.model.RssItem
+import com.moblino.countrynews.parser.XMLParser
+import com.moblino.countynews.common.model.RssItem
 import com.moblino.countrynews.model.RssRequest
 import com.moblino.countrynews.model.RssResponse
-import com.moblino.countrynews.util.DateUtil
+import com.moblino.countynews.common.DateUtil
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient

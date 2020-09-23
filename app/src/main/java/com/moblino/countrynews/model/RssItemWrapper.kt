@@ -17,6 +17,8 @@
 
 package com.moblino.countrynews.model
 
+import com.moblino.countynews.common.model.RssItem
+
 data class RssItemWrapper(val rssItem: RssItem? = null,
                           val card: CardQuestion? = null,
                           val parsedDate: String? = null)

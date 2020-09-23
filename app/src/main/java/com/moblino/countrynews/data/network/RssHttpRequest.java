@@ -21,8 +21,10 @@ import android.os.AsyncTask;
 import androidx.annotation.Nullable;
 import android.util.Log;
 
-import com.moblino.countrynews.model.RssItem;
-import com.moblino.countrynews.data.XMLParser;
+import com.moblino.countrynews.parser.ResponseStatus;
+import com.moblino.countrynews.parser.RssResponseListener;
+import com.moblino.countrynews.parser.XMLParser;
+import com.moblino.countynews.common.model.RssItem;
 
 import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;

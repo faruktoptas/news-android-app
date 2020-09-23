@@ -25,10 +25,10 @@ import android.widget.TextView;
 import com.moblino.countrynews.R;
 import com.moblino.countrynews.base.BaseActivity;
 import com.moblino.countrynews.model.FeedItem;
-import com.moblino.countrynews.model.RssItem;
-import com.moblino.countrynews.data.network.OkHttpRssRequest;
-import com.moblino.countrynews.data.network.ResponseStatus;
-import com.moblino.countrynews.data.network.RssResponseListener;
+import com.moblino.countrynews.parser.OkHttpRssRequest;
+import com.moblino.countrynews.parser.ResponseStatus;
+import com.moblino.countrynews.parser.RssResponseListener;
+import com.moblino.countynews.common.model.RssItem;
 
 import java.io.IOException;
 import java.util.ArrayList;

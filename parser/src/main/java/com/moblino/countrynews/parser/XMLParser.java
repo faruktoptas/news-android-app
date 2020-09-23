@@ -15,13 +15,9 @@
  *
  */
 
-package com.moblino.countrynews.data;
+package com.moblino.countrynews.parser;
 
-import android.text.Html;
-
-import com.moblino.countrynews.model.RssItem;
-import com.moblino.countrynews.util.DateUtil;
-import com.moblino.countrynews.util.HtmlUtil;
+import com.moblino.countynews.common.model.RssItem;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;

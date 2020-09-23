@@ -19,8 +19,8 @@ package com.moblino.countrynews.data
 
 import com.moblino.countrynews.NewsApplication.Companion.instance
 import com.moblino.countrynews.model.FeedItem
-import com.moblino.countrynews.model.RssItem
 import com.moblino.countrynews.model.RssResponse
+import com.moblino.countynews.common.model.RssItem
 
 data class AppCache(val allFeeds: ArrayList<FeedItem> = arrayListOf(),
                     val currentFeedList: ArrayList<FeedItem> = arrayListOf(),

@@ -23,7 +23,7 @@ import com.moblino.countrynews.data.LoggerRepository
 import com.moblino.countrynews.data.PrefRepository
 import com.moblino.countrynews.data.firebase.FirebaseManager
 import com.moblino.countrynews.model.CardQuestion
-import com.moblino.countrynews.model.RssItem
+import com.moblino.countynews.common.model.RssItem
 
 class DetailViewModel(private val repo: DetailRepository, logger: LoggerRepository, pref: PrefRepository) : BaseViewModel() {
 

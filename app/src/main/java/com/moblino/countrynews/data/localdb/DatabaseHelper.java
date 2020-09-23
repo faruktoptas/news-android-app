@@ -25,7 +25,7 @@ import android.util.Log;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
-import com.moblino.countrynews.model.RssItem;
+import com.moblino.countynews.common.model.RssItem;
 
 /**
  * Created by faruktoptas on 01/08/16.

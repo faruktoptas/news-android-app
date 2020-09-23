@@ -28,7 +28,7 @@ import com.moblino.countrynews.features.main.chrome.ChromeTabObservable
 import com.moblino.countrynews.ext.observeNotNull
 import com.moblino.countrynews.ext.observeTrue
 import com.moblino.countrynews.model.CardQuestion
-import com.moblino.countrynews.model.RssItem
+import com.moblino.countynews.common.model.RssItem
 import com.moblino.countrynews.ext.show
 import com.moblino.countrynews.util.AnimUtils
 import com.moblino.countrynews.util.Constants

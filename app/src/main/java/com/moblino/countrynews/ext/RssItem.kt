@@ -18,9 +18,9 @@
 package com.moblino.countrynews.ext
 
 import android.content.Context
-import com.moblino.countrynews.model.RssItem
 import com.moblino.countrynews.model.RssItemWrapper
 import com.moblino.countrynews.util.DateUtil
+import com.moblino.countynews.common.model.RssItem
 
 fun List<RssItem>.toWrapperList(context: Context) = map {
     if (!DateUtil.isLoadImagesEnabled(context)) it.image = null

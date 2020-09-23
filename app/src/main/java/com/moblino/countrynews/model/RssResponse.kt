@@ -17,6 +17,8 @@
 
 package com.moblino.countrynews.model
 
+import com.moblino.countynews.common.model.RssItem
+
 data class RssResponse(
         val items: List<RssItem>,
         val timeStamp: Long

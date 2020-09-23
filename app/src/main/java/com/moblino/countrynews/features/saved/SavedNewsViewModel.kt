@@ -24,7 +24,7 @@ import com.moblino.countrynews.data.SingleLiveEvent
 import com.moblino.countrynews.data.LoggerRepository
 import com.moblino.countrynews.data.PrefRepository
 import com.moblino.countrynews.data.AppCache
-import com.moblino.countrynews.model.RssItem
+import com.moblino.countynews.common.model.RssItem
 
 class SavedNewsViewModel(private val repo: SavedNewsRepository,
                          private val prefRepo: PrefRepository,
