@@ -20,9 +20,8 @@ package com.moblino.countrynews.features.activity
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.moblino.countrynews.data.LoggerRepository
 import com.moblino.countrynews.data.PrefRepository
-import com.moblino.countrynews.data.ResourceRepository
+import com.moblino.countrynews.data.repository.ResourceRepository
 import com.moblino.countrynews.features.editlist.EditFeedsViewModel
-import com.moblino.countrynews.data.AppCache
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify

@@ -25,7 +25,7 @@ import androidx.appcompat.widget.Toolbar
 import android.view.MenuItem
 import android.widget.Toast
 import com.moblino.countrynews.R
-import com.moblino.countrynews.data.ResourceRepositoryImpl
+import com.moblino.countrynews.data.repository.ResourceRepositoryImpl
 import com.moblino.countrynews.ext.observeNotNull
 import com.moblino.countrynews.util.PreferenceWrapper
 

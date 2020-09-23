@@ -22,7 +22,7 @@
 
         <variable
             name="feed"
-            type="com.moblino.countrynews.model.FeedItem" />
+            type="com.moblino.countynews.common.model.FeedItem" />
     </data>
 
     <RelativeLayout

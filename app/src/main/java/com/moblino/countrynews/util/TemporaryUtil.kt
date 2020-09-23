@@ -15,17 +15,19 @@
  *
  */
 
-package com.moblino.countrynews.data
+package com.moblino.countrynews.util
 
-import android.content.Context
-import androidx.annotation.StringRes
+import com.moblino.countrynews.NewsApplication.Companion.instance
 
-interface ResourceRepository {
-    fun getString(@StringRes id: Int): String
-}
+// TODO: Will be removed  
+object TemporaryUtil {
 
-class ResourceRepositoryImpl(private val activityContext: Context) : ResourceRepository {
-
-    override fun getString(id: Int): String = activityContext.getString(id)
-
+    fun isFavorite(url: String): Int {
+        for (i in instance.appCache.favoriteList.indices) {
+            if (instance.appCache.favoriteList[i].link == url) {
+                return i
+            }
+        }
+        return -1
+    }
 }

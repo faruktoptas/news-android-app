@@ -19,7 +19,7 @@ package com.moblino.countrynews.base
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.moblino.countrynews.data.ResourceRepository
+import com.moblino.countrynews.data.repository.ResourceRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

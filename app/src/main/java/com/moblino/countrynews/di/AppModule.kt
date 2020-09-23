@@ -21,6 +21,8 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.moblino.countrynews.BuildConfig
 import com.moblino.countrynews.NewsApplication
+import com.moblino.countrynews.data.repository.RssRepository
+import com.moblino.countrynews.data.repository.RssRepositoryImpl
 import com.moblino.countrynews.data.*
 import com.moblino.countrynews.features.detail.DetailRepository
 import com.moblino.countrynews.features.detail.DetailRepositoryImpl

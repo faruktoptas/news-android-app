@@ -20,12 +20,11 @@ package com.moblino.countrynews.features.main
 import androidx.lifecycle.MutableLiveData
 import com.moblino.countrynews.base.BaseViewModel
 import com.moblino.countrynews.data.SingleLiveEvent
-import com.moblino.countrynews.data.AppCache
 import com.moblino.countrynews.data.LoggerRepository
 import com.moblino.countrynews.data.PrefRepository
 import com.moblino.countrynews.ext.postTrue
-import com.moblino.countrynews.model.Category
-import com.moblino.countrynews.model.FeedItem
+import com.moblino.countynews.common.model.Category
+import com.moblino.countynews.common.model.FeedItem
 import com.moblino.countrynews.util.Constants
 import com.moblino.countrynews.util.ListUtil
 import com.moblino.countrynews.util.UpdateChecker

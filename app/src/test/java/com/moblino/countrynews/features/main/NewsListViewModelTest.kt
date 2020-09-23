@@ -18,9 +18,9 @@
 package com.moblino.countrynews.features.main
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.moblino.countrynews.data.AppCache
 import com.moblino.countrynews.data.LoggerRepository
 import com.moblino.countrynews.data.firebase.FirebaseManager
+import com.moblino.countrynews.data.repository.RssRepository
 import com.moblino.countrynews.features.Mock
 import com.moblino.countrynews.features.saved.SavedNewsRepository
 import com.moblino.countynews.common.model.RssItem

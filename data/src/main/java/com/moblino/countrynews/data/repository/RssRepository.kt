@@ -15,12 +15,12 @@
  *
  */
 
-package com.moblino.countrynews.features.main
+package com.moblino.countrynews.data.repository
 
 import com.moblino.countrynews.parser.XMLParser
 import com.moblino.countynews.common.model.RssItem
-import com.moblino.countrynews.model.RssRequest
-import com.moblino.countrynews.model.RssResponse
+import com.moblino.countynews.common.model.RssRequest
+import com.moblino.countynews.common.model.RssResponse
 import com.moblino.countynews.common.DateUtil
 import com.moblino.countynews.common.model.RssError
 import kotlinx.coroutines.Dispatchers

@@ -15,8 +15,17 @@
  *
  */
 
-package com.moblino.countrynews.model
+package com.moblino.countrynews.data.repository
 
-import com.moblino.countynews.common.model.FeedItem
+import android.content.Context
+import androidx.annotation.StringRes
 
-data class FeedItemWrapper(val item: FeedItem, val question: CardQuestion? = null)
+interface ResourceRepository {
+    fun getString(@StringRes id: Int): String
+}
+
+class ResourceRepositoryImpl(private val activityContext: Context) : ResourceRepository {
+
+    override fun getString(id: Int): String = activityContext.getString(id)
+
+}

@@ -15,7 +15,7 @@
  *
  */
 
-package com.moblino.countrynews.model;
+package com.moblino.countynews.common.model;
 
 import com.google.gson.annotations.SerializedName;
 

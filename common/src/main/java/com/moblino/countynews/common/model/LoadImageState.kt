@@ -14,7 +14,7 @@
  *   limitations under the License.
  *
  */
-package com.moblino.countrynews.model
+package com.moblino.countynews.common.model
 
 /**
  * Created by faruktoptas on 12/12/15.

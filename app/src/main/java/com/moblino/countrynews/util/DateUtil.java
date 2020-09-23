@@ -22,7 +22,7 @@ import android.content.Context;
 import androidx.annotation.Nullable;
 
 import com.moblino.countrynews.R;
-import com.moblino.countrynews.model.LoadImageState;
+import com.moblino.countynews.common.model.LoadImageState;
 
 import java.io.BufferedReader;
 import java.io.IOException;

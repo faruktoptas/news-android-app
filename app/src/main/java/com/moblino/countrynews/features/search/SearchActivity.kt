@@ -36,7 +36,7 @@ import android.widget.Toast
 import com.moblino.countrynews.R
 import com.moblino.countrynews.base.BaseMvvmActivity
 import com.moblino.countrynews.ext.observeNotNull
-import com.moblino.countrynews.model.FeedItem
+import com.moblino.countynews.common.model.FeedItem
 import com.moblino.countrynews.util.Constants
 import com.moblino.countrynews.util.PreferenceWrapper
 import kotlinx.android.synthetic.main.activity_search.lvSearch

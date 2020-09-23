@@ -17,27 +17,13 @@
 
 package com.moblino.countrynews.data
 
-import com.moblino.countrynews.NewsApplication.Companion.instance
-import com.moblino.countrynews.model.FeedItem
-import com.moblino.countrynews.model.RssResponse
+
+import com.moblino.countynews.common.model.FeedItem
 import com.moblino.countynews.common.model.RssItem
+import com.moblino.countynews.common.model.RssResponse
 
 data class AppCache(val allFeeds: ArrayList<FeedItem> = arrayListOf(),
                     val currentFeedList: ArrayList<FeedItem> = arrayListOf(),
                     val responseList: HashMap<String, RssResponse.Success> = hashMapOf(),
                     val favoriteList: ArrayList<RssItem> = arrayListOf()
-) {
-
-    companion object {
-
-        // TODO: move to vm
-        fun isFavorite(url: String): Int {
-            for (i in instance.appCache.favoriteList.indices) {
-                if (instance.appCache.favoriteList[i].link == url) {
-                    return i
-                }
-            }
-            return -1
-        }
-    }
-}
+)

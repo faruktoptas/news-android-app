@@ -47,9 +47,6 @@ import com.moblino.countrynews.features.saved.SavedNewsActivity
 import com.moblino.countrynews.features.search.SearchActivity
 import com.moblino.countrynews.features.settings.SettingsActivity
 import com.moblino.countrynews.features.webview.HeadingsActivity
-import com.moblino.countrynews.model.Category
-import com.moblino.countrynews.model.FeedItem
-import com.moblino.countynews.common.model.RssItem
 import com.moblino.countrynews.util.Constants
 import com.moblino.countrynews.util.Constants.Companion.EXTRA_CURRENT_CATEGORY
 import com.moblino.countrynews.util.Constants.Companion.EXTRA_SEARCH_ITEM
@@ -61,6 +58,9 @@ import com.moblino.countrynews.util.Constants.Companion.NAV_ITEM_SETTINGS
 import com.moblino.countrynews.util.Constants.Companion.NAV_ITEM_SHARE
 import com.moblino.countrynews.util.NewsShortcuts
 import com.moblino.countrynews.util.UIUtils
+import com.moblino.countynews.common.model.Category
+import com.moblino.countynews.common.model.FeedItem
+import com.moblino.countynews.common.model.RssItem
 import kotlinx.android.synthetic.main.activity_main.*
 import me.toptas.fancyshowcase.FancyShowCaseView
 import org.koin.android.viewmodel.ext.android.viewModel

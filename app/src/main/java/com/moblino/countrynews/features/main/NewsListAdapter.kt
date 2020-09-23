@@ -35,6 +35,7 @@ import com.moblino.countrynews.ext.isTrue
 import com.moblino.countrynews.model.RssItemWrapper
 import com.moblino.countrynews.util.PreferenceWrapper
 import com.moblino.countrynews.util.DateUtil
+import com.moblino.countrynews.util.TemporaryUtil
 
 class NewsListAdapter(
         private val context: Context,
@@ -120,7 +121,7 @@ class NewsListAdapter(
         val isStaggered = false
         binding.rlFav.setOnClickListener { view -> onItemClickListener?.onFavouriteClicked(view, wrapper.rssItem, position, (isStaggered || !showThumb) && !isNightMode) }
 
-        if (AppCache.isFavorite(wrapper.rssItem?.link!!) > -1) {
+        if (TemporaryUtil.isFavorite(wrapper.rssItem?.link!!) > -1) {
             binding.ivFav.setImageResource(if ((isStaggered || !showThumb) && !isNightMode) R.drawable.ic_favorite_black_24dp else R.drawable.ic_favorite_white_24dp)
             binding.ivFav.tag = true
         } else {

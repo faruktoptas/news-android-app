@@ -27,7 +27,7 @@ import androidx.annotation.DrawableRes;
 
 import com.moblino.countrynews.R;
 import com.moblino.countrynews.features.main.MainActivity;
-import com.moblino.countrynews.model.Category;
+import com.moblino.countynews.common.model.Category;
 
 import java.util.ArrayList;
 import java.util.Collections;

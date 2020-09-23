@@ -18,8 +18,8 @@
 package com.moblino.countrynews.features.activity
 
 import com.moblino.countrynews.model.CardQuestion
-import com.moblino.countrynews.model.Category
-import com.moblino.countrynews.model.FeedItem
+import com.moblino.countynews.common.model.Category
+import com.moblino.countynews.common.model.FeedItem
 import com.moblino.countynews.common.model.RssItem
 
 object MockData {

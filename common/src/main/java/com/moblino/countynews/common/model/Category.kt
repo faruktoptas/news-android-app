@@ -15,6 +15,20 @@
  *
  */
 
-package com.moblino.countrynews.model
+package com.moblino.countynews.common.model
 
-data class RssRequest(val url: String, val encoding: String?)
+import com.google.gson.annotations.SerializedName
+import java.io.Serializable
+
+/**
+ * Created by faruktoptas on 30/10/15.
+ */
+data class Category(
+
+        @SerializedName("id")
+        val id: Int,
+
+        @SerializedName("title")
+        val title: String
+
+) : Serializable

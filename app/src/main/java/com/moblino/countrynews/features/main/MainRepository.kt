@@ -21,8 +21,8 @@ import android.content.res.AssetManager
 import com.google.gson.Gson
 import com.moblino.countrynews.NewsApplication
 import com.moblino.countrynews.ext.readFile
-import com.moblino.countrynews.model.Category
-import com.moblino.countrynews.model.FeedItem
+import com.moblino.countynews.common.model.Category
+import com.moblino.countynews.common.model.FeedItem
 import com.moblino.countrynews.util.Constants
 
 interface MainRepository {

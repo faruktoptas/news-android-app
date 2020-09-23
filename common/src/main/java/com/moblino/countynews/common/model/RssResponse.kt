@@ -15,8 +15,9 @@
  *
  */
 
-package com.moblino.countrynews.model
+package com.moblino.countynews.common.model
 
-import com.moblino.countynews.common.model.FeedItem
-
-data class FeedItemWrapper(val item: FeedItem, val question: CardQuestion? = null)
+sealed class RssResponse {
+    data class Success(val items: List<RssItem>, val timeStamp: Long) : RssResponse()
+    data class Fail(val error: RssError) : RssResponse()
+}

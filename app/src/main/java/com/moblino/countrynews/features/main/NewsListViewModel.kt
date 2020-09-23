@@ -19,17 +19,17 @@ package com.moblino.countrynews.features.main
 
 import androidx.lifecycle.MutableLiveData
 import com.moblino.countrynews.base.BaseViewModel
-import com.moblino.countrynews.data.AppCache
 import com.moblino.countrynews.data.LoggerRepository
+import com.moblino.countrynews.data.repository.RssRepository
 import com.moblino.countrynews.data.firebase.FirebaseManager
 import com.moblino.countrynews.ext.isTrue
 import com.moblino.countrynews.ext.postFalse
 import com.moblino.countrynews.ext.postTrue
 import com.moblino.countrynews.features.saved.SavedNewsRepository
-import com.moblino.countrynews.model.FeedItem
+import com.moblino.countynews.common.model.FeedItem
 import com.moblino.countynews.common.model.RssItem
-import com.moblino.countrynews.model.RssRequest
-import com.moblino.countrynews.model.RssResponse
+import com.moblino.countynews.common.model.RssRequest
+import com.moblino.countynews.common.model.RssResponse
 import kotlinx.coroutines.launch
 
 
