@@ -65,9 +65,9 @@ public class CardQuestionManager {
             return rateMe;
         } else if (sortFeeds != null) {
             return sortFeeds;
-        } else if (darkMode != null) {
-            return darkMode;
-        } else {
+        } /*else if (darkMode != null) {
+            return darkMode; todo add dark mode card
+        } */else {
             return null;
         }
     }

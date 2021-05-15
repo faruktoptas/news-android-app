@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~  Copyright (c) 2020. Faruk Toptaş
   ~
   ~   Licensed under the Apache License, Version 2.0 (the "License");
@@ -81,14 +80,14 @@
                 android:id="@+id/tv_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{cardItem.card.text}"
                 android:layout_below="@+id/rl_head"
                 android:gravity="center"
                 android:paddingLeft="@dimen/default_margin"
                 android:paddingRight="@dimen/default_margin"
+                android:text='@{cardItem != null  ? cardItem.card.text :""}'
                 android:textColor="@color/mainTextColor"
                 android:textSize="@dimen/text_size_card_question"
-                tools:text="Eklenmesini istediğiniz bir haber sitesi var mı?" />
+                tools:text="Question text" />
 
 
             <RelativeLayout
@@ -100,9 +99,9 @@
                     android:id="@+id/btn_action_1"
                     style="@style/Widget.MaterialComponents.Button.TextButton"
                     android:layout_width="wrap_content"
-                    android:text="@{cardItem.card.firstButtonText}"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
+                    android:text='@{ cardItem != null ? cardItem.card.firstButtonText : ""}'
                     android:textColor="@color/colorAccent"
                     tools:text="Yes" />
 

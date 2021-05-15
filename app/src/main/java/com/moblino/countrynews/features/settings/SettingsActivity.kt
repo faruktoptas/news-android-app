@@ -66,43 +66,43 @@ class SettingsActivity : BaseActivity() {
 
         override fun onCreatePreferences(bundle: Bundle?, s: String?) {
             addPreferencesFromResource(R.xml.main_settings)
-            val prefFeedback = findPreference(PREF_FEEDBACK)
-            prefFeedback.onPreferenceClickListener = Preference.OnPreferenceClickListener {
+            val prefFeedback = findPreference<Preference>(PREF_FEEDBACK)
+            prefFeedback?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
                 requireActivity().openEmailIntent()
                 true
             }
-            findPreference(PREF_GWL).onPreferenceClickListener = Preference.OnPreferenceClickListener {
+            findPreference<Preference>(PREF_GWL)?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
                 FirebaseManager.getInstance().setUserPropertyGWL(PreferenceWrapper.getInstance().readGWLMode())
                 false
             }
-            findPreference(PREF_SHOW_SUMMARY).onPreferenceClickListener = Preference.OnPreferenceClickListener {
+            findPreference<Preference>(PREF_SHOW_SUMMARY)?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
                 FirebaseManager.getInstance().setUserPropertyDisableSummary(!PreferenceWrapper.getInstance().readShowDetailFirst())
                 false
             }
-            findPreference(PreferenceWrapper.KEY_NIGHT_MODE).onPreferenceChangeListener = Preference.OnPreferenceChangeListener { preference, newValue ->
+            findPreference<Preference>(PreferenceWrapper.KEY_NIGHT_MODE)?.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { preference, newValue ->
                 FirebaseManager.getInstance().setUserPropertyNightMode(PreferenceWrapper.getInstance().readNightMode())
                 requireActivity().recreate()
                 true
             }
-            findPreference(PreferenceWrapper.KEY_FONT_SIZE).onPreferenceChangeListener = Preference.OnPreferenceChangeListener { preference, newValue ->
+            findPreference<Preference>(PreferenceWrapper.KEY_FONT_SIZE)?.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { preference, newValue ->
                 NewsApplication.instance.fontSizeHelper.update(Integer.valueOf(newValue as String))
                 prefChangeListener.onPreferenceChange(preference, newValue)
                 true
             }
-            findPreference(PREF_PRIVACY).onPreferenceClickListener = Preference.OnPreferenceClickListener {
+            findPreference<Preference>(PREF_PRIVACY)?.onPreferenceClickListener = Preference.OnPreferenceClickListener {
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(Constants.PRIVACY_URL))
                 startActivity(intent)
                 false
             }
-            val prefLoadImages = findPreference(PREF_KEY_LOAD_IMAGES) as ListPreference
-            val prefCountry = findPreference(PREF_KEY_COUNTRY) as ListPreference
-            prefLoadImages.onPreferenceChangeListener = prefChangeListener
-            prefCountry.onPreferenceChangeListener = prefChangeListener
-            updateSummary(prefLoadImages.value, prefLoadImages, R.array.array_load_images, R.array.array_load_images_values)
-            updateSummary(prefCountry.value, prefCountry, R.array.array_country_keys, R.array.array_country_values)
+            val prefLoadImages = findPreference<ListPreference>(PREF_KEY_LOAD_IMAGES)
+            val prefCountry = findPreference<ListPreference>(PREF_KEY_COUNTRY)
+            prefLoadImages?.onPreferenceChangeListener = prefChangeListener
+            prefCountry?.onPreferenceChangeListener = prefChangeListener
+            updateSummary(prefLoadImages?.value, prefLoadImages, R.array.array_load_images, R.array.array_load_images_values)
+            updateSummary(prefCountry?.value, prefCountry, R.array.array_country_keys, R.array.array_country_values)
         }
 
-        private fun updateSummary(value: String, pref: Preference?, id_keys: Int, id_values: Int) {
+        private fun updateSummary(value: String?, pref: Preference?, id_keys: Int, id_values: Int) {
             val arr = resources.getStringArray(id_keys)
             val arrValues = resources.getStringArray(id_values)
             for (i in arr.indices) {
