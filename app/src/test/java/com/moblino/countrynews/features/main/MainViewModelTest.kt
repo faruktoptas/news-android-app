@@ -18,10 +18,12 @@
 package com.moblino.countrynews.features.main
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.moblino.countrynews.data.AppCache
 import com.moblino.countrynews.data.LoggerRepository
 import com.moblino.countrynews.data.PrefRepository
 import com.moblino.countrynews.features.activity.MockData
 import com.moblino.countrynews.features.activity.observedValue
+import com.moblino.countrynews.util.UpdateChecker
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.eq
 import com.nhaarman.mockitokotlin2.mock
@@ -43,7 +45,8 @@ class MainViewModelTest {
     private val pref: PrefRepository = mock()
     private val logger: LoggerRepository = mock()
     private val cache = AppCache()
-    private val vm = MainViewModel(repo, pref, cache, logger)
+    private val updateChecker: UpdateChecker = mock()
+    private val vm = MainViewModel(repo, pref, cache, updateChecker, logger)
 
     @Before
     fun setup() {
@@ -57,7 +60,7 @@ class MainViewModelTest {
 
     @Test
     fun testAppFirstStart() {
-        whenever(pref.readAppVersion()).thenReturn(false)
+        whenever(pref.readAppVersion()).thenReturn("1.0")
         whenever(pref.readStartCount()).thenReturn(0)
         vm.initialize()
         verify(pref).writeStartCount(1)
@@ -68,7 +71,9 @@ class MainViewModelTest {
 
     @Test
     fun testAppUpdated() {
-        whenever(pref.readAppVersion()).thenReturn(true)
+        whenever(pref.readAppVersion()).thenReturn("1.0")
+        whenever(updateChecker.isUpdated(any(), any())).thenReturn(true)
+
         vm.initialize()
 
         assertEquals(vm.showWhatsNewLive.observedValue(), true)
@@ -172,13 +177,5 @@ class MainViewModelTest {
 
         assertEquals(vm.goToTabLive.observedValue(), 1)
         verify(pref).writeCategoryId(1)
-    }
-
-    @Test
-    fun testLogNewsClick() {
-        vm.setup(0)
-        vm.logNewsClick(1)
-
-        verify(logger).sendScreen(MockData.FEED_ITEMS[1].title)
     }
 }

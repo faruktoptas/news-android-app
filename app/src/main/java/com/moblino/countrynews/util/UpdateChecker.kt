@@ -20,11 +20,15 @@ package com.moblino.countrynews.util
 import android.content.Context
 import com.moblino.countrynews.ext.getAppVersion
 
-class UpdateChecker(context: Context) {
+interface UpdateChecker {
+    fun isUpdated(oldAppVersion: String?, writeNewVersion: () -> Unit): Boolean
+}
+
+class UpdateCheckerImpl(context: Context) : UpdateChecker {
 
     private val currentAppVersion = context.getAppVersion()
 
-    fun isUpdated(oldAppVersion: String?, writeNewVersion: () -> Unit): Boolean {
+    override fun isUpdated(oldAppVersion: String?, writeNewVersion: () -> Unit): Boolean {
         if (oldAppVersion != null) {
             if (oldAppVersion != currentAppVersion) {
                 writeNewVersion()

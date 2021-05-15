@@ -37,6 +37,7 @@ import com.moblino.countrynews.features.search.SearchViewModel
 import com.moblino.countrynews.features.webview.WebViewViewModel
 import com.moblino.countrynews.util.PreferenceWrapper
 import com.moblino.countrynews.util.UpdateChecker
+import com.moblino.countrynews.util.UpdateCheckerImpl
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -60,7 +61,7 @@ val appModule = module {
         builder.build()
     }
 
-    single { UpdateChecker(androidContext()) }
+    single<UpdateChecker> { UpdateCheckerImpl(androidContext()) }
 
     single<DetailRepository> { DetailRepositoryImpl(get()) }
     single<LoggerRepository> { LoggerRepositoryImpl() }

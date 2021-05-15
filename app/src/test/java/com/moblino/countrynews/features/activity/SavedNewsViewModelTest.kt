@@ -19,6 +19,7 @@ package com.moblino.countrynews.features.activity
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.LiveData
+import com.moblino.countrynews.data.AppCache
 import com.moblino.countrynews.data.LoggerRepository
 import com.moblino.countrynews.data.PrefRepository
 import com.moblino.countrynews.data.repository.ResourceRepository
