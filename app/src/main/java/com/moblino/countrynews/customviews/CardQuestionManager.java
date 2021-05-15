@@ -25,7 +25,7 @@ import androidx.annotation.Nullable;
 
 import com.moblino.countrynews.R;
 import com.moblino.countrynews.data.firebase.FirebaseManager;
-import com.moblino.countrynews.data.firebase.RemoteConfigWrapper;
+import com.moblino.countrynews.data.firebase.RemoteConfigHelper;
 import com.moblino.countrynews.ext.ContextKt;
 import com.moblino.countrynews.features.editlist.EditFeedsActivity;
 import com.moblino.countrynews.model.CardQuestion;
@@ -41,13 +41,11 @@ public class CardQuestionManager {
     private static final String ID_NEW_VERSION = "q_new_version";
     private static final String ID_DARK_MODE = "q_dark_mode";
 
-    private static CardQuestionManager ourInstance = new CardQuestionManager();
+    private final RemoteConfigHelper remoteConfigHelper;
 
-    public static CardQuestionManager getInstance() {
-        return ourInstance;
-    }
 
-    private CardQuestionManager() {
+    public CardQuestionManager(RemoteConfigHelper remoteConfigHelper) {
+        this.remoteConfigHelper = remoteConfigHelper;
     }
 
     @Nullable
@@ -67,7 +65,7 @@ public class CardQuestionManager {
             return sortFeeds;
         } /*else if (darkMode != null) {
             return darkMode; todo add dark mode card
-        } */else {
+        } */ else {
             return null;
         }
     }
@@ -100,7 +98,7 @@ public class CardQuestionManager {
     }
 
     public CardQuestion createNewVersionCard(Context context) {
-        if (RemoteConfigWrapper.getInstance().isNewVersionAvailable(context)) {
+        if (remoteConfigHelper.isNewVersionAvailable(context)) {
             return new CardQuestion(ID_NEW_VERSION, 0, false, context.getString(R.string.card_question_new_version), R.drawable.ic_update,
                     context.getString(R.string.card_question_yes), context.getString(R.string.card_question_no));
         }

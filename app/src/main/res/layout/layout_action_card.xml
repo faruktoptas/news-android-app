@@ -111,7 +111,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@+id/btn_action_1"
-                    android:text="@{cardItem.card.secondButtonText}"
+                    android:text='@{cardItem != null ? cardItem.card.secondButtonText: ""}'
                     android:textColor="@color/colorAccent"
                     tools:text="No" />
             </RelativeLayout>

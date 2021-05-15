@@ -21,9 +21,11 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.moblino.countrynews.BuildConfig
 import com.moblino.countrynews.NewsApplication
+import com.moblino.countrynews.customviews.CardQuestionManager
 import com.moblino.countrynews.data.repository.RssRepository
 import com.moblino.countrynews.data.repository.RssRepositoryImpl
 import com.moblino.countrynews.data.*
+import com.moblino.countrynews.data.firebase.RemoteConfigHelper
 import com.moblino.countrynews.features.detail.DetailRepository
 import com.moblino.countrynews.features.detail.DetailRepositoryImpl
 import com.moblino.countrynews.features.detail.DetailViewModel
@@ -51,6 +53,8 @@ val appModule = module {
 
     single { AppCache() }
     single { PreferenceWrapper.getInstance() }
+    single { RemoteConfigHelper() }
+    single { CardQuestionManager(get()) }
 
     single<Gson> { GsonBuilder().create() }
     single<OkHttpClient> {

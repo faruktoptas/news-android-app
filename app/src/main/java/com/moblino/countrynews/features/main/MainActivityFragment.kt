@@ -51,6 +51,7 @@ class MainActivityFragment : Fragment(), OnNewsItemClickListener, OnRefreshListe
 
     private val viewModel: NewsListViewModel by viewModel()
     private val pref: PreferenceWrapper by inject()
+    private val cardQuestionManager:CardQuestionManager by inject()
 
     private var rssUrl: String? = null
     private var itemList: ArrayList<RssItem>? = null
@@ -117,14 +118,14 @@ class MainActivityFragment : Fragment(), OnNewsItemClickListener, OnRefreshListe
             }
             cardRowActionListener = object : CardRowActionListener {
                 override fun onActionItemPositive(card: CardQuestion) {
-                    CardQuestionManager.getInstance().executeAction(activity, cardQuestion)
-                    card.hideForever()
+                    cardQuestionManager.executeAction(activity, cardQuestion)
+                    cardQuestionManager.hideQuestion(card.questionId)
                     cardQuestion = null
                     rvAdapter.removeFirstItem()
                 }
 
                 override fun onActionItemNegative(card: CardQuestion) {
-                    card.hideForever()
+                    cardQuestionManager.hideQuestion(card.questionId)
                     cardQuestion = null
                     rvAdapter.removeFirstItem()
                 }

@@ -37,7 +37,7 @@ import com.moblino.countrynews.R
 import com.moblino.countrynews.base.BaseMvvmActivity
 import com.moblino.countrynews.customviews.CardQuestionManager
 import com.moblino.countrynews.data.firebase.FirebaseManager
-import com.moblino.countrynews.data.firebase.RemoteConfigWrapper
+import com.moblino.countrynews.data.firebase.RemoteConfigHelper
 import com.moblino.countrynews.ext.goToPlayStore
 import com.moblino.countrynews.ext.observeNotNull
 import com.moblino.countrynews.ext.observeTrue
@@ -63,6 +63,7 @@ import com.moblino.countynews.common.model.FeedItem
 import com.moblino.countynews.common.model.RssItem
 import kotlinx.android.synthetic.main.activity_main.*
 import me.toptas.fancyshowcase.FancyShowCaseView
+import org.koin.android.ext.android.inject
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseMvvmActivity(),
@@ -71,6 +72,8 @@ class MainActivity : BaseMvvmActivity(),
 
     private val viewModel: MainViewModel by viewModel()
     private val chromeObservable = ChromeTabObservable(this)
+    private val remoteConfigHelper: RemoteConfigHelper by inject()
+    private val cardQuestionManager: CardQuestionManager by inject()
 
     private lateinit var adapterViewPager: MainViewPagerAdapterLegacy
     private var menuItemListType: MenuItem? = null
@@ -93,7 +96,7 @@ class MainActivity : BaseMvvmActivity(),
         setSupportActionBar(toolbar)
 
         val shortCutTab = intent.getIntExtra(EXTRA_CURRENT_CATEGORY, -1)
-        RemoteConfigWrapper.getInstance().init(this)
+        remoteConfigHelper.initialize(this)
 
 
         viewModel.setup(shortCutTab)
@@ -158,7 +161,7 @@ class MainActivity : BaseMvvmActivity(),
      */
     private fun setupViewPager(feeds: List<FeedItem>) {
         feeds.forEachIndexed { index, feedItemModel ->
-            val cardQuestion = if (index == 0) CardQuestionManager.getInstance().nextCard(this) else null
+            val cardQuestion = if (index == 0) cardQuestionManager.nextCard(this) else null
             adapterViewPager.addFrag(
                     MainActivityFragment.newInstance(feedItemModel, cardQuestion), feedItemModel.title)
         }

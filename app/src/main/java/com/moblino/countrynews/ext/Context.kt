@@ -22,15 +22,14 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.Configuration
-import android.content.res.Resources
 import android.net.Uri
 import com.moblino.countrynews.R
 import com.moblino.countrynews.util.DeviceInfo
 import com.moblino.countrynews.util.PreferenceWrapper
 
-fun Context.getAppVersion(): String? {
+fun Context.getAppVersion(): String {
     return try {
-        packageManager.getPackageInfo(packageName, 0).versionName
+        packageManager.getPackageInfo(packageName, 0).versionName ?: ""
     } catch (e: PackageManager.NameNotFoundException) {
         ""
     }

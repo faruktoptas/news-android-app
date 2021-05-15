@@ -17,13 +17,13 @@
 
 package com.moblino.countrynews.model;
 
-import com.moblino.countrynews.customviews.CardQuestionManager;
-
 import java.io.Serializable;
 
 /**
  * Created by faruktoptas on 25/07/16.
  */
+
+// TODO: 15.05.2021 Refactor data class
 public class CardQuestion implements Serializable {
 
     private String mQuestionId;
@@ -47,10 +47,6 @@ public class CardQuestion implements Serializable {
         mImageResId = imageResId;
         mFirstButtonText = firstButtonText;
         mSecondButtonText = secondButtonText;
-    }
-
-    public void hideForever() {
-        CardQuestionManager.getInstance().hideQuestion(mQuestionId);
     }
 
     public String getQuestionId() {
