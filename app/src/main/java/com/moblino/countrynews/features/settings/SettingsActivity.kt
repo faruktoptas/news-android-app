@@ -33,9 +33,9 @@ import com.moblino.countrynews.NewsApplication
 import com.moblino.countrynews.R
 import com.moblino.countrynews.base.BaseMvvmActivity
 import com.moblino.countrynews.data.firebase.FirebaseManager
-import com.moblino.countrynews.ext.openEmailIntent
+import com.moblino.countynews.common.ext.openEmailIntent
 import com.moblino.countrynews.util.Constants
-import com.moblino.countrynews.util.PreferenceWrapper
+import com.moblino.countynews.common.PreferenceWrapper
 
 class SettingsActivity : BaseMvvmActivity() {
 

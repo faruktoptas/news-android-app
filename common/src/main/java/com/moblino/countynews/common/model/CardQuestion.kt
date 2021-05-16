@@ -1,12 +1,12 @@
 /*
  *  Copyright (c) 2020. Faruk Toptaş
- *
+ *  
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
  *   You may obtain a copy of the License at
- *
+ *  
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ *  
  *   Unless required by applicable law or agreed to in writing, software
  *   distributed under the License is distributed on an "AS IS" BASIS,
  *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,11 +14,20 @@
  *   limitations under the License.
  *
  */
+package com.moblino.countynews.common.model
 
-package com.moblino.countrynews.parser;
+import java.io.Serializable
 
-public enum ResponseStatus{
-	SUCCESS,
-	FAIL,
-	NETWORK
-}
+/**
+ * Created by faruktoptas on 25/07/16.
+ */
+// TODO: 15.05.2021 Refactor data class
+data class CardQuestion(
+        var questionId: String,
+        val text: String,
+        val imageResId: Int,
+        val firstButtonText: String,
+        val secondButtonText: String,
+        val position: Int = 0,
+        val isAd: Boolean = false,
+) : Serializable

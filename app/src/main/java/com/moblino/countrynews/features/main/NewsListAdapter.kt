@@ -26,14 +26,13 @@ import com.moblino.countrynews.BR
 import com.moblino.countrynews.NewsApplication
 import com.moblino.countrynews.R
 import com.moblino.countrynews.base.BaseBindingListAdapter
-import com.moblino.countrynews.data.AppCache
 import com.moblino.countrynews.databinding.ItemRecyclerBinding
 import com.moblino.countrynews.databinding.ItemRecyclerStaggeredBinding
 import com.moblino.countrynews.databinding.LayoutActionCardBinding
-import com.moblino.countrynews.ext.isNightMode
+import com.moblino.countynews.common.ext.isNightMode
 import com.moblino.countrynews.ext.isTrue
-import com.moblino.countrynews.model.RssItemWrapper
-import com.moblino.countrynews.util.PreferenceWrapper
+import com.moblino.countynews.common.model.RssItemWrapper
+import com.moblino.countynews.common.PreferenceWrapper
 import com.moblino.countrynews.util.DateUtil
 import com.moblino.countrynews.util.TemporaryUtil
 

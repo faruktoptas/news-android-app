@@ -18,7 +18,7 @@
 package com.moblino.countrynews.ext
 
 import android.content.Context
-import com.moblino.countrynews.model.RssItemWrapper
+import com.moblino.countynews.common.model.RssItemWrapper
 import com.moblino.countrynews.util.DateUtil
 import com.moblino.countynews.common.model.RssItem
 

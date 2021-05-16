@@ -19,12 +19,13 @@ package com.moblino.countrynews
 
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.multidex.MultiDexApplication
-import com.moblino.countrynews.data.AppCache
+import com.moblino.countynews.common.model.AppCache
 import com.moblino.countrynews.data.firebase.FirebaseManager
 import com.moblino.countrynews.data.localdb.FavouritePersistenceManager
 import com.moblino.countrynews.di.appModule
 import com.moblino.countrynews.util.FontSizeHelper
-import com.moblino.countrynews.util.PreferenceWrapper
+import com.moblino.countynews.common.PreferenceWrapper
+import com.moblino.countynews.common.commonModule
 import com.squareup.picasso.OkHttp3Downloader
 import com.squareup.picasso.Picasso
 import okhttp3.OkHttpClient
@@ -34,8 +35,8 @@ import org.koin.android.ext.android.startKoin
 
 class NewsApplication : MultiDexApplication() {
     val appCache: AppCache by inject()
-    var currentCategoryId: Int = 0
-    // TODO: Use room  
+
+    // TODO: Use room
     lateinit var favouritePersistenceManager: FavouritePersistenceManager
         private set
     lateinit var fontSizeHelper: FontSizeHelper
@@ -43,7 +44,7 @@ class NewsApplication : MultiDexApplication() {
 
     override fun onCreate() {
         super.onCreate()
-        startKoin(this, listOf(appModule))
+        startKoin(this, listOf(appModule, commonModule))
 
         instance = this
         PreferenceWrapper.getInstance().init(applicationContext)

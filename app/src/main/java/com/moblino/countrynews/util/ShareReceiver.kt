@@ -20,7 +20,7 @@ package com.moblino.countrynews.util
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import com.moblino.countrynews.ext.shareText
+import com.moblino.countynews.common.ext.shareText
 
 /**
  * Created by faruktoptas on 11/06/16.

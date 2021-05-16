@@ -20,7 +20,6 @@ package com.moblino.countrynews.ext
 import android.annotation.SuppressLint
 import android.webkit.WebSettings
 import android.webkit.WebView
-import kotlinx.android.synthetic.main.activity_webview.*
 
 @SuppressLint("SetJavaScriptEnabled")
 fun WebView.setup() {

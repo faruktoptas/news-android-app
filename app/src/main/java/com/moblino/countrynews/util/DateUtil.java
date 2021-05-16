@@ -19,15 +19,10 @@ package com.moblino.countrynews.util;
 
 import android.content.Context;
 
-import androidx.annotation.Nullable;
-
 import com.moblino.countrynews.R;
+import com.moblino.countynews.common.PreferenceWrapper;
 import com.moblino.countynews.common.model.LoadImageState;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -109,22 +104,6 @@ public class DateUtil {
             return null;
         }
         return suff;
-    }
-
-    public static String readInputStream(InputStream stream, @Nullable String encoding) throws IOException {
-        BufferedReader reader;
-        if (encoding != null) {
-            reader = new BufferedReader(new InputStreamReader(stream, encoding));
-        } else {
-            reader = new BufferedReader(new InputStreamReader(stream));
-        }
-
-        StringBuilder builder = new StringBuilder();
-        String line;
-        while ((line = reader.readLine()) != null) {
-            builder.append(line);
-        }
-        return builder.toString();
     }
 
 }

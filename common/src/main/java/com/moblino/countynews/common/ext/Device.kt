@@ -15,8 +15,20 @@
  *
  */
 
-package com.moblino.countrynews.model
+package com.moblino.countynews.common.ext
 
-import com.moblino.countynews.common.model.FeedItem
+import android.os.Build
 
-data class FeedItemWrapper(val item: FeedItem, val question: CardQuestion? = null)
+object DeviceInfo {
+    fun getDeviceManufacturer(): String? {
+        return Build.MANUFACTURER
+    }
+
+    fun getDeviceModel(): String? {
+        return Build.MODEL
+    }
+
+    fun getOSVersion(): String? {
+        return Build.VERSION.RELEASE
+    }
+}

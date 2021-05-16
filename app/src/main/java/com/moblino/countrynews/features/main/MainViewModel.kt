@@ -19,7 +19,7 @@ package com.moblino.countrynews.features.main
 
 import androidx.lifecycle.MutableLiveData
 import com.moblino.countrynews.base.BaseViewModel
-import com.moblino.countrynews.data.AppCache
+import com.moblino.countynews.common.model.AppCache
 import com.moblino.countrynews.util.SingleLiveEvent
 import com.moblino.countrynews.data.LoggerRepository
 import com.moblino.countrynews.data.PrefRepository
@@ -87,7 +87,7 @@ class MainViewModel(private val repo: MainRepository,
 
     private fun setupViewPager(categoryId: Int) {
         currentCategoryId = categoryId
-        repo.setCurrentCategory(categoryId)
+        pref.writeCategoryId(categoryId)
 
         val excludedString = pref.readCheckString().orEmpty()
         val excludedItems = excludedString.split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()

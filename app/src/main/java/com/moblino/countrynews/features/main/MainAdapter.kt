@@ -20,7 +20,7 @@ package com.moblino.countrynews.features.main
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.moblino.countrynews.model.FeedItemWrapper
+import com.moblino.countynews.common.model.FeedItemWrapper
 
 class MainAdapter(activity: FragmentActivity) : FragmentStateAdapter(activity) {
 

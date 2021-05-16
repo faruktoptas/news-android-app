@@ -15,7 +15,7 @@
  *
  */
 
-package com.moblino.countrynews.data
+package com.moblino.countynews.common.model
 
 
 import com.moblino.countynews.common.model.FeedItem

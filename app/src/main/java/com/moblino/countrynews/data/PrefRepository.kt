@@ -17,7 +17,7 @@
 
 package com.moblino.countrynews.data
 
-import com.moblino.countrynews.util.PreferenceWrapper
+import com.moblino.countynews.common.PreferenceWrapper
 
 interface PrefRepository {
     fun isStaggered(): Boolean

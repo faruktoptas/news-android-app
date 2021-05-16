@@ -20,7 +20,7 @@ package com.moblino.countrynews.features.main
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.moblino.countrynews.base.BaseViewModel
-import com.moblino.countrynews.data.AppCache
+import com.moblino.countynews.common.model.AppCache
 import com.moblino.countrynews.data.LoggerRepository
 import com.moblino.countrynews.data.repository.RssRepository
 import com.moblino.countrynews.data.firebase.FirebaseManager

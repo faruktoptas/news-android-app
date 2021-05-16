@@ -32,10 +32,10 @@ import com.moblino.countrynews.data.firebase.FirebaseManager
 import com.moblino.countrynews.features.detail.DetailActivity
 import com.moblino.countrynews.features.settings.SettingsActivity
 import com.moblino.countrynews.features.webview.WebViewActivity
-import com.moblino.countrynews.model.CardQuestion
+import com.moblino.countynews.common.model.CardQuestion
 import com.moblino.countynews.common.model.RssItem
 import com.moblino.countrynews.util.Constants
-import com.moblino.countrynews.util.PreferenceWrapper
+import com.moblino.countynews.common.PreferenceWrapper
 import com.moblino.countrynews.util.ShareReceiver
 
 

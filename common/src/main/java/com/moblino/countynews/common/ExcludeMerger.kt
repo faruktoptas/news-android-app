@@ -15,7 +15,7 @@
  *
  */
 
-package com.moblino.countrynews.features.main
+package com.moblino.countynews.common
 
 /**
  * Merges local (SharedPreferences) and remote (Firebase Remote config) excludes

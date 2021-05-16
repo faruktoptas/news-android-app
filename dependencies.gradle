@@ -35,19 +35,6 @@ buildscript {
         minSdk = 16
         targetSdk = 29
 
-        versions = [
-                'appcompat': '1.2.0',
-
-        ]
-
-        deps = [
-                'kotlin'           : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
-                'appcompat'        : "androidx.appcompat:appcompat:$versions.appcompat",
-                'gson'             : "com.google.code.gson:gson:2.8.6",
-                'coroutines'       : "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.7",
-                'coroutinesAndroid': "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.7"
-
-        ]
 
 
     }

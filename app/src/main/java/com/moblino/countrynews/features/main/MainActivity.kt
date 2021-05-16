@@ -35,10 +35,10 @@ import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
 import com.moblino.countrynews.R
 import com.moblino.countrynews.base.BaseMvvmActivity
-import com.moblino.countrynews.customviews.CardQuestionManager
+import com.moblino.countrynews.util.CardQuestionHelper
 import com.moblino.countrynews.data.firebase.FirebaseManager
 import com.moblino.countrynews.data.firebase.RemoteConfigHelper
-import com.moblino.countrynews.ext.goToPlayStore
+import com.moblino.countynews.common.ext.goToPlayStore
 import com.moblino.countrynews.ext.observeNotNull
 import com.moblino.countrynews.ext.observeTrue
 import com.moblino.countrynews.features.editlist.EditFeedsActivity
@@ -57,7 +57,7 @@ import com.moblino.countrynews.util.Constants.Companion.NAV_ITEM_RATE
 import com.moblino.countrynews.util.Constants.Companion.NAV_ITEM_SETTINGS
 import com.moblino.countrynews.util.Constants.Companion.NAV_ITEM_SHARE
 import com.moblino.countrynews.util.NewsShortcuts
-import com.moblino.countrynews.util.PreferenceWrapper
+import com.moblino.countynews.common.PreferenceWrapper
 import com.moblino.countrynews.util.UIUtils
 import com.moblino.countynews.common.model.Category
 import com.moblino.countynews.common.model.FeedItem
@@ -74,7 +74,7 @@ class MainActivity : BaseMvvmActivity(),
     private val viewModel: MainViewModel by viewModel()
     private val chromeObservable = ChromeTabObservable(this)
     private val remoteConfigHelper: RemoteConfigHelper by inject()
-    private val cardQuestionManager: CardQuestionManager by inject()
+    private val cardQuestionManager: CardQuestionHelper by inject()
     private val pref: PreferenceWrapper by inject()
 
     private lateinit var adapterViewPager: MainViewPagerAdapterLegacy

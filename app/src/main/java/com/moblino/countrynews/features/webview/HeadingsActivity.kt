@@ -22,7 +22,7 @@ import android.os.Bundle
 import android.webkit.WebViewClient
 import com.moblino.countrynews.R
 import com.moblino.countrynews.base.BaseMvvmActivity
-import com.moblino.countrynews.util.PreferenceWrapper
+import com.moblino.countynews.common.PreferenceWrapper
 import kotlinx.android.synthetic.main.activity_headings.webView
 import org.koin.android.ext.android.inject
 

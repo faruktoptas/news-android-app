@@ -46,7 +46,10 @@ android {
 
 dependencies {
 
-    implementation deps.kotlin
+    implementation Deps.kotlin
+
+    implementation Deps.koin
+    implementation Deps.koinVm
 
 }
 

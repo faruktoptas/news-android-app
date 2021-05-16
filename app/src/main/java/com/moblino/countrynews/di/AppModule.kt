@@ -21,7 +21,7 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.moblino.countrynews.BuildConfig
 import com.moblino.countrynews.NewsApplication
-import com.moblino.countrynews.customviews.CardQuestionManager
+import com.moblino.countrynews.util.CardQuestionHelper
 import com.moblino.countrynews.data.repository.RssRepository
 import com.moblino.countrynews.data.repository.RssRepositoryImpl
 import com.moblino.countrynews.data.*
@@ -37,7 +37,6 @@ import com.moblino.countrynews.features.saved.SavedNewsRepositoryImpl
 import com.moblino.countrynews.features.saved.SavedNewsViewModel
 import com.moblino.countrynews.features.search.SearchViewModel
 import com.moblino.countrynews.features.webview.WebViewViewModel
-import com.moblino.countrynews.util.PreferenceWrapper
 import com.moblino.countrynews.util.UpdateChecker
 import com.moblino.countrynews.util.UpdateCheckerImpl
 import okhttp3.OkHttpClient
@@ -51,10 +50,8 @@ val appModule = module {
 
     single { androidContext() as NewsApplication }
 
-    single { AppCache() }
-    single { PreferenceWrapper.getInstance() }
     single { RemoteConfigHelper() }
-    single { CardQuestionManager(get()) }
+    single { CardQuestionHelper(get(), get()) }
 
     single<Gson> { GsonBuilder().create() }
     single<OkHttpClient> {

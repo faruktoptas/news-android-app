@@ -20,7 +20,7 @@ package com.moblino.countrynews.features.about
 import android.os.Bundle
 import com.moblino.countrynews.R
 import com.moblino.countrynews.base.BaseMvvmActivity
-import com.moblino.countrynews.ext.getAppVersion
+import com.moblino.countynews.common.ext.getAppVersion
 import kotlinx.android.synthetic.main.activity_about.*
 
 class AboutActivity : BaseMvvmActivity() {

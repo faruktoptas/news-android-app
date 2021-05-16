@@ -26,15 +26,15 @@ import android.view.ViewGroup
 import com.moblino.countrynews.NewsApplication
 import com.moblino.countrynews.R
 import com.moblino.countrynews.base.BaseFragment
-import com.moblino.countrynews.data.AppCache
 import com.moblino.countrynews.ext.*
 import com.moblino.countrynews.features.main.NewsListViewModel
 import com.moblino.countrynews.ext.hide
 import com.moblino.countrynews.util.TemporaryUtil
 import com.moblino.countynews.common.model.RssItem
 import com.moblino.countrynews.util.UIUtils
+import com.moblino.countynews.common.ext.isNightMode
+import com.moblino.countynews.common.ext.shareText
 import kotlinx.android.synthetic.main.fragment_news_detail.*
-import org.koin.android.ext.android.inject
 import org.koin.android.viewmodel.ext.android.viewModel
 
 /**

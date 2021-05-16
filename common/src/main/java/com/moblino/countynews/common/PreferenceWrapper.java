@@ -15,16 +15,15 @@
  *
  */
 
-package com.moblino.countrynews.util;
+package com.moblino.countynews.common;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+
 import androidx.annotation.NonNull;
 
-import com.moblino.countrynews.NewsApplication;
-import com.moblino.countrynews.ext.ContextKt;
-import com.moblino.countrynews.features.main.ExcludeMerger;
+import com.moblino.countynews.common.ext.ContextKt;
 
 
 public class PreferenceWrapper {
@@ -77,7 +76,7 @@ public class PreferenceWrapper {
 
     @NonNull
     public String readCheckString() {
-        int categoryId = NewsApplication.getInstance().getCurrentCategoryId();
+        int categoryId = readCategoryId();
         return readCheckString(categoryId);
     }
 
@@ -89,7 +88,7 @@ public class PreferenceWrapper {
 
     public void writeCheckString(String checkString) {
         SharedPreferences.Editor editor = mSharedPreferences.edit();
-        editor.putString(readCountry() + "_" + NewsApplication.getInstance().getCurrentCategoryId(), checkString);
+        editor.putString(readCountry() + "_" + readCategoryId(), checkString);
         editor.apply();
     }
 
@@ -138,12 +137,12 @@ public class PreferenceWrapper {
 
     @NonNull
     public String readListOrder() {
-        return mSharedPreferences.getString(KEY_LIST_ORDER + "_" + readCountry() + "_" + NewsApplication.getInstance().getCurrentCategoryId(), "");
+        return mSharedPreferences.getString(KEY_LIST_ORDER + "_" + readCountry() + "_" + readCategoryId(), "");
     }
 
     public void writeListOrder(String order) {
         SharedPreferences.Editor editor = mSharedPreferences.edit();
-        editor.putString(KEY_LIST_ORDER + "_" + readCountry() + "_" + NewsApplication.getInstance().getCurrentCategoryId(), order);
+        editor.putString(KEY_LIST_ORDER + "_" + readCountry() + "_" + readCategoryId(), order);
         editor.commit();
     }
 

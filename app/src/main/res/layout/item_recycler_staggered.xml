@@ -25,7 +25,7 @@
 
         <variable
             name="rssItemStaggered"
-            type="com.moblino.countrynews.model.RssItemWrapper" />
+            type="com.moblino.countynews.common.model.RssItemWrapper" />
 
     </data>
 

@@ -27,7 +27,7 @@ import android.widget.Toast
 import com.moblino.countrynews.R
 import com.moblino.countrynews.data.repository.ResourceRepositoryImpl
 import com.moblino.countrynews.ext.observeNotNull
-import com.moblino.countrynews.util.PreferenceWrapper
+import com.moblino.countynews.common.PreferenceWrapper
 
 /**
  * Created by ftoptas on 22/01/18.

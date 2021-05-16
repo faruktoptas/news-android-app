@@ -19,6 +19,7 @@ package com.moblino.countrynews.util
 
 import android.util.TypedValue
 import android.widget.TextView
+import com.moblino.countynews.common.PreferenceWrapper
 
 /**
  * Created by ftoptas on 06/0index/18.

@@ -36,7 +36,7 @@ import com.moblino.countrynews.features.settings.SettingsActivity
 import com.moblino.countynews.common.model.RssItem
 import com.moblino.countrynews.ext.show
 import com.moblino.countrynews.util.Constants
-import com.moblino.countrynews.util.PreferenceWrapper
+import com.moblino.countynews.common.PreferenceWrapper
 import com.moblino.countrynews.util.UIUtils
 import kotlinx.android.synthetic.main.activity_saved.recyclerView
 import kotlinx.android.synthetic.main.activity_saved.rl_no_items

@@ -15,20 +15,12 @@
  *
  */
 
-package com.moblino.countrynews.util
+package com.moblino.countynews.common
 
-import android.os.Build
+import com.moblino.countynews.common.model.AppCache
+import org.koin.dsl.module.module
 
-object DeviceInfo {
-    fun getDeviceManufacturer(): String? {
-        return Build.MANUFACTURER
-    }
-
-    fun getDeviceModel(): String? {
-        return Build.MODEL
-    }
-
-    fun getOSVersion(): String? {
-        return Build.VERSION.RELEASE
-    }
+val commonModule = module {
+    single { AppCache() }
+    single { PreferenceWrapper.getInstance() }
 }

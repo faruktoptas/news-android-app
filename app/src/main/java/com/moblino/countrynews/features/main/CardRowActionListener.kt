@@ -17,7 +17,7 @@
 
 package com.moblino.countrynews.features.main
 
-import com.moblino.countrynews.model.CardQuestion
+import com.moblino.countynews.common.model.CardQuestion
 
 interface CardRowActionListener {
 

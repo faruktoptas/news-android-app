@@ -21,9 +21,9 @@ import android.content.Context
 import android.util.Log
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
-import com.moblino.countrynews.BuildConfig
-import com.moblino.countrynews.ext.getAppVersion
-import com.moblino.countrynews.util.PreferenceWrapper
+import com.moblino.countynews.common.ext.getAppVersion
+import com.moblino.countynews.common.BuildConfig
+import com.moblino.countynews.common.PreferenceWrapper
 import java.util.*
 
 class RemoteConfigHelper {
@@ -49,7 +49,7 @@ class RemoteConfigHelper {
                 val latestVersion = remoteConfig.getString(VALUE_LATEST_VERSION)
                 val excludedNews = remoteConfig.getString(VALUE_EXCLUDED_NEWS)
                 val headingUrl = remoteConfig.getString(VALUE_HEADING_URL)
-                Log.v("asd","Remote config fetch successful $latestVersion $headingUrl $excludedNews")
+                Log.v("asd", "Remote config fetch successful $latestVersion $headingUrl $excludedNews")
 
                 pref.writeRemoteExcludedNews(excludedNews)
                 if (latestVersion.isNotEmpty()) {

@@ -77,9 +77,9 @@ dependencies {
     implementation project(':common')
     implementation project(':data')
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+    implementation Deps.kotlin
     implementation 'androidx.multidex:multidex:2.0.1'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation Deps.appcompat
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.0'
@@ -90,20 +90,20 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:28.0.1')
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
     implementation 'com.google.firebase:firebase-analytics-ktx'
-    implementation 'com.google.firebase:firebase-config-ktx'
+    //implementation 'com.google.firebase:firebase-config-ktx'
 
-    implementation deps.coroutines
-    implementation deps.coroutinesAndroid
+    implementation Deps.coroutines
+    implementation Deps.coroutinesAndroid
 
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation "android.arch.lifecycle:common-java8:1.1.1"
 
-    implementation 'org.koin:koin-android:1.0.2'
-    implementation 'org.koin:koin-android-viewmodel:1.0.2'
+    implementation Deps.koin
+    implementation Deps.koinVm
 
-    implementation deps.gson
+    implementation Deps.gson
     implementation('com.squareup.picasso:picasso:2.71828') {
         exclude group: 'com.android.support'
     }

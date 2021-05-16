@@ -15,14 +15,8 @@
  *
  */
 
-package com.moblino.countrynews.parser;
+package com.moblino.countynews.common.model
 
-import com.moblino.countynews.common.model.RssItem;
-
-import java.util.ArrayList;
-
-public interface RssResponseListener {
-	void onResponse(ArrayList<RssItem> newsList, ResponseStatus status, String feedUrl);
-}
-
-
+data class RssItemWrapper(val rssItem: RssItem? = null,
+                          val card: CardQuestion? = null,
+                          val parsedDate: String? = null)

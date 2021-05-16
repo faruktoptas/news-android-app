@@ -15,7 +15,7 @@
  *
  */
 
-package com.moblino.countrynews.ext
+package com.moblino.countynews.common.ext
 
 import android.content.ActivityNotFoundException
 import android.content.Context
@@ -23,9 +23,8 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.net.Uri
-import com.moblino.countrynews.R
-import com.moblino.countrynews.util.DeviceInfo
-import com.moblino.countrynews.util.PreferenceWrapper
+import com.moblino.countynews.common.PreferenceWrapper
+import com.moblino.countynews.common.R
 
 fun Context.getAppVersion(): String {
     return try {

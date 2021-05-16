@@ -29,17 +29,18 @@ import android.view.ViewGroup
 import android.widget.*
 import com.moblino.countrynews.NewsApplication.Companion.instance
 import com.moblino.countrynews.R
-import com.moblino.countrynews.customviews.CardQuestionManager
+import com.moblino.countrynews.util.CardQuestionHelper
 import com.moblino.countrynews.data.localdb.FavouritePersistenceManager
 import com.moblino.countrynews.ext.asVisibility
 import com.moblino.countrynews.ext.observeNotNull
 import com.moblino.countrynews.ext.toWrapperList
-import com.moblino.countrynews.model.CardQuestion
+import com.moblino.countynews.common.model.CardQuestion
 import com.moblino.countynews.common.model.FeedItem
 import com.moblino.countynews.common.model.RssItem
-import com.moblino.countrynews.model.RssItemWrapper
+import com.moblino.countynews.common.model.RssItemWrapper
 import com.moblino.countrynews.ext.show
 import com.moblino.countrynews.util.*
+import com.moblino.countynews.common.PreferenceWrapper
 import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.layout_empty_state.*
 import org.koin.android.ext.android.inject
@@ -51,7 +52,7 @@ class MainActivityFragment : Fragment(), OnNewsItemClickListener, OnRefreshListe
 
     private val viewModel: NewsListViewModel by viewModel()
     private val pref: PreferenceWrapper by inject()
-    private val cardQuestionManager:CardQuestionManager by inject()
+    private val cardQuestionManager: CardQuestionHelper by inject()
 
     private var rssUrl: String? = null
     private var itemList: ArrayList<RssItem>? = null

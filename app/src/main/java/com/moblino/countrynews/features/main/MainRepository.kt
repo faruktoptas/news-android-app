@@ -35,8 +35,6 @@ interface MainRepository {
 
     fun feedsByCategory(country: String, categoryId: Int): List<FeedItem>
 
-    fun setCurrentCategory(categoryId: Int)
-
 }
 
 class MainRepositoryImpl(private val assets: AssetManager, private val gson: Gson) : MainRepository {
@@ -55,10 +53,6 @@ class MainRepositoryImpl(private val assets: AssetManager, private val gson: Gso
     override fun feedsByCategory(country: String, categoryId: Int): List<FeedItem> {
         val feedListJson = readAssets("$country/$categoryId.json")
         return gson.fromJson(feedListJson, Array<FeedItem>::class.java).toList()
-    }
-
-    override fun setCurrentCategory(categoryId: Int) {
-        NewsApplication.instance.currentCategoryId = categoryId
     }
 
     private fun readAssets(file: String) = assets.readFile(file).toString(Charsets.UTF_8)

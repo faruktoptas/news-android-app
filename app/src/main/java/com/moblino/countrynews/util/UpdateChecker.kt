@@ -18,7 +18,7 @@
 package com.moblino.countrynews.util
 
 import android.content.Context
-import com.moblino.countrynews.ext.getAppVersion
+import com.moblino.countynews.common.ext.getAppVersion
 
 interface UpdateChecker {
     fun isUpdated(oldAppVersion: String?, writeNewVersion: () -> Unit): Boolean
