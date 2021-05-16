@@ -175,7 +175,6 @@ class MainViewModel(private val repo: MainRepository,
     fun changeCategory(categoryId: Int) {
         resetViewPagerLive.postTrue()
         setup(categoryId)
-        pref.writeCategoryId(categoryId)
     }
 
     fun selectSearchedItem(feedItem: FeedItem) {

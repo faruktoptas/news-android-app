@@ -15,7 +15,7 @@
  *
  */
 
-package com.moblino.countrynews.features.activity
+package com.moblino.countrynews.features.saved
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.LiveData
@@ -23,9 +23,11 @@ import com.moblino.countynews.common.model.AppCache
 import com.moblino.countrynews.data.LoggerRepository
 import com.moblino.countrynews.data.PrefRepository
 import com.moblino.countrynews.data.repository.ResourceRepository
-import com.moblino.countrynews.features.saved.SavedNewsRepository
-import com.moblino.countrynews.features.saved.SavedNewsViewModel
+import com.moblino.countrynews.features.TestCoroutineRule
+import com.moblino.countrynews.features.MockData
 import com.nhaarman.mockitokotlin2.verify
+import com.nhaarman.mockitokotlin2.whenever
+import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Before
@@ -37,6 +39,9 @@ class SavedNewsViewModelTest {
 
     @get:Rule
     val rule = InstantTaskExecutorRule()
+
+    @get:Rule
+    val coroutineRule = TestCoroutineRule()
 
     private lateinit var viewModel: SavedNewsViewModel
     private val repo: SavedNewsRepository = Mockito.mock(SavedNewsRepository::class.java)
@@ -61,10 +66,15 @@ class SavedNewsViewModelTest {
 
     @Test
     fun testEmptySavedList() {
-        cache.favoriteList.clear()
-        viewModel.getItems()
-        assert(viewModel.emptyListLive.observedValue() == true)
-        assert(viewModel.titleLive.observedValue() == "Title")
+        runBlocking {
+            whenever(repo.getAll()).thenReturn(listOf())
+
+            cache.favoriteList.clear()
+            viewModel.getItems()
+
+            assert(viewModel.emptyListLive.observedValue() == true)
+            assert(viewModel.titleLive.observedValue() == "Title")
+        }
     }
 
     @Test
@@ -77,11 +87,12 @@ class SavedNewsViewModelTest {
 
     @Test
     fun testItemRemovedFromSavedNews() {
-        viewModel.removeItem(MockData.RSS_ITEMS_SINGLE[0])
-        verify(repo).removeFromDb("link")
-        verify(repo).removeFromMemory("link")
-        assert(viewModel.notifyItemRemoved.observedValue() == 0)
-        assert(viewModel.showSnackBar.observedValue() == true)
+        runBlocking {
+            viewModel.removeItem(MockData.RSS_ITEMS_SINGLE[0])
+            verify(repo).removeFromDb("link")
+            assert(viewModel.notifyItemRemoved.observedValue() == 0)
+            assert(viewModel.showSnackBar.observedValue() == true)
+        }
     }
 }
 

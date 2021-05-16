@@ -15,24 +15,23 @@
  *
  */
 
-package com.moblino.countrynews.features.activity
+package com.moblino.countrynews.features
 
-import com.moblino.countrynews.ext.unite
-import org.junit.Test
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.test.resetMain
+import kotlinx.coroutines.test.setMain
+import org.junit.rules.TestWatcher
+import org.junit.runner.Description
 
-class ExtensionTest {
+class TestCoroutineRule : TestWatcher() {
 
-    @Test
-    fun testUniteList() {
-        val empty = listOf<Int>()
-        assert(empty.unite() == "")
+    override fun starting(description: Description?) {
+        super.starting(description)
+        Dispatchers.setMain(Dispatchers.Unconfined)
+    }
 
-        val single = listOf(3)
-        assert(single.unite() == "3")
-
-        val multiple = listOf(1, 3)
-        assert(multiple.unite() == "1,3")
-
-        assert(multiple.unite('-') == "1-3")
+    override fun finished(description: Description?) {
+        super.finished(description)
+        Dispatchers.resetMain()
     }
 }

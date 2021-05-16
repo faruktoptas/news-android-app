@@ -15,14 +15,14 @@
  *
  */
 
-package com.moblino.countrynews.features.activity
+package com.moblino.countrynews.features.detail
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.moblino.countrynews.data.LoggerRepository
 import com.moblino.countrynews.data.PrefRepository
 import com.moblino.countrynews.data.firebase.FirebaseManager
-import com.moblino.countrynews.features.detail.DetailRepository
-import com.moblino.countrynews.features.detail.DetailViewModel
+import com.moblino.countrynews.features.MockData
+import com.moblino.countrynews.features.saved.observedValue
 import com.nhaarman.mockitokotlin2.anyVararg
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify

@@ -15,7 +15,7 @@
  *
  */
 
-package com.moblino.countrynews.features.activity
+package com.moblino.countrynews.features
 
 import com.google.gson.Gson
 import com.moblino.countynews.common.model.FeedItem

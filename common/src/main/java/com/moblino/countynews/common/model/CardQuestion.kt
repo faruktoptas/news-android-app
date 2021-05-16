@@ -21,7 +21,6 @@ import java.io.Serializable
 /**
  * Created by faruktoptas on 25/07/16.
  */
-// TODO: 15.05.2021 Refactor data class
 data class CardQuestion(
         var questionId: String,
         val text: String,

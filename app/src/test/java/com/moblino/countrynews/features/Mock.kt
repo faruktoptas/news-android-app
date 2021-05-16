@@ -21,5 +21,5 @@ import com.moblino.countynews.common.model.RssItem
 
 object Mock {
 
-    val RSS_ITEM = RssItem("title", "http://", "", "", 0, "feedTitle", "desc")
+    val RSS_ITEM = RssItem(0,"title", "http://", "", "", 0, "feedTitle", "desc")
 }

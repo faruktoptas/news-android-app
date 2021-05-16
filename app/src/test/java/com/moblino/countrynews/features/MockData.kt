@@ -15,7 +15,7 @@
  *
  */
 
-package com.moblino.countrynews.features.activity
+package com.moblino.countrynews.features
 
 import com.moblino.countynews.common.model.CardQuestion
 import com.moblino.countynews.common.model.Category
@@ -23,12 +23,12 @@ import com.moblino.countynews.common.model.FeedItem
 import com.moblino.countynews.common.model.RssItem
 
 object MockData {
-    val RSS_ITEMS_SINGLE = listOf(RssItem("title", "link", "image", "date", 0, "feedTitle", "desc"))
+    val RSS_ITEMS_SINGLE = listOf(RssItem(0, "title", "link", "image", "date", 0, "feedTitle", "desc"))
     val RSS_ITEMS_MULTIPLE = listOf(
-            RssItem("title1", "link1", "image1", "date1", 1, "feedTitle", "desc"),
-            RssItem("title2", "link2", "image2", "date2", 2, "feedTitle", "desc")
+            RssItem(0, "title1", "link1", "image1", "date1", 1, "feedTitle", "desc"),
+            RssItem(0, "title2", "link2", "image2", "date2", 2, "feedTitle", "desc")
     )
-    val CARD = CardQuestion(0, true)
+    val CARD = CardQuestion("0", "Card text", 0, "Yes", "No")
     val FEED_ITEMS = listOf(
             FeedItem().apply {
                 feedId = 0

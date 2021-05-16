@@ -21,14 +21,17 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.moblino.countynews.common.model.AppCache
 import com.moblino.countrynews.data.LoggerRepository
 import com.moblino.countrynews.data.PrefRepository
-import com.moblino.countrynews.features.activity.MockData
-import com.moblino.countrynews.features.activity.observedValue
+import com.moblino.countrynews.features.TestCoroutineRule
+import com.moblino.countrynews.features.MockData
+import com.moblino.countrynews.features.saved.SavedNewsRepository
+import com.moblino.countrynews.features.saved.observedValue
 import com.moblino.countrynews.util.UpdateChecker
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.eq
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
+import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotEquals
 import org.junit.Before
@@ -41,21 +44,27 @@ class MainViewModelTest {
     @get:Rule
     val rule = InstantTaskExecutorRule()
 
+    @get:Rule
+    val coroutineRule = TestCoroutineRule()
+
     private val repo: MainRepository = mock()
     private val pref: PrefRepository = mock()
     private val logger: LoggerRepository = mock()
     private val cache = AppCache()
     private val updateChecker: UpdateChecker = mock()
-    private val vm = MainViewModel(repo, pref, cache, updateChecker, logger)
+    private val savedRepo: SavedNewsRepository = mock()
+    private val vm = MainViewModel(repo, pref, cache, updateChecker, savedRepo, logger)
 
     @Before
     fun setup() {
-        whenever(repo.categoriesByCountry(any())).thenReturn(MockData.CATEGORIES)
-        whenever(pref.getListOrder()).thenReturn("")
-
-        whenever(repo.getCountryFiles(any())).thenReturn(arrayOf("categories.json", "1.json", "0.json"))
-        whenever(repo.feedsByCategory(any(), eq(0))).thenReturn(MockData.FEED_ITEMS)
-        whenever(repo.feedsByCategory(any(), eq(1))).thenReturn(MockData.FEED_ITEMS2)
+        runBlocking {
+            whenever(repo.categoriesByCountry(any())).thenReturn(MockData.CATEGORIES)
+            whenever(pref.getListOrder()).thenReturn("")
+            whenever(savedRepo.getAll()).thenReturn(listOf())
+            whenever(repo.getCountryFiles(any())).thenReturn(arrayOf("categories.json", "1.json", "0.json"))
+            whenever(repo.feedsByCategory(any(), eq(0))).thenReturn(MockData.FEED_ITEMS)
+            whenever(repo.feedsByCategory(any(), eq(1))).thenReturn(MockData.FEED_ITEMS2)
+        }
     }
 
     @Test
@@ -117,12 +126,14 @@ class MainViewModelTest {
 
     @Test
     fun testFeedItemListOrder() {
-        whenever(pref.getListOrder()).thenReturn("2,0,1")
-        vm.setup(0)
+        runBlocking {
+            whenever(pref.getListOrder()).thenReturn("2,0,1")
+            vm.setup(0)
 
-        assertEquals(vm.viewPagerItemsLive.observedValue()!![0], MockData.FEED_ITEMS[2])
-        assertEquals(vm.viewPagerItemsLive.observedValue()!![1], MockData.FEED_ITEMS[0])
-        assertEquals(vm.viewPagerItemsLive.observedValue()!![2], MockData.FEED_ITEMS[1])
+            assertEquals(vm.viewPagerItemsLive.observedValue()!![0], MockData.FEED_ITEMS[2])
+            assertEquals(vm.viewPagerItemsLive.observedValue()!![1], MockData.FEED_ITEMS[0])
+            assertEquals(vm.viewPagerItemsLive.observedValue()!![2], MockData.FEED_ITEMS[1])
+        }
     }
 
     @Test

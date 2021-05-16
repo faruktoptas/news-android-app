@@ -15,14 +15,16 @@
  *
  */
 
-package com.moblino.countrynews.features.activity
+package com.moblino.countrynews.features.editlist
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.moblino.countynews.common.model.AppCache
 import com.moblino.countrynews.data.LoggerRepository
 import com.moblino.countrynews.data.PrefRepository
 import com.moblino.countrynews.data.repository.ResourceRepository
-import com.moblino.countrynews.features.editlist.EditFeedsViewModel
+import com.moblino.countrynews.features.TestCoroutineRule
+import com.moblino.countrynews.features.MockData
+import com.moblino.countrynews.features.saved.observedValue
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
@@ -37,6 +39,9 @@ class EditFeedsViewModelTest {
 
     @get:Rule
     val rule = InstantTaskExecutorRule()
+
+    @get:Rule
+    val coroutineRule = TestCoroutineRule()
 
     private lateinit var viewModel: EditFeedsViewModel
 

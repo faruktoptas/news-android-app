@@ -23,11 +23,13 @@ import com.moblino.countrynews.data.LoggerRepository
 import com.moblino.countrynews.data.firebase.FirebaseManager
 import com.moblino.countrynews.data.repository.RssRepository
 import com.moblino.countrynews.features.Mock
+import com.moblino.countrynews.features.TestCoroutineRule
 import com.moblino.countrynews.features.saved.SavedNewsRepository
 import com.moblino.countynews.common.model.RssItem
 import com.nhaarman.mockitokotlin2.argumentCaptor
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
+import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
@@ -38,28 +40,29 @@ class NewsListViewModelTest {
     @get:Rule
     val rule = InstantTaskExecutorRule()
 
+    @get:Rule
+    val coroutineRule = TestCoroutineRule()
+
     private val rssRepo: RssRepository = mock()
     private val repo: SavedNewsRepository = mock()
     private val logger: LoggerRepository = mock()
     private val cache = AppCache()
     private val vm = NewsListViewModel(cache, rssRepo, repo, logger)
 
-    @Before
-    fun setup() {
-
-    }
-
     @Test
     fun testFavoriteClicked() {
-        vm.favoriteClicked(Mock.RSS_ITEM) { added ->
-            assertEquals(true, added)
+        runBlocking {
+            vm.favoriteClicked(Mock.RSS_ITEM) { added ->
+                assertEquals(true, added)
+            }
+
+            val captor = argumentCaptor<RssItem>()
+            verify(repo).add(captor.capture())
+            val item = captor.firstValue
+            assertEquals("title", item.title)
+
+            verify(logger).logEvent(FirebaseManager.EVENT_FAVOURITE)
         }
 
-        val captor = argumentCaptor<RssItem>()
-        verify(repo).add(captor.capture())
-        val item = captor.firstValue
-        assertEquals("title", item.title)
-
-        verify(logger).logEvent(FirebaseManager.EVENT_FAVOURITE)
     }
 }

@@ -43,10 +43,5 @@ fun String.isNumeric(): Boolean = this.matches("\\d+".toRegex())
 fun String.toNumberOrZero(): Int = if (isNumeric()) Integer.valueOf(this) else 0
 
 fun <Int> List<Int>.unite(char: Char = ','): String {
-    var res = ""
-    this.forEachIndexed { index, int ->
-        res += int
-        if (index < size - 1) res += char
-    }
-    return res
+    return joinToString(char.toString())
 }
