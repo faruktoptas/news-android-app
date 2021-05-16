@@ -1,11 +1,9 @@
-import org.gradle.api.JavaVersion
-
-/*object Config {
+object Config {
     val minSdk = 16
     val compileSdk = 28
     val targetSdk = 28
-    val buildTools = "28.0.3"
-}*/
+    val buildTools = "29.0.3"
+}
 
 object Versions {
     const val kotlin = "1.4.32"
