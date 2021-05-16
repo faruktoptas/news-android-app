@@ -20,22 +20,12 @@ package com.moblino.countrynews.base
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.moblino.countrynews.data.repository.ResourceRepository
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
 
 open class BaseViewModel : ViewModel() {
-
-    private val job = Job()
-    val uiScope = CoroutineScope(Dispatchers.Main + job)
 
     val finishLive = MutableLiveData<Boolean>()
     val toastLive = MutableLiveData<String>()
 
     lateinit var res: ResourceRepository
 
-    override fun onCleared() {
-        job.cancel()
-        super.onCleared()
-    }
 }

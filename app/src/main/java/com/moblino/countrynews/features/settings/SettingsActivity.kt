@@ -21,40 +21,34 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import androidx.core.content.ContextCompat
-import androidx.preference.ListPreference
-import androidx.preference.Preference
-import androidx.preference.PreferenceFragmentCompat
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import androidx.preference.ListPreference
+import androidx.preference.Preference
+import androidx.preference.PreferenceFragmentCompat
 import com.moblino.countrynews.NewsApplication
 import com.moblino.countrynews.R
-import com.moblino.countrynews.base.BaseActivity
+import com.moblino.countrynews.base.BaseMvvmActivity
 import com.moblino.countrynews.data.firebase.FirebaseManager
 import com.moblino.countrynews.ext.openEmailIntent
 import com.moblino.countrynews.util.Constants
 import com.moblino.countrynews.util.PreferenceWrapper
-import kotlinx.android.synthetic.main.layout_app_bar.*
 
-class SettingsActivity : BaseActivity() {
+class SettingsActivity : BaseMvvmActivity() {
 
-    public override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val actionBar = supportActionBar
+    override fun layoutRes() = R.layout.activity_settings
 
-        actionBar?.setDisplayHomeAsUpEnabled(true)
-        setContentView(R.layout.activity_settings)
-        setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    override fun initViews(savedInstanceState: Bundle?) {
+        setupToolbar()
 
-        val settingsFragment = SettingsFragment()
         supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.container, settingsFragment).commit()
+                .replace(R.id.container, SettingsFragment())
+                .commit()
     }
-
 
     class SettingsFragment : PreferenceFragmentCompat() {
 

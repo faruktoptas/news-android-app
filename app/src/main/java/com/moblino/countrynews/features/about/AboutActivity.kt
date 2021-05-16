@@ -17,34 +17,20 @@
 
 package com.moblino.countrynews.features.about
 
-import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import com.moblino.countrynews.R
-import com.moblino.countrynews.base.BaseActivity
+import com.moblino.countrynews.base.BaseMvvmActivity
 import com.moblino.countrynews.ext.getAppVersion
-import com.moblino.countrynews.features.settings.HealthCheckActivity
-import kotlinx.android.synthetic.main.activity_about.activity_about_textversion
-import kotlinx.android.synthetic.main.activity_about.ivLogo
+import kotlinx.android.synthetic.main.activity_about.*
 
-class AboutActivity : BaseActivity() {
+class AboutActivity : BaseMvvmActivity() {
 
-    private var mCounter = 0
+    override fun layoutRes() = R.layout.activity_about
 
-    @SuppressLint("SetTextI18n")
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_about)
+    override fun initViews(savedInstanceState: Bundle?) {
         setupToolbar()
 
         activity_about_textversion.text = "v${getAppVersion()}"
-
-        ivLogo.setOnClickListener {
-            if (mCounter++ == 5) {
-                startActivity(Intent(this, HealthCheckActivity::class.java))
-            }
-        }
-
     }
 }
 

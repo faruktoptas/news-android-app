@@ -47,6 +47,7 @@ public class PreferenceWrapper {
     private static final String KEY_HEADING = "HEADING";
 
 
+    // TODO: 16.05.2021 remove static instance
     private static final PreferenceWrapper instance = new PreferenceWrapper();
     private SharedPreferences mSharedPreferences;
     private Context mContext;

@@ -25,6 +25,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import java.util.ArrayList;
 
+// TODO: 15.05.2021 Separate lib
 public class XMLParser extends DefaultHandler {
 
     private String elementValue = null;

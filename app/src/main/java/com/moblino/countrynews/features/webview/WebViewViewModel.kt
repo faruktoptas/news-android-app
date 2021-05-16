@@ -21,7 +21,7 @@ import com.moblino.countrynews.R
 import com.moblino.countrynews.base.BaseViewModel
 import com.moblino.countrynews.data.ConfigRepository
 import com.moblino.countrynews.data.PrefRepository
-import com.moblino.countrynews.data.SingleLiveEvent
+import com.moblino.countrynews.util.SingleLiveEvent
 import com.moblino.countrynews.ext.postTrue
 import com.moblino.countrynews.util.Constants
 

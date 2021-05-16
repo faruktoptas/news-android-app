@@ -22,9 +22,13 @@ import android.os.Bundle
 import android.webkit.WebViewClient
 import com.moblino.countrynews.R
 import com.moblino.countrynews.base.BaseMvvmActivity
+import com.moblino.countrynews.util.PreferenceWrapper
 import kotlinx.android.synthetic.main.activity_headings.webView
+import org.koin.android.ext.android.inject
 
 class HeadingsActivity : BaseMvvmActivity() {
+
+    private val pref: PreferenceWrapper by inject()
 
     override fun layoutRes() = R.layout.activity_headings
 
@@ -42,7 +46,7 @@ class HeadingsActivity : BaseMvvmActivity() {
 
         webView.webViewClient = WebViewClient()
 
-        val url = getPreferenceWrapper().readHeadingUrl()
+        val url = pref.readHeadingUrl()
         if (url.isNullOrEmpty()) {
             finish()
         } else {

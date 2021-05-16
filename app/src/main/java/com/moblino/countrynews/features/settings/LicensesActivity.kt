@@ -21,7 +21,6 @@ import android.os.Bundle
 import com.mikepenz.aboutlibraries.LibsBuilder
 import com.moblino.countrynews.R
 import com.moblino.countrynews.R.string
-import com.moblino.countrynews.base.BaseActivity
 import com.moblino.countrynews.base.BaseMvvmActivity
 
 /**

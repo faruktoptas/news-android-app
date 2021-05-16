@@ -57,6 +57,7 @@ import com.moblino.countrynews.util.Constants.Companion.NAV_ITEM_RATE
 import com.moblino.countrynews.util.Constants.Companion.NAV_ITEM_SETTINGS
 import com.moblino.countrynews.util.Constants.Companion.NAV_ITEM_SHARE
 import com.moblino.countrynews.util.NewsShortcuts
+import com.moblino.countrynews.util.PreferenceWrapper
 import com.moblino.countrynews.util.UIUtils
 import com.moblino.countynews.common.model.Category
 import com.moblino.countynews.common.model.FeedItem
@@ -74,6 +75,7 @@ class MainActivity : BaseMvvmActivity(),
     private val chromeObservable = ChromeTabObservable(this)
     private val remoteConfigHelper: RemoteConfigHelper by inject()
     private val cardQuestionManager: CardQuestionManager by inject()
+    private val pref: PreferenceWrapper by inject()
 
     private lateinit var adapterViewPager: MainViewPagerAdapterLegacy
     private var menuItemListType: MenuItem? = null
@@ -128,7 +130,7 @@ class MainActivity : BaseMvvmActivity(),
     private fun setupNavigationDrawer(categories: List<Category>, current: Int) {
         val menu = nav_view.menu
         menu.clear()
-        if (getPreferenceWrapper().readCountry() == "TR" && !getPreferenceWrapper().readHeadingUrl().isNullOrEmpty()) {
+        if (pref.readCountry() == "TR" && !pref.readHeadingUrl().isNullOrEmpty()) {
             val itemHeading = menu.add(3, NAV_ITEM_FIRST_PAGES, 0, "Manşetler")
             UIUtils.setNavMenuIcon(itemHeading, NAV_ITEM_FIRST_PAGES)
         }
@@ -230,11 +232,11 @@ class MainActivity : BaseMvvmActivity(),
                 showSearchActivity()
             }
             R.id.item_layout_type -> {
-                getPreferenceWrapper().writeStaggeredLayout(!getPreferenceWrapper().readStaggered())
+                pref.writeStaggeredLayout(!pref.readStaggered())
                 setMenuItemIcon()
                 viewModel.refresh(main_viewpager.currentItem)
 
-                FirebaseManager.getInstance().setUserPropertyListingType(!getPreferenceWrapper().readStaggered())
+                FirebaseManager.getInstance().setUserPropertyListingType(!pref.readStaggered())
             }
         }
         return false
@@ -325,7 +327,7 @@ class MainActivity : BaseMvvmActivity(),
     }
 
     private fun setMenuItemIcon() {
-        if (getPreferenceWrapper().readStaggered()) {
+        if (pref.readStaggered()) {
             menuItemListType?.setIcon(R.drawable.ic_list_lienar)
         } else {
             menuItemListType?.setIcon(R.drawable.ic_list_staggered)

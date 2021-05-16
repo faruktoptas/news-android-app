@@ -15,7 +15,7 @@
  *
  */
 
-package com.moblino.countrynews.data
+package com.moblino.countrynews.util
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData

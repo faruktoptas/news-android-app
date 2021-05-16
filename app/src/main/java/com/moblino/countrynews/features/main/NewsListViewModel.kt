@@ -18,6 +18,7 @@
 package com.moblino.countrynews.features.main
 
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.moblino.countrynews.base.BaseViewModel
 import com.moblino.countrynews.data.AppCache
 import com.moblino.countrynews.data.LoggerRepository
@@ -55,7 +56,7 @@ class NewsListViewModel(private val cache: AppCache,
         if (!hasCachedResponse || !readFromCache) {
             showEmptyLive.postValue(false)
             showProgressLive.postValue(showProgress)
-            uiScope.launch {
+            viewModelScope.launch {
                 when (val response = rssRepo.fetchRss(RssRequest(rssUrl, encoding))) {
                     is RssResponse.Success -> {
                         val newsList = response.items

@@ -35,6 +35,7 @@ import org.koin.android.ext.android.startKoin
 class NewsApplication : MultiDexApplication() {
     val appCache: AppCache by inject()
     var currentCategoryId: Int = 0
+    // TODO: Use room  
     lateinit var favouritePersistenceManager: FavouritePersistenceManager
         private set
     lateinit var fontSizeHelper: FontSizeHelper
@@ -53,6 +54,7 @@ class NewsApplication : MultiDexApplication() {
             appCache.favoriteList.addAll(it)
         }
 
+        // TODO: inject with koin
         val client = OkHttpClient()
         val picasso = Picasso.Builder(this)
                 .downloader(OkHttp3Downloader(client))
@@ -64,6 +66,7 @@ class NewsApplication : MultiDexApplication() {
 
     companion object {
 
+        // TODO: remove
         @JvmStatic
         @get:Synchronized
         lateinit var instance: NewsApplication

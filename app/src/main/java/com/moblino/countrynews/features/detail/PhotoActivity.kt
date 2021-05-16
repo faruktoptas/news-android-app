@@ -21,7 +21,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import com.moblino.countrynews.R
-import com.moblino.countrynews.base.BaseActivity
+import com.moblino.countrynews.base.BaseMvvmActivity
 import com.moblino.countrynews.ext.loadUrlWithResult
 import com.moblino.countrynews.util.DateUtil
 import kotlinx.android.synthetic.main.activity_photo.*
@@ -30,13 +30,13 @@ import uk.co.senab.photoview.PhotoViewAttacher
 /**
  * Created by ftoptas on 22/02/17.
  */
-class PhotoActivity : BaseActivity() {
+class PhotoActivity : BaseMvvmActivity() {
 
     private var photoAttach: PhotoViewAttacher? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_photo)
+    override fun layoutRes() = R.layout.activity_photo
+
+    override fun initViews(savedInstanceState: Bundle?) {
         val imageUrl = intent.getStringExtra(EXTRA_IMAGE)
 
         if (DateUtil.isLoadImagesEnabled(this) && imageUrl != null) {

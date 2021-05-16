@@ -26,6 +26,7 @@ import org.xml.sax.InputSource
 import java.io.StringReader
 import javax.xml.parsers.SAXParserFactory
 
+// TODO: Still AsyncTask OMG
 class OkHttpRssRequest(private val listener: RssResponseListener) :
         AsyncTask<String, Void, ArrayList<RssItem>>() {
 

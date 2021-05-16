@@ -71,11 +71,6 @@ abstract class BaseMvvmActivity : AppCompatActivity() {
         actionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    // TODO: move to vm
-    fun getPreferenceWrapper(): PreferenceWrapper {
-        return PreferenceWrapper.getInstance()
-    }
-
     fun bindViewModel(vm: BaseViewModel) {
         vm.res = ResourceRepositoryImpl(this)
         vm.toastLive.observeNotNull(this) {

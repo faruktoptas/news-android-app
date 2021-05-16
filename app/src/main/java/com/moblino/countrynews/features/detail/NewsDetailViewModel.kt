@@ -20,7 +20,7 @@ package com.moblino.countrynews.features.detail
 import androidx.lifecycle.MutableLiveData
 import com.moblino.countrynews.base.BaseViewModel
 import com.moblino.countrynews.data.ConfigRepository
-import com.moblino.countrynews.data.SingleLiveEvent
+import com.moblino.countrynews.util.SingleLiveEvent
 import com.moblino.countrynews.ext.postTrue
 import com.moblino.countrynews.parser.HtmlUtil
 import com.moblino.countynews.common.model.RssItem
