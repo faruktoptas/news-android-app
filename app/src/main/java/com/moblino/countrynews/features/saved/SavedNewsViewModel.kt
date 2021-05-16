@@ -18,6 +18,7 @@
 package com.moblino.countrynews.features.saved
 
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.moblino.countrynews.R
 import com.moblino.countrynews.base.BaseViewModel
 import com.moblino.countynews.common.model.AppCache
@@ -25,6 +26,7 @@ import com.moblino.countrynews.util.SingleLiveEvent
 import com.moblino.countrynews.data.LoggerRepository
 import com.moblino.countrynews.data.PrefRepository
 import com.moblino.countynews.common.model.RssItem
+import kotlinx.coroutines.launch
 
 class SavedNewsViewModel(private val repo: SavedNewsRepository,
                          private val prefRepo: PrefRepository,
@@ -45,24 +47,40 @@ class SavedNewsViewModel(private val repo: SavedNewsRepository,
     }
 
     fun refresh() {
-        val items = appCache.favoriteList.reversed()
-        itemsLive.postValue(items)
-        emptyListLive.postValue(items.isEmpty())
+        viewModelScope.launch {
+            if (appCache.favoriteList.isEmpty()) {
+                appCache.favoriteList.addAll(repo.getAll())
+            }
 
-        var title = res.getString(R.string.title_favourites)
-        if (items.isNotEmpty()) {
-            title += " (${items.size})"
+            val items = appCache.favoriteList.reversed()
+            itemsLive.postValue(items)
+            emptyListLive.postValue(items.isEmpty())
+
+            var title = res.getString(R.string.title_favourites)
+            if (items.isNotEmpty()) {
+                title += " (${items.size})"
+            }
+            titleLive.postValue(title)
         }
-        titleLive.postValue(title)
     }
 
 
     fun removeItem(item: RssItem) {
-        repo.removeFromDb(item.link)
-        val position = repo.removeFromMemory(item.link)
-        notifyItemRemoved.postValue(position)
-        showSnackBar.postValue(true)
-        refresh()
+        viewModelScope.launch {
+            repo.removeFromDb(item.link)
+            val position = removeFromCache(item.link)
+            notifyItemRemoved.postValue(position)
+            showSnackBar.postValue(true)
+            refresh()
+        }
+    }
+
+    private fun removeFromCache(link: String): Int {
+        val pos = appCache.isFavorite(link)
+        if (pos > -1) {
+            appCache.favoriteList.removeAt(pos)
+        }
+        return pos
     }
 
 }

@@ -34,10 +34,11 @@ import com.moblino.countrynews.ext.isTrue
 import com.moblino.countynews.common.model.RssItemWrapper
 import com.moblino.countynews.common.PreferenceWrapper
 import com.moblino.countrynews.util.DateUtil
-import com.moblino.countrynews.util.TemporaryUtil
+import com.moblino.countynews.common.model.AppCache
 
 class NewsListAdapter(
         private val context: Context,
+        private val appCache: AppCache,
         private val pref: PreferenceWrapper) : BaseBindingListAdapter<RssItemWrapper, ItemRecyclerStaggeredBinding>() {
 
     var onItemClickListener: OnNewsItemClickListener? = null
@@ -120,7 +121,7 @@ class NewsListAdapter(
         val isStaggered = false
         binding.rlFav.setOnClickListener { view -> onItemClickListener?.onFavouriteClicked(view, wrapper.rssItem, position, (isStaggered || !showThumb) && !isNightMode) }
 
-        if (TemporaryUtil.isFavorite(wrapper.rssItem?.link!!) > -1) {
+        if (appCache.isFavorite(wrapper.rssItem?.link!!) > -1) {
             binding.ivFav.setImageResource(if ((isStaggered || !showThumb) && !isNightMode) R.drawable.ic_favorite_black_24dp else R.drawable.ic_favorite_white_24dp)
             binding.ivFav.tag = true
         } else {

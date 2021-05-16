@@ -17,41 +17,25 @@
 
 package com.moblino.countrynews.features.saved
 
-import com.moblino.countynews.common.model.AppCache
-import com.moblino.countrynews.data.localdb.FavouritePersistenceManager
-import com.moblino.countrynews.util.TemporaryUtil.isFavorite
+import com.moblino.countrynews.data.room.FavoriteDao
+import com.moblino.countynews.common.ext.withIoDispatcher
 import com.moblino.countynews.common.model.RssItem
 
 interface SavedNewsRepository {
 
-    fun removeFromDb(link: String)
+    suspend fun getAll(): List<RssItem>
 
-    fun removeFromMemory(link: String): Int
+    suspend fun removeFromDb(link: String)
 
-    fun getSavedByUrl(link: String): List<RssItem>
-
-    fun add(item: RssItem)
+    suspend fun add(item: RssItem)
 }
 
-class SavedNewsRepositoryImpl(private val appCache: AppCache,
-                              private val pm: FavouritePersistenceManager) : SavedNewsRepository {
+class SavedNewsRepositoryImpl(private val dao: FavoriteDao) : SavedNewsRepository {
 
-    override fun removeFromDb(link: String) {
-        pm.deleteByUrl(link)
-    }
+    override suspend fun getAll() = withIoDispatcher { dao.getAll() }
 
-    override fun removeFromMemory(link: String): Int {
-        val pos = isFavorite(link)
-        if (pos > -1) {
-            appCache.favoriteList.removeAt(pos)
-        }
-        return pos
-    }
+    override suspend fun removeFromDb(link: String) = withIoDispatcher { dao.deleteByUrl(link) }
 
-    override fun getSavedByUrl(link: String): List<RssItem> = pm.getFavouritesByUrl(link)
-
-    override fun add(item: RssItem) {
-        pm.create(item)
-    }
+    override suspend fun add(item: RssItem) = withIoDispatcher { dao.add(item) }
 }
 

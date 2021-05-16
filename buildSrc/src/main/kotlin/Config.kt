@@ -18,6 +18,9 @@ object Deps {
     const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.7"
     const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.7"
 
+    const val room = "androidx.room:room-runtime:2.2.5"
+    const val roomCompiler = "androidx.room:room-compiler:2.2.5"
+
     const val gson = "com.google.code.gson:gson:2.8.6"
 
     const val appcompat = "androidx.appcompat:appcompat:1.2.0"

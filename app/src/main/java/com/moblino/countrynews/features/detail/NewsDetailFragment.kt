@@ -29,12 +29,13 @@ import com.moblino.countrynews.base.BaseFragment
 import com.moblino.countrynews.ext.*
 import com.moblino.countrynews.features.main.NewsListViewModel
 import com.moblino.countrynews.ext.hide
-import com.moblino.countrynews.util.TemporaryUtil
 import com.moblino.countynews.common.model.RssItem
 import com.moblino.countrynews.util.UIUtils
 import com.moblino.countynews.common.ext.isNightMode
 import com.moblino.countynews.common.ext.shareText
+import com.moblino.countynews.common.model.AppCache
 import kotlinx.android.synthetic.main.fragment_news_detail.*
+import org.koin.android.ext.android.inject
 import org.koin.android.viewmodel.ext.android.viewModel
 
 /**
@@ -44,6 +45,7 @@ class NewsDetailFragment : BaseFragment() {
 
     private val viewModel: NewsDetailViewModel by viewModel()
     private val newsViewModel: NewsListViewModel by viewModel()
+    private val appCache: AppCache by inject()
     private var rssItem: RssItem? = null
     private var mListener: OnNewsDetailListener? = null
     private var mIsNightMode = false
@@ -115,7 +117,7 @@ class NewsDetailFragment : BaseFragment() {
         viewModel.setupContent(rssItem)
         if (!isAdded) return
         rssItem?.let {
-            if (TemporaryUtil.isFavorite(it.link) > -1) {
+            if (appCache.isFavorite(it.link) > -1) {
                 ivFav.setImageResource(if (mIsNightMode) R.drawable.ic_favorite_white_24dp else R.drawable.ic_favorite_black_24dp)
             } else {
                 ivFav.setImageResource(if (mIsNightMode) R.drawable.ic_favorite_border_white_24dp else R.drawable.ic_favorite_border_black_24dp)

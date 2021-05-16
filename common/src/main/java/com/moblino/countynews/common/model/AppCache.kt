@@ -18,12 +18,18 @@
 package com.moblino.countynews.common.model
 
 
-import com.moblino.countynews.common.model.FeedItem
-import com.moblino.countynews.common.model.RssItem
-import com.moblino.countynews.common.model.RssResponse
-
 data class AppCache(val allFeeds: ArrayList<FeedItem> = arrayListOf(),
                     val currentFeedList: ArrayList<FeedItem> = arrayListOf(),
                     val responseList: HashMap<String, RssResponse.Success> = hashMapOf(),
                     val favoriteList: ArrayList<RssItem> = arrayListOf()
-)
+) {
+
+    fun isFavorite(url: String): Int {
+        for (i in favoriteList.indices) {
+            if (favoriteList[i].link == url) {
+                return i
+            }
+        }
+        return -1
+    }
+}

@@ -38,6 +38,7 @@ import com.moblino.countrynews.ext.show
 import com.moblino.countrynews.util.Constants
 import com.moblino.countynews.common.PreferenceWrapper
 import com.moblino.countrynews.util.UIUtils
+import com.moblino.countynews.common.model.AppCache
 import kotlinx.android.synthetic.main.activity_saved.recyclerView
 import kotlinx.android.synthetic.main.activity_saved.rl_no_items
 import org.koin.android.ext.android.inject
@@ -48,6 +49,7 @@ class SavedNewsActivity : BaseMvvmActivity(), OnNewsItemClickListener {
     private lateinit var adapter: NewsListAdapter
     private val viewModel: SavedNewsViewModel by viewModel()
     private val prefWrapper: PreferenceWrapper by inject()
+    private val appCache: AppCache by inject()
     private val chromeObservable = ChromeTabObservable(this)
 
     override fun layoutRes() = R.layout.activity_saved
@@ -67,7 +69,7 @@ class SavedNewsActivity : BaseMvvmActivity(), OnNewsItemClickListener {
     private fun observe() {
         lifecycle.addObserver(chromeObservable)
         viewModel.itemsLive.observeNotNull(this, { rssItems ->
-            adapter = NewsListAdapter(this, prefWrapper)
+            adapter = NewsListAdapter(this, appCache, prefWrapper)
             adapter.items = rssItems.toWrapperList(this)
             adapter.onItemClickListener = this
             recyclerView.adapter = adapter

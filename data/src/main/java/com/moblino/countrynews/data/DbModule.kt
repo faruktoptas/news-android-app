@@ -15,8 +15,15 @@
  *
  */
 
-package com.moblino.countynews.common.model;
+package com.moblino.countrynews.data
 
-public interface Modal {
-    int getId();
+import com.moblino.countrynews.data.room.LocalDatabase
+import org.koin.android.ext.koin.androidContext
+import org.koin.dsl.module.module
+
+val dbModule = module {
+
+    single { LocalDatabase.getDatabase(androidContext())!! }
+
+    single { get<LocalDatabase>().favoriteDao() }
 }

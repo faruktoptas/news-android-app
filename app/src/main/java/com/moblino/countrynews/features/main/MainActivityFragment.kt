@@ -19,33 +19,26 @@ package com.moblino.countrynews.features.main
 
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import com.moblino.countrynews.NewsApplication.Companion.instance
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
 import com.moblino.countrynews.R
-import com.moblino.countrynews.util.CardQuestionHelper
-import com.moblino.countrynews.data.localdb.FavouritePersistenceManager
 import com.moblino.countrynews.ext.asVisibility
 import com.moblino.countrynews.ext.observeNotNull
-import com.moblino.countrynews.ext.toWrapperList
-import com.moblino.countynews.common.model.CardQuestion
-import com.moblino.countynews.common.model.FeedItem
-import com.moblino.countynews.common.model.RssItem
-import com.moblino.countynews.common.model.RssItemWrapper
 import com.moblino.countrynews.ext.show
+import com.moblino.countrynews.ext.toWrapperList
 import com.moblino.countrynews.util.*
 import com.moblino.countynews.common.PreferenceWrapper
+import com.moblino.countynews.common.model.*
 import kotlinx.android.synthetic.main.fragment_main.*
 import kotlinx.android.synthetic.main.layout_empty_state.*
 import org.koin.android.ext.android.inject
 import org.koin.android.viewmodel.ext.android.viewModel
-import kotlin.collections.ArrayList
 
 
 class MainActivityFragment : Fragment(), OnNewsItemClickListener, OnRefreshListener {
@@ -53,13 +46,13 @@ class MainActivityFragment : Fragment(), OnNewsItemClickListener, OnRefreshListe
     private val viewModel: NewsListViewModel by viewModel()
     private val pref: PreferenceWrapper by inject()
     private val cardQuestionManager: CardQuestionHelper by inject()
+    private val appCache: AppCache by inject()
 
     private var rssUrl: String? = null
     private var itemList: ArrayList<RssItem>? = null
     private lateinit var rvAdapter: NewsListAdapter
     private var mOnNewsClickListener: OnNewsClickListener? = null
     var cardQuestion: CardQuestion? = null
-    private var mFavouritePersistenceManager: FavouritePersistenceManager? = null
     private var mFeedItem: FeedItem? = null
 
 
@@ -87,7 +80,6 @@ class MainActivityFragment : Fragment(), OnNewsItemClickListener, OnRefreshListe
         super.onViewCreated(view, savedInstanceState)
         swRefresh.setOnRefreshListener(this)
         swRefresh.setColorSchemeResources(R.color.colorAccent)
-        mFavouritePersistenceManager = instance.favouritePersistenceManager
         btn_retry.setOnClickListener { viewModel.fetchRss(false) }
         setRecycleView()
         viewModel.fetchRss()
@@ -107,7 +99,7 @@ class MainActivityFragment : Fragment(), OnNewsItemClickListener, OnRefreshListe
         } else {
             rvRssItems.layoutManager = LinearLayoutManager(activity)
         }
-        rvAdapter = NewsListAdapter(requireContext(), pref).apply {
+        rvAdapter = NewsListAdapter(requireContext(), appCache, pref).apply {
             onItemClickListener = object : OnNewsItemClickListener {
                 override fun onItemSelected(item: RssItem, position: Int) {
                     mOnNewsClickListener?.onNewsClicked(item, rssUrl!!, position)

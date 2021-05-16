@@ -67,7 +67,7 @@ val appModule = module {
     single<DetailRepository> { DetailRepositoryImpl(get()) }
     single<LoggerRepository> { LoggerRepositoryImpl() }
     single<PrefRepository> { PrefRepositoryImpl() }
-    single<SavedNewsRepository> { SavedNewsRepositoryImpl(get(), get<NewsApplication>().favouritePersistenceManager) }
+    single<SavedNewsRepository> { SavedNewsRepositoryImpl(get()) }
     single<MainRepository> { MainRepositoryImpl(androidContext().assets, get()) }
     single<ConfigRepository> { ConfigRepositoryImpl(androidContext()) }
     single<RssRepository> { RssRepositoryImpl(get()) }
@@ -76,7 +76,7 @@ val appModule = module {
     viewModel { EditFeedsViewModel(get(), get(), get()) }
     viewModel { SavedNewsViewModel(get(), get(), get(), get()) }
     viewModel { SearchViewModel(get()) }
-    viewModel { MainViewModel(get(), get(), get(), get(), get()) }
+    viewModel { MainViewModel(get(), get(), get(), get(), get(), get()) }
     viewModel { NewsListViewModel(get(), get(), get(), get()) }
     viewModel { NewsDetailViewModel(get()) }
     viewModel { WebViewViewModel(get(), get()) }

@@ -82,29 +82,29 @@ class NewsListViewModel(private val cache: AppCache,
     }
 
     fun favoriteClicked(rssItem: RssItem, cb: (Boolean) -> Unit) {
-        val rssLink = rssItem.link
-        val favoritePosition = cache.favoriteList.indexOfFirst { it.link == rssLink }
-        if (favoritePosition > -1) {
-            cache.favoriteList.removeAt(favoritePosition)
-            val list = savedRepo.getSavedByUrl(rssLink)
-            if (list.isNotEmpty()) {
+        viewModelScope.launch {
+            val rssLink = rssItem.link
+            val favoritePosition = cache.favoriteList.indexOfFirst { it.link == rssLink }
+            if (favoritePosition > -1) {
+                cache.favoriteList.removeAt(favoritePosition)
                 savedRepo.removeFromDb(rssLink)
+                cb(false)
+            } else {
+                rssItem.feedTitle = title
+                cache.favoriteList.add(rssItem)
+                savedRepo.add(RssItem(
+                        title = rssItem.title,
+                        link = rssItem.link,
+                        image = rssItem.image,
+                        pubDate = rssItem.pubDate,
+                        feedId = feedItem?.feedId ?: -1,
+                        feedTitle = title,
+                        description = rssItem.description))
+
+                loggerRepo.logEvent(FirebaseManager.EVENT_FAVOURITE)
+                cb(true)
             }
-            cb(false)
-        } else {
-            rssItem.feedTitle = title
-            cache.favoriteList.add(rssItem)
-            savedRepo.add(RssItem(rssItem.title,
-                    rssItem.link,
-                    rssItem.image,
-                    rssItem.pubDate,
-                    feedItem?.feedId ?: -1,
-                    title,
-                    rssItem.description))
-
-            loggerRepo.logEvent(FirebaseManager.EVENT_FAVOURITE)
-            cb(true)
         }
-    }
 
+    }
 }

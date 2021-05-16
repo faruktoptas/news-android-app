@@ -15,19 +15,24 @@
  *
  */
 
-package com.moblino.countrynews.util
+package com.moblino.countrynews.data.room
 
-import com.moblino.countrynews.NewsApplication.Companion.instance
+import androidx.room.*
+import com.moblino.countynews.common.model.RssItem
 
-// TODO: Will be removed  
-object TemporaryUtil {
+@Dao
+interface FavoriteDao {
 
-    fun isFavorite(url: String): Int {
-        for (i in instance.appCache.favoriteList.indices) {
-            if (instance.appCache.favoriteList[i].link == url) {
-                return i
-            }
-        }
-        return -1
-    }
+    @Query("Select * from fav order by id desc")
+    fun getAll(): List<RssItem>
+
+    @Insert
+    fun add(favorite: RssItem)
+
+    @Delete
+    fun delete(favorite: RssItem)
+
+    @Query("DELETE FROM fav WHERE link = :url")
+    fun deleteByUrl(url: String)
+
 }

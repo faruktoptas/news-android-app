@@ -18,24 +18,27 @@
 package com.moblino.countrynews.features.main
 
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.moblino.countrynews.base.BaseViewModel
-import com.moblino.countynews.common.model.AppCache
-import com.moblino.countrynews.util.SingleLiveEvent
 import com.moblino.countrynews.data.LoggerRepository
 import com.moblino.countrynews.data.PrefRepository
 import com.moblino.countrynews.ext.postTrue
-import com.moblino.countynews.common.model.Category
-import com.moblino.countynews.common.model.FeedItem
+import com.moblino.countrynews.features.saved.SavedNewsRepository
 import com.moblino.countrynews.util.Constants
 import com.moblino.countrynews.util.ListUtil
+import com.moblino.countrynews.util.SingleLiveEvent
 import com.moblino.countrynews.util.UpdateChecker
-import java.util.ArrayList
-import java.util.Locale
+import com.moblino.countynews.common.model.AppCache
+import com.moblino.countynews.common.model.Category
+import com.moblino.countynews.common.model.FeedItem
+import kotlinx.coroutines.launch
+import java.util.*
 
 class MainViewModel(private val repo: MainRepository,
                     private val pref: PrefRepository,
                     private val appCache: AppCache,
                     private val updateChecker: UpdateChecker,
+                    private val savedRepo: SavedNewsRepository,
                     private val logger: LoggerRepository) : BaseViewModel() {
 
     private val currentlyViewedFeeds = ArrayList<FeedItem>()
@@ -58,31 +61,35 @@ class MainViewModel(private val repo: MainRepository,
     }
 
     fun setup(categoryId: Int) {
-        setupCurrentCountry()
+        viewModelScope.launch {
+            appCache.favoriteList.clear()
+            appCache.favoriteList.addAll(savedRepo.getAll())
+            setupCurrentCountry()
 
-        val categories = repo.categoriesByCountry(selectedCountry)
+            val categories = repo.categoriesByCountry(selectedCountry)
 
-        // A workaround not to use lambda. Because code coverage fails if kotlin sort used
-        val files = ListUtil.sortList(repo.getCountryFiles(selectedCountry).toList()).map { it as String }
+            // A workaround not to use lambda. Because code coverage fails if kotlin sort used
+            val files = ListUtil.sortList(repo.getCountryFiles(selectedCountry).toList()).map { it as String }
 
-        appCache.allFeeds.clear()
-        activeCategories.clear()
-        files.filter { it != Constants.CATEGORY_FILE }
-                .forEach {
-                    val id = Integer.parseInt(it.substring(0, it.indexOf(".")))
-                    activeCategories.add(categories[id])
+            appCache.allFeeds.clear()
+            activeCategories.clear()
+            files.filter { it != Constants.CATEGORY_FILE }
+                    .forEach {
+                        val id = Integer.parseInt(it.substring(0, it.indexOf(".")))
+                        activeCategories.add(categories[id])
 
-                    val feedList = repo.feedsByCategory(selectedCountry, id)
-                    feedList.forEach { feed ->
-                        feed.category = categories[id].title
-                        feed.categoryId = id
+                        val feedList = repo.feedsByCategory(selectedCountry, id)
+                        feedList.forEach { feed ->
+                            feed.category = categories[id].title
+                            feed.categoryId = id
+                        }
+                        appCache.allFeeds.addAll(feedList)
                     }
-                    appCache.allFeeds.addAll(feedList)
-                }
 
-        currentCategoryId = if (categoryId > -1) categoryId else pref.readCategoryId()
-        navigationItemsLive.postValue(Pair(currentCategoryId, activeCategories))
-        setupViewPager(currentCategoryId)
+            currentCategoryId = if (categoryId > -1) categoryId else pref.readCategoryId()
+            navigationItemsLive.postValue(Pair(currentCategoryId, activeCategories))
+            setupViewPager(currentCategoryId)
+        }
     }
 
     private fun setupViewPager(categoryId: Int) {
