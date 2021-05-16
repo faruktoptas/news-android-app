@@ -8,7 +8,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Create dummy sign
       - run: echo 'test' >> sign.gradle
       - uses: actions/checkout@v1
       - name: Gradle Command
