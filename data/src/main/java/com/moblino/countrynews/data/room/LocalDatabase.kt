@@ -10,9 +10,9 @@ import com.moblino.countynews.common.model.RssItem
 
 
 @Database(
-        entities = [
-            RssItem::class
-        ], exportSchema = false, version = 3
+    entities = [
+        RssItem::class
+    ], exportSchema = false, version = 3
 )
 abstract class LocalDatabase : RoomDatabase() {
 
@@ -27,13 +27,12 @@ abstract class LocalDatabase : RoomDatabase() {
             if (instance == null) {
                 synchronized(LocalDatabase::class) {
                     instance = Room.databaseBuilder(
-                            context.applicationContext,
-                            LocalDatabase::class.java,
-                            DB_NAME
+                        context.applicationContext,
+                        LocalDatabase::class.java,
+                        DB_NAME
                     )
-                            //.addMigrations(Migration2To3())
-                            .fallbackToDestructiveMigrationFrom(2)
-                            .build()
+                        .addMigrations(Migration2To3())
+                        .build()
 
                 }
             }
@@ -46,37 +45,10 @@ abstract class LocalDatabase : RoomDatabase() {
 class Migration2To3 : Migration(2, 3) {
 
     override fun migrate(database: SupportSQLiteDatabase) {
-        // TODO: Migrate favorites
-        /*val cursor = database.query("Select * from Favourites")
-        cursor.moveToFirst()
-        do {
-            val id = cursor.getInt(cursor.getColumnIndex("id"))
-            val description = cursor.getString(cursor.getColumnIndex("description"))
-            val feedId = cursor.getInt(cursor.getColumnIndex("feedId"))
-            val feedTitle = cursor.getString(cursor.getColumnIndex("feedTitle"))
-            val image = cursor.getString(cursor.getColumnIndex("image"))
-            val link = cursor.getString(cursor.getColumnIndex("link"))
-            val pubDate = cursor.getString(cursor.getColumnIndex("pubDate"))
-            val title = cursor.getString(cursor.getColumnIndex("title"))
-
-            val values = ContentValues()
-            values.put("description", description)
-            values.put("feedId", feedId)
-            values.put("feedTitle", feedTitle)
-            values.put("image", image)
-            values.put("link", link)
-            values.put("pubDate", pubDate)
-            values.put("title", title)
-
-            database.insert("fav", CONFLICT_REPLACE, values)
-
-            Log.v("asd", "$id $description $feedId $image $feedTitle $image $link $pubDate $title")
-
-        } while (cursor.moveToNext())
-
-        throw RuntimeException("not handled")*/
-        /*database.execSQL("ALTER TABLE favorite ADD COLUMN readTime INTEGER NOT NULL DEFAULT 0;")
-        Timber.i("Migrated from 2 to 3")*/
+        database.execSQL("CREATE TABLE fav_new (id INTEGER NOT NULL, image TEXT, feedId INTEGER NOT NULL, link TEXT NOT NULL, description TEXT, title TEXT, feedTitle TEXT, pubDate TEXT NOT NULL, PRIMARY KEY(id))")
+        database.execSQL("INSERT INTO fav_new (id, image, feedId, link, description, title, feedTitle, pubDate) SELECT id, image, feedId, link, description, title, feedTitle, pubDate FROM Favourites")
+        database.execSQL("DROP TABLE Favourites")
+        database.execSQL("ALTER TABLE fav_new RENAME TO Favourites")
     }
 
 }

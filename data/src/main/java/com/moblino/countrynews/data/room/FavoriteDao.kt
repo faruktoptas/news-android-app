@@ -23,7 +23,7 @@ import com.moblino.countynews.common.model.RssItem
 @Dao
 interface FavoriteDao {
 
-    @Query("Select * from fav order by id desc")
+    @Query("Select * from Favourites order by id asc")
     fun getAll(): List<RssItem>
 
     @Insert
@@ -32,7 +32,7 @@ interface FavoriteDao {
     @Delete
     fun delete(favorite: RssItem)
 
-    @Query("DELETE FROM fav WHERE link = :url")
+    @Query("DELETE FROM Favourites WHERE link = :url")
     fun deleteByUrl(url: String)
 
 }
