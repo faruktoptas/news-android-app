@@ -1,0 +1,45 @@
+{
+  "project_info": {
+    "project_number": "1",
+    "firebase_url": "https://example.com",
+    "project_id": "1",
+    "storage_bucket": "1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1:android:1",
+        "android_client_info": {
+          "package_name": "com.moblino.countrynews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "key"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "id"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
