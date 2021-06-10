@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - run: |
-          chmod +x ./ci.sh
+          chmod +x ci.sh
           ./ci.sh
       - uses: actions/checkout@v1
       - name: Gradle Command
