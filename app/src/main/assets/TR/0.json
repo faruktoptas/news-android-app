@@ -45,21 +45,6 @@
     "l": "https://www.aa.com.tr/tr/rss/default?cat=live"
   },
   {
-    "i": 1843,
-    "n": "Sol",
-    "l": "http://haber.sol.org.tr/rss/tumicerik"
-  },
-  {
-    "i": 1847,
-    "n": "Denizhaber",
-    "l": "https://www.denizhaber.com.tr/rss/"
-  },
-  {
-    "i": 1850,
-    "n": "Ogünhaber",
-    "l": "http://www.ogunhaber.com/rss"
-  },
-  {
     "i": 1861,
     "n": "Dünya.com",
     "l": "https://www.dunya.com/rss?dunya"
@@ -80,20 +65,9 @@
     "l": "http://www.gunes.com/XmlRss"
   },
   {
-    "i": 1828,
-    "n": "Objektifhaber",
-    "l": "http://www.objektifhaber.com/sondakika.rss"
-  },
-
-  {
     "i": 1820,
     "n": "Stargazete",
     "l": "http://www.stargazete.com/rss/sondakika.xml"
-  },
-  {
-    "i": 1853,
-    "n": "BBC Türkçe",
-    "l": "http://feeds.bbci.co.uk/turkce/rss.xml"
   },
   {
     "i": 1857,
@@ -129,6 +103,21 @@
     "i": 1806,
     "n": "Mynet",
     "l": "http://www.mynet.com/haber/rss/sondakika"
+  },
+  {
+    "i": 1843,
+    "n": "Sol",
+    "l": "https://haber.sol.org.tr/rss.xml"
+  },
+  {
+    "i": 1853,
+    "n": "BBC Türkçe",
+    "l": "http://feeds.bbci.co.uk/turkce/rss.xml"
+  },
+  {
+    "i": 1850,
+    "n": "Ogünhaber",
+    "l": "http://www.ogunhaber.com/rss"
   },
   {
     "i": 1865,

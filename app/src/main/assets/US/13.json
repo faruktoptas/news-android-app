@@ -45,11 +45,6 @@
     "l": "http://www.cnbc.com/id/19854910/device/rss/rss.html"
   },
   {
-    "i": 2111,
-    "n": "Reuters",
-    "l": "http://feeds.reuters.com/reuters/technologyNews?format=xml"
-  },
-  {
     "i": 2112,
     "n": "Arstechnica",
     "l": "http://feeds.arstechnica.com/arstechnica/index?format=xml"
