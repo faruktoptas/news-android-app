@@ -93,7 +93,9 @@ public class XMLParser extends DefaultHandler {
                 rssItem.setTitle(tempTitle.trim());
                 rssItem.setLink(tempLink);
                 rssItem.setImage(HtmlUtil.optimizeImage(tempImage, tempLink));
-                rssItem.setPubDate(tempPubdate);
+                if (tempPubdate != null) {
+                    rssItem.setPubDate(tempPubdate);
+                }
                 rssItem.setDescription((HtmlUtil.fixDescription(tempDescription)));
                 if (tempImage == null && tempDescription != null && HtmlUtil.getImageSourceFromDescription(tempDescription) != null) {
                     rssItem.setImage(HtmlUtil.optimizeImage(HtmlUtil.getImageSourceFromDescription(tempDescription), tempLink));

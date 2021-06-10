@@ -31,6 +31,7 @@ dependencies {
     implementation Deps.appcompat
     implementation Deps.gson
     implementation 'androidx.preference:preference-ktx:1.1.1'
+    implementation 'com.google.android.material:material:1.3.0'
 
     implementation Deps.room
 

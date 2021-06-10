@@ -20,17 +20,22 @@ package com.moblino.countrynews.features.about
 import android.os.Bundle
 import com.moblino.countrynews.R
 import com.moblino.countrynews.base.BaseMvvmActivity
+import com.moblino.countynews.common.PreferenceWrapper
 import com.moblino.countynews.common.ext.getAppVersion
 import kotlinx.android.synthetic.main.activity_about.*
+import org.koin.android.ext.android.inject
 
 class AboutActivity : BaseMvvmActivity() {
+
+    private val pref: PreferenceWrapper by inject()
 
     override fun layoutRes() = R.layout.activity_about
 
     override fun initViews(savedInstanceState: Bundle?) {
         setupToolbar()
 
-        activity_about_textversion.text = "v${getAppVersion()}"
+        tvVersion.text = "v${getAppVersion()}"
+        tvContactInfo.text = pref.readContactInfo().replace("\\n", "\n")
     }
 }
 

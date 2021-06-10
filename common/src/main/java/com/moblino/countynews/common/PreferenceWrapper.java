@@ -44,6 +44,7 @@ public class PreferenceWrapper {
     private static final String KEY_LAST_AD_SHOWN_DATE = "LAST_AD_SHOWN_DATE";
     private static final String KEY_NEWS_DETAIL_SHOWCASE = "NEWS_DETAIL_SHOWCASE";
     private static final String KEY_HEADING = "HEADING";
+    private static final String KEY_CONTACT_INFO = "CONTACT_INFO";
 
 
     // TODO: 16.05.2021 remove static instance
@@ -217,6 +218,16 @@ public class PreferenceWrapper {
 
     public String readHeadingUrl() {
         return mSharedPreferences.getString(KEY_HEADING, "");
+    }
+
+    public void writeContactInfo(String info) {
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
+        editor.putString(KEY_CONTACT_INFO, info);
+        editor.apply();
+    }
+
+    public String readContactInfo() {
+        return mSharedPreferences.getString(KEY_CONTACT_INFO, "");
     }
 
 }

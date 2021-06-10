@@ -41,6 +41,7 @@ class RemoteConfigHelper {
     fun initialize(context: Context) {
         val defaults = HashMap<String, Any>()
         defaults[VALUE_LATEST_VERSION] = context.getAppVersion()
+        defaults[VALUE_CONTACT_INFO] = ""
 
         remoteConfig.setDefaultsAsync(defaults)
 
@@ -49,13 +50,18 @@ class RemoteConfigHelper {
                 val latestVersion = remoteConfig.getString(VALUE_LATEST_VERSION)
                 val excludedNews = remoteConfig.getString(VALUE_EXCLUDED_NEWS)
                 val headingUrl = remoteConfig.getString(VALUE_HEADING_URL)
-                Log.v("asd", "Remote config fetch successful $latestVersion $headingUrl $excludedNews")
+                val contactInfo = remoteConfig.getString(VALUE_CONTACT_INFO)
+                Log.v(
+                    "asd",
+                    "Remote config fetch successful $latestVersion $headingUrl $excludedNews $contactInfo"
+                )
 
                 pref.writeRemoteExcludedNews(excludedNews)
                 if (latestVersion.isNotEmpty()) {
                     pref.writeString(PreferenceWrapper.KEY_NEW_VERSION, latestVersion)
                 }
                 pref.writeHeadingUrl(headingUrl)
+                pref.writeContactInfo(contactInfo)
             }
         }
     }
@@ -78,6 +84,7 @@ class RemoteConfigHelper {
         const val VALUE_LATEST_VERSION = "latest_version"
         const val VALUE_EXCLUDED_NEWS = "excluded_news"
         private const val VALUE_HEADING_URL = "heading_url"
+        private const val VALUE_CONTACT_INFO = "contact_info"
     }
 
 }
