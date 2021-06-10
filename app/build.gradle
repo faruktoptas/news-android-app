@@ -34,8 +34,8 @@ android {
         minSdkVersion Config.minSdk
         targetSdkVersion Config.targetSdk
         multiDexEnabled true
-        versionCode 56
-        versionName "2.6.4"
+        versionCode 58
+        versionName "2.6.5"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
 
@@ -67,6 +67,7 @@ android {
 
     lintOptions {
         disable 'MissingTranslation'
+        checkReleaseBuilds false
     }
 }
 

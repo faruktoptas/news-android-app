@@ -1,7 +1,7 @@
 object Config {
     val minSdk = 16
-    val compileSdk = 28
-    val targetSdk = 28
+    val compileSdk = 29
+    val targetSdk = 29
     val buildTools = "29.0.3"
 }
 
